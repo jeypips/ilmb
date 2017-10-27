@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB</title>
+        <title>ILMB | Dashboard</title>
 
         <!--Morris Chart CSS -->
 		    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
@@ -45,7 +45,7 @@
                 <div class="topbar-left">
                     <div class="text-center">
 						<!-- <a href="index.php" class="logo"><img class="img-circle" width="130px;" src="assets/img/brgy.png" alt="PLGU Logo"></a> -->
-							 <a href="index.php" class="logo"><img class="img-circle" width="50px;" src="assets/img/lovelaunion.png" alt="PLGU Logo"><span><img class="img-circle" width="100px;" style="margin-right: 10px;" src="assets/img/zxc.png" alt="PLGU Logo"></span></a>
+							 <a href="index.php" class="logo"><img class="img-circle" width="50px;" src="assets/img/lovelaunion.png" alt="PLGU Logo"><span><img class="img-circle" width="100px;" style="margin-right: 10px;" src="assets/img/index-logo.png" alt="PLGU Logo"></span></a>
                     </div>
                 </div>
 
