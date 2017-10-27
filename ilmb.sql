@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2017 at 03:08 PM
+-- Generation Time: Oct 27, 2017 at 08:30 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -639,15 +639,16 @@ INSERT INTO `municipalities` (`id`, `municipality`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_infos`
+-- Table structure for table `personal_info`
 --
 
-CREATE TABLE `personal_infos` (
+CREATE TABLE `personal_info` (
   `id` int(10) NOT NULL,
   `firstname` varchar(500) DEFAULT NULL,
   `middlename` varchar(500) DEFAULT NULL,
   `lastname` varchar(500) DEFAULT NULL,
   `extension_name` varchar(500) DEFAULT NULL,
+  `nationality` varchar(550) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `birth_date` date NOT NULL DEFAULT '0000-00-00',
   `birth_place` varchar(550) DEFAULT NULL,
@@ -656,6 +657,7 @@ CREATE TABLE `personal_infos` (
   `address_street` varchar(550) DEFAULT NULL,
   `address_subdivision` varchar(550) DEFAULT NULL,
   `address_barangay` int(11) DEFAULT NULL,
+  `address_city` varchar(550) DEFAULT NULL,
   `address_municipality` int(11) DEFAULT NULL,
   `contact_no` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -677,9 +679,9 @@ ALTER TABLE `municipalities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal_infos`
+-- Indexes for table `personal_info`
 --
-ALTER TABLE `personal_infos`
+ALTER TABLE `personal_info`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -697,9 +699,9 @@ ALTER TABLE `barangays`
 ALTER TABLE `municipalities`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- AUTO_INCREMENT for table `personal_infos`
+-- AUTO_INCREMENT for table `personal_info`
 --
-ALTER TABLE `personal_infos`
+ALTER TABLE `personal_info`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
