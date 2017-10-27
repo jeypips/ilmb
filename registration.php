@@ -239,7 +239,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    <strong>Copyright &copy; <?php echo date("Y"); ?> PGLU, I Love my Barangay.</strong> All rights reserved.
+                    Copyright <strong>&copy; <?php echo date("Y"); ?> PGLU, I Love my Barangay.</strong> All rights reserved.
                 </footer>
 
             </div>
