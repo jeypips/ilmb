@@ -44,8 +44,8 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-						<!-- <a href="index.html" class="logo"><img class="img-circle" width="130px;" src="assets/img/brgy.png" alt="PLGU Logo"></a> -->
-							 <a href="index.html" class="logo"><img class="img-circle" width="50px;" src="assets/img/lovelaunion.png" alt="PLGU Logo"><span><img class="img-circle" width="100px;" style="margin-right: 10px;" src="assets/img/zxc.png" alt="PLGU Logo"></span></a>
+						<!-- <a href="index.php" class="logo"><img class="img-circle" width="130px;" src="assets/img/brgy.png" alt="PLGU Logo"></a> -->
+							 <a href="index.php" class="logo"><img class="img-circle" width="50px;" src="assets/img/lovelaunion.png" alt="PLGU Logo"><span><img class="img-circle" width="100px;" style="margin-right: 10px;" src="assets/img/zxc.png" alt="PLGU Logo"></span></a>
                     </div>
                 </div>
 
@@ -204,9 +204,8 @@
                         <ul>
 
                         	<li class="text-muted menu-title">Navigation</li>
-                            <li><a href="index.html" class="active"><i class="icon-home"></i><span> Dashboard </span></a></li>
-                            
-
+                            <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
+                            <li><a href="registration.php" class="active"><i class="icon-note"></i><span> Registration </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -606,18 +605,20 @@
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
         <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
 
-
-
         <script src="assets/plugins/morris/morris.min.js"></script>
         <script src="assets/plugins/raphael/raphael-min.js"></script>
-
         <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-
         <script src="assets/pages/jquery.dashboard.js"></script>
-
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
+		<script src="assets/js/bootbox.min.js"></script>
 
+		<!-- Angular  -->
+		<script src="angular/angular.min.js"></script>
+		<script src="modules/fullscreen.js"></script>
+		<script src="modules/bootstrap-modal.js"></script>
+		<script src="modules/growl.js"></script>
+		
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 $('.counter').counterUp({
@@ -629,9 +630,5 @@
 
             });
         </script>
-
-
-
-
     </body>
 </html>
