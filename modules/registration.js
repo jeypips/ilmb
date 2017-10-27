@@ -104,7 +104,7 @@ angular.module('registration-module',['bootstrap-modal']).factory('form', functi
 				
 				if (scope.personal_info.id == 0) scope.personal_info.id = response.data;
 				mode(scope,scope.personal_info);
-				// $timeout(function() { self.list(scope); },200);
+				
 				
 			}, function myError(response) {
 				 
