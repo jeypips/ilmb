@@ -30,7 +30,7 @@
     </head>
 
 
-    <body class="fixed-left">
+    <body class="fixed-left" ng-controller="registrationCtrl" ng-app="registration">
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -394,6 +394,8 @@
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
+		<script src="modules/registration.js"></script>
+		<script src="controllers/registration.js"></script>
 
     </body>
 </html>
