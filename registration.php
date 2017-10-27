@@ -9,7 +9,10 @@
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
         <title>ILMB | Registration</title>
-
+		
+		<!-- DataTables -->
+        <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
+		
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -226,7 +229,7 @@
                                 <h4 class="page-title">Registration</h4>
                             </div>
                         </div>
-						
+						<br>
 						<div class="row">
                             <div class="col-sm-12">
 								<div id="x_content" class="x_content"></div>
@@ -380,7 +383,9 @@
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
-
+		<script src="assets/plugins/peity/jquery.peity.min.js"></script>
+		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
 
         <!-- jQuery  -->
