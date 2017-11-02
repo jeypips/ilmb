@@ -1,4 +1,4 @@
-var app = angular.module('registration',['toggle-fullscreen','registration-module']);
+var app = angular.module('registration',['account-module','toggle-fullscreen','registration-module']);
 
 app.controller('registrationCtrl',function($scope,fullscreen,form) {
 	
@@ -9,6 +9,5 @@ app.controller('registrationCtrl',function($scope,fullscreen,form) {
 	form.list($scope);
 	
 	$scope.form = form;
-	
 	
 });

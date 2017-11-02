@@ -1,0 +1,13 @@
+<?php
+
+header("Content-Type: application/json");
+
+session_start();
+
+if (isset($_SESSION['account_id'])) unset($_SESSION['account_id']);
+
+echo "Logout Successful";
+
+header("location: ../index.php");
+
+?>
