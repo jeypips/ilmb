@@ -392,6 +392,7 @@
         <script src="assets/pages/jquery.dashboard.js"></script>
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 		<script src="assets/js/bootbox.min.js"></script>
 
 		<!-- Angular  -->

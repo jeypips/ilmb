@@ -388,6 +388,7 @@
 		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
