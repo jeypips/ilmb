@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2017 at 10:27 AM
+-- Generation Time: Nov 02, 2017 at 01:11 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -670,16 +670,17 @@ CREATE TABLE `personal_infos` (
   `middlename` varchar(500) DEFAULT NULL,
   `lastname` varchar(500) DEFAULT NULL,
   `extension_name` varchar(500) DEFAULT NULL,
-  `nationality` varchar(100) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `birth_date` varchar(55) DEFAULT NULL,
   `birth_place` varchar(550) DEFAULT NULL,
   `age` int(3) DEFAULT NULL,
+  `family_head` tinyint(5) DEFAULT NULL,
+  `family_members` int(11) DEFAULT NULL,
+  `employment_status` varchar(5) DEFAULT NULL,
+  `philhealth_member` varchar(5) DEFAULT NULL,
   `address_house` int(11) DEFAULT NULL,
-  `address_street` varchar(550) DEFAULT NULL,
-  `address_city` varchar(550) DEFAULT NULL,
-  `address_zipcode` int(4) DEFAULT NULL,
-  `address_subdivision` varchar(550) DEFAULT NULL,
+  `address_sitio` varchar(100) DEFAULT NULL,
+  `address_purok` int(11) DEFAULT NULL,
   `address_barangay` varchar(550) DEFAULT NULL,
   `address_municipality` varchar(550) DEFAULT NULL,
   `address_province` varchar(100) DEFAULT NULL,
@@ -690,8 +691,8 @@ CREATE TABLE `personal_infos` (
 -- Dumping data for table `personal_infos`
 --
 
-INSERT INTO `personal_infos` (`id`, `firstname`, `middlename`, `lastname`, `extension_name`, `nationality`, `gender`, `birth_date`, `birth_place`, `age`, `address_house`, `address_street`, `address_city`, `address_zipcode`, `address_subdivision`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`) VALUES
-(1, 'John Paul', 'Garcia', 'Balanon', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '373', NULL, NULL, NULL);
+INSERT INTO `personal_infos` (`id`, `firstname`, `middlename`, `lastname`, `extension_name`, `gender`, `birth_date`, `birth_place`, `age`, `family_head`, `family_members`, `employment_status`, `philhealth_member`, `address_house`, `address_sitio`, `address_purok`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`) VALUES
+(1, 'John Paul', 'Garcia', 'Balanon', NULL, NULL, NULL, NULL, NULL, 1, 5, 'true', 'false', NULL, NULL, NULL, '10', '15', NULL, NULL);
 
 --
 -- Indexes for dumped tables

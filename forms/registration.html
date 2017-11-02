@@ -12,89 +12,142 @@
 		<div class="panel panel-inverse panel-border card-box">
 	
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.firstname.$touched && formHolder.personal_info.firstname.$invalid}">
-					<label class="label-control">First Name</label>
+			<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.lastname.$touched && formHolder.personal_info.lastname.$invalid}">
+					<label class="label-control">Family Name</label>
+					<input type="text" class="form-control" name="lastname" ng-model="personal_info.lastname" required ng-disabled="controls.ok.btn">
+					<span class="help-block" ng-show="formHolder.personal_info.lastname.$touched && formHolder.personal_info.lastname.$invalid">Last name is required</span>
+				</div>	
+				<div class="col-lg-3 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.firstname.$touched && formHolder.personal_info.firstname.$invalid}">
+					<label class="label-control">Given Name</label>
 					<input type="text" class="form-control" name="firstname" ng-model="personal_info.firstname" required ng-disabled="controls.ok.btn">
 					<span class="help-block" ng-show="formHolder.personal_info.firstname.$touched && formHolder.personal_info.firstname.$invalid">First name is required</span>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.middlename.$touched && formHolder.personal_info.middlename.$invalid}">
+				<div class="col-lg-3 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.middlename.$touched && formHolder.personal_info.middlename.$invalid}">
 					<label class="label-control">Middle Name</label>
 					<input type="text" class="form-control" name="middlename" ng-model="personal_info.middlename" required ng-disabled="controls.ok.btn">
 					<span class="help-block" ng-show="formHolder.personal_info.middlename.$touched && formHolder.personal_info.middlename.$invalid">Middle name is required</span>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.lastname.$touched && formHolder.personal_info.lastname.$invalid}">
-					<label class="label-control">Last Name</label>
-					<input type="text" class="form-control" name="lastname" ng-model="personal_info.lastname" required ng-disabled="controls.ok.btn">
-					<span class="help-block" ng-show="formHolder.personal_info.lastname.$touched && formHolder.personal_info.lastname.$invalid">Last name is required</span>
-				</div>			
+				<div class="col-lg-2 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Extension Name</label>
+					<input type="text" class="form-control" name="extension_name" ng-model="personal_info.extension_name" ng-disabled="controls.ok.btn">
+				</div>
 			</div>
 	
 			<div class="row">
+				<div class="col-lg-4 col-md-3 col-sm-12 form-group">
+					<label class="label-control">Civil Status</label>
+					<div>
+						<select class="form-control" name="civil_status" ng-model="personal_info.civil_status" ng-disabled="controls.ok.btn">
+							<option>Single</option>
+							<option>Married</option>
+							<option>Widow/er</option>
+							<option>Legally Separated</option>
+							<option>Annulled</option>
+						</select>
+					</div>
+				</div>
+				
 				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
-					<label class="label-control">Extension Name</label>
-					<input type="text" class="form-control" name="extension_name" ng-model="personal_info.extension_name" ng-disabled="controls.ok.btn">
-				</div>	
-				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Nationality</label>
-					<input type="text" class="form-control" name="nationality" ng-model="personal_info.nationality" ng-disabled="controls.ok.btn">
+					<div class="checkbox checkbox-custom">
+							<input id="check" type="checkbox" ng-model="personal_info.family_head" ng-disabled="controls.ok.btn">
+							<label class="label-control" for="check" style="margin-top: 23px;">
+								 Head of the family?
+							</label>
+					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Gender</label>
-					<input type="text" class="form-control" name="gender" ng-model="personal_info.gender" ng-disabled="controls.ok.btn">
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Age</label>
-					<input type="number" class="form-control" name="age" ng-model="personal_info.age" ng-disabled="controls.ok.btn">
+				<div class="col-lg-5 col-md-3 col-sm-12 form-group" ng-show="personal_info.family_head">
+				<label class="label-control">How many members of the family?</label>
+					<input type="number" class="form-control" name="family_members" ng-model="personal_info.family_members" ng-disabled="controls.ok.btn">
 				</div>	
 			</div>	
 			
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Birth Date</label>
-					<input type="text" class="form-control" name="birth_date" ng-model="personal_info.birth_date" ng-disabled="controls.ok.btn">
+					<label class="label-control">Gender</label>
+					<input type="text" class="form-control" name="gender" ng-model="personal_info.gender" ng-disabled="controls.ok.btn">
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Birth Place</label>
-					<input type="text" class="form-control" name="birth_place" ng-model="personal_info.birth_place" ng-disabled="controls.ok.btn">
+					<label class="label-control">Age</label>
+					<input type="number" class="form-control" name="age" ng-model="personal_info.age" ng-disabled="controls.ok.btn">
 				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Birthday</label>
+					<input type="date" class="form-control" name="birth_date" ng-model="personal_info.birth_date" ng-disabled="controls.ok.btn">
+				</div>
+			</div>
+			<!-- <div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Contact No.</label>
 					<input type="text" class="form-control" name="contact_no" ng-model="personal_info.contact_no" ng-disabled="controls.ok.btn">
 				</div>	
-			</div>
-			<hr>
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Street</label>
-					<input type="text" class="form-control" name="address_street" ng-model="personal_info.address_street" ng-disabled="controls.ok.btn">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Subdivision</label>
-					<input type="text" class="form-control" name="address_subdivision" ng-model="personal_info.address_subdivision" ng-disabled="controls.ok.btn">
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-12 form-group">
-					<label class="label-control">House No.</label>
-					<input type="number" class="form-control" name="address_house" ng-model="personal_info.address_house" ng-disabled="controls.ok.btn">
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Zip Code</label>
-					<input type="number" class="form-control" name="address_zipcode" ng-model="personal_info.address_zipcode" ng-disabled="controls.ok.btn">
-				</div>				
-			</div>
+			</div> -->
 			
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+					<label class="label-control">House no.</label>
+					<input type="text" class="form-control" name="address_street" ng-model="personal_info.address_street" ng-disabled="controls.ok.btn">
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Purok</label>
+					<input type="text" class="form-control" name="address_subdivision" ng-model="personal_info.address_subdivision" ng-disabled="controls.ok.btn">
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Sitio</label>
+					<input type="number" class="form-control" name="address_house" ng-model="personal_info.address_house" ng-disabled="controls.ok.btn">
+				</div>			
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Barangay</label>
 					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn">
 				</div>			
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Municipality</label>
 					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
+<<<<<<< HEAD
 				</div>	
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Province</label>
 					<input type="text" class="form-control" name="address_province" ng-model="personal_info.address_province" ng-disabled="controls.ok.btn">
 				</div>	
+=======
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Contact Number</label>
+					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn">
+				</div>			
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
+					<label class="label-control">E-mail</label>
+					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Employment Status</label>
+					<div class="radio-inline">
+					  <label><input type="radio" name="employment_status" value="true" ng-model="personal_info.employment_status">Employed</label>
+					</div>
+					<div class="radio-inline">
+					  <label><input type="radio" name="employment_status" value="false" ng-model="personal_info.employment_status">Unemployed</label>
+					</div>
+				</div>
+				
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
+				<label class="label-control">Philhealth Member</label>
+					<div class="radio-inline">
+					  <label><input type="radio" name="philhealth_member" value="true" ng-model="personal_info.philhealth_member">Yes</label>
+					</div>
+					<div class="radio-inline">
+					  <label><input type="radio" name="philhealth_member" value="false" ng-model="personal_info.philhealth_member">No</label>
+					</div>
+				</div>
+					
+>>>>>>> refs/remotes/origin/jp
 			</div>
 		</div>
 	</form>
