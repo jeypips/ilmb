@@ -1,4 +1,4 @@
-angular.module('registration-module',['bootstrap-modal']).factory('form', function($compile,$timeout,$http,bootstrapModal) {
+angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory('form', function($compile,$timeout,$http,bootstrapModal) {
 	
 	function form() {
 		
@@ -23,6 +23,28 @@ angular.module('registration-module',['bootstrap-modal']).factory('form', functi
 			scope.personal_info.id = 0;
 
 			scope.personal_infos = []; // list
+			
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/barangays'
+			}).then(function mySucces(response) {
+				
+				scope.barangays = response.data;
+				
+			},function myError(response) {
+				
+			});
+			
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/municipalities'
+			}).then(function mySucces(response) {
+				
+				scope.municipalities = response.data;
+				
+			},function myError(response) {
+				
+			});			
 
 		};
 
@@ -92,7 +114,7 @@ angular.module('registration-module',['bootstrap-modal']).factory('form', functi
 			
 		};
 		
-		self.save = function(scope) {
+		self.save = function(scope) {			
 			
 			if (validate(scope)) return;
 			
@@ -183,6 +205,12 @@ angular.module('registration-module',['bootstrap-modal']).factory('form', functi
 
 			return http.status != 404;
 
+		};
+		
+		self.barangaySelect = function($item, scope) {
+			
+			scope.personal_info.address_barangay = $item;
+			
 		};
 	};
 	
