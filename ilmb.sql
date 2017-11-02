@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2017 at 08:30 PM
+-- Generation Time: Nov 02, 2017 at 10:27 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `ilmb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account_infos`
+--
+
+CREATE TABLE `account_infos` (
+  `account_id` int(11) NOT NULL,
+  `account_firstname` varchar(100) DEFAULT NULL,
+  `account_middlename` varchar(100) DEFAULT NULL,
+  `account_lastname` varchar(100) DEFAULT NULL,
+  `account_username` varchar(50) DEFAULT NULL,
+  `account_password` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `account_infos`
+--
+
+INSERT INTO `account_infos` (`account_id`, `account_firstname`, `account_middlename`, `account_lastname`, `account_username`, `account_password`) VALUES
+(1, 'John Paul', 'G.', 'Balanon', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -639,32 +661,47 @@ INSERT INTO `municipalities` (`id`, `municipality`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_info`
+-- Table structure for table `personal_infos`
 --
 
-CREATE TABLE `personal_info` (
+CREATE TABLE `personal_infos` (
   `id` int(10) NOT NULL,
   `firstname` varchar(500) DEFAULT NULL,
   `middlename` varchar(500) DEFAULT NULL,
   `lastname` varchar(500) DEFAULT NULL,
   `extension_name` varchar(500) DEFAULT NULL,
-  `nationality` varchar(550) DEFAULT NULL,
+  `nationality` varchar(100) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
-  `birth_date` date NOT NULL DEFAULT '0000-00-00',
+  `birth_date` varchar(55) DEFAULT NULL,
   `birth_place` varchar(550) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
+  `age` int(3) DEFAULT NULL,
   `address_house` int(11) DEFAULT NULL,
   `address_street` varchar(550) DEFAULT NULL,
-  `address_subdivision` varchar(550) DEFAULT NULL,
-  `address_barangay` int(11) DEFAULT NULL,
   `address_city` varchar(550) DEFAULT NULL,
-  `address_municipality` int(11) DEFAULT NULL,
+  `address_zipcode` int(4) DEFAULT NULL,
+  `address_subdivision` varchar(550) DEFAULT NULL,
+  `address_barangay` varchar(550) DEFAULT NULL,
+  `address_municipality` varchar(550) DEFAULT NULL,
+  `address_province` varchar(100) DEFAULT NULL,
   `contact_no` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `personal_infos`
+--
+
+INSERT INTO `personal_infos` (`id`, `firstname`, `middlename`, `lastname`, `extension_name`, `nationality`, `gender`, `birth_date`, `birth_place`, `age`, `address_house`, `address_street`, `address_city`, `address_zipcode`, `address_subdivision`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`) VALUES
+(1, 'John Paul', 'Garcia', 'Balanon', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '373', NULL, NULL, NULL);
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `account_infos`
+--
+ALTER TABLE `account_infos`
+  ADD PRIMARY KEY (`account_id`);
 
 --
 -- Indexes for table `barangays`
@@ -679,15 +716,20 @@ ALTER TABLE `municipalities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal_info`
+-- Indexes for table `personal_infos`
 --
-ALTER TABLE `personal_info`
+ALTER TABLE `personal_infos`
   ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `account_infos`
+--
+ALTER TABLE `account_infos`
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `barangays`
 --
@@ -699,10 +741,10 @@ ALTER TABLE `barangays`
 ALTER TABLE `municipalities`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- AUTO_INCREMENT for table `personal_info`
+-- AUTO_INCREMENT for table `personal_infos`
 --
-ALTER TABLE `personal_info`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `personal_infos`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
