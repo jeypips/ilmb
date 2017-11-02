@@ -34,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl">
+    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
