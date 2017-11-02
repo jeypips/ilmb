@@ -201,6 +201,12 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 			scope.personal_info.address_barangay = $item;
 			
 		};
+		
+		self.municipalitySelect = function($item, scope) {
+			
+			scope.personal_info.address_municipality = $item;
+			
+		};
 	};
 	
 	return new form();

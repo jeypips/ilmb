@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2017 at 03:08 PM
+-- Generation Time: Nov 02, 2017 at 05:24 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -648,6 +648,7 @@ CREATE TABLE `personal_infos` (
   `middlename` varchar(500) DEFAULT NULL,
   `lastname` varchar(500) DEFAULT NULL,
   `extension_name` varchar(500) DEFAULT NULL,
+  `nationality` varchar(550) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `birth_date` date NOT NULL DEFAULT '0000-00-00',
   `birth_place` varchar(550) DEFAULT NULL,
@@ -656,9 +657,17 @@ CREATE TABLE `personal_infos` (
   `address_street` varchar(550) DEFAULT NULL,
   `address_subdivision` varchar(550) DEFAULT NULL,
   `address_barangay` int(11) DEFAULT NULL,
+  `address_city` varchar(550) DEFAULT NULL,
   `address_municipality` int(11) DEFAULT NULL,
   `contact_no` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `personal_infos`
+--
+
+INSERT INTO `personal_infos` (`id`, `firstname`, `middlename`, `lastname`, `extension_name`, `nationality`, `gender`, `birth_date`, `birth_place`, `age`, `address_house`, `address_street`, `address_subdivision`, `address_barangay`, `address_city`, `address_municipality`, `contact_no`) VALUES
+(3, 'asd', 'sad', 'sad', NULL, NULL, NULL, '0000-00-00', NULL, NULL, NULL, NULL, NULL, 403, 'San Fernando', 14, NULL);
 
 --
 -- Indexes for dumped tables
@@ -700,7 +709,7 @@ ALTER TABLE `municipalities`
 -- AUTO_INCREMENT for table `personal_infos`
 --
 ALTER TABLE `personal_infos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
