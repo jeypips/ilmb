@@ -6,5 +6,9 @@ app.controller('registrationCtrl',function($scope,fullscreen,form) {
 	$scope.views = {};
 	
 	form.data($scope);
+	form.list($scope);
+	
+	$scope.form = form;
+	
 	
 });
