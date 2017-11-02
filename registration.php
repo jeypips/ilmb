@@ -396,6 +396,7 @@
 
 		<!-- Angular  -->
 		<script src="angular/angular.min.js"></script>
+		<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
