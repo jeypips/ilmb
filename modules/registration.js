@@ -196,20 +196,15 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 			});
 		};
 		
-		function imageExists(image_url){
-
-			var http = new XMLHttpRequest();
-
-			http.open('HEAD', image_url, false);
-			http.send();
-
-			return http.status != 404;
-
-		};
-		
 		self.barangaySelect = function($item, scope) {
 			
 			scope.personal_info.address_barangay = $item;
+			
+		};
+		
+		self.municipalitySelect = function($item, scope) {
+			
+			scope.personal_info.address_municipality = $item;
 			
 		};
 	};

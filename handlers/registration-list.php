@@ -20,6 +20,14 @@ foreach ($personal_infos as $key => $personal_info) {
 	
 }
 
+// foreach($personal_infos as $key => $personal_info){
+	
+	// $municipalities = $con->getData("SELECT id, municipality FROM municipalities WHERE municipalities.id = ".$personal_info['address_municipality']);
+	// $personal_infos[$key]['address_municipality'] = $municipalities[0];
+	
+// }
+
+
 header("Content-Type: application/json");
 echo json_encode($personal_infos);
 
