@@ -9,7 +9,7 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB | Registration</title>
+        <title>ILMB | Accounts</title>
 		
 		<!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
@@ -34,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl" account-profile>
+    <body class="fixed-left" ng-app="users" ng-controller="usersCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -205,8 +205,8 @@
                         <ul>
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
-                            <li><a href="registration.php" class="active"><i class="icon-note"></i><span> Registration </span></a></li>
-                            <li><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
+                            <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
+							<li><a href="users.php" class="active"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -404,8 +404,8 @@
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
-		<script src="modules/registration.js"></script>
-		<script src="controllers/registration.js"></script>
+		<script src="modules/users.js"></script>
+		<script src="controllers/users.js"></script>
 
     </body>
 </html>
