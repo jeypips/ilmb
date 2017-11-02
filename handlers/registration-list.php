@@ -9,9 +9,17 @@ session_start();
 
 $con = new pdo_db();
 
-$personal_info = $con->getData("SELECT * FROM personal_infos");
+// $personal_infos = $con->getData("SELECT *, (SELECT barangays.barangay_description FROM barangays WHERE barangays.id = personal_infos.address_barangay) address_barangay FROM personal_infos");
+$personal_infos = $con->getData("SELECT * FROM personal_infos");
+
+foreach ($personal_infos as $key => $personal_info) {
+	
+	$barangay = $con->getData("SELECT id, barangay_description FROM barangays WHERE barangays.id = ".$personal_info['address_barangay']);
+	$personal_infos[$key]['address_barangay'] = $barangay[0];
+	
+}
 
 header("Content-Type: application/json");
-echo json_encode($personal_info);
+echo json_encode($personal_infos);
 
 ?>
