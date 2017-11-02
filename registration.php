@@ -227,7 +227,7 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Registration</h4>
+                             
                             </div>
                         </div>
 						<br>
