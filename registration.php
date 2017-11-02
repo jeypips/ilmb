@@ -1,3 +1,4 @@
+<?php include_once 'authentication.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-controller="registrationCtrl" ng-app="registration">
+    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl">
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -178,12 +179,12 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                        <li><a href="javascript:;" logout-account><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -397,6 +398,7 @@
 		<!-- Angular  -->
 		<script src="angular/angular.min.js"></script>
 		<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
+		<script src="modules/account.js"></script>
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
