@@ -85,15 +85,15 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">House no.</label>
-					<input type="text" class="form-control" name="address_street" ng-model="personal_info.address_street" ng-disabled="controls.ok.btn">
+					<input type="number" class="form-control" name="address_house" ng-model="personal_info.address_house" ng-disabled="controls.ok.btn">
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Purok</label>
-					<input type="text" class="form-control" name="address_subdivision" ng-model="personal_info.address_subdivision" ng-disabled="controls.ok.btn">
+					<input type="number" class="form-control" name="address_purok" ng-model="personal_info.address_purok" ng-disabled="controls.ok.btn">
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Sitio</label>
-					<input type="number" class="form-control" name="address_house" ng-model="personal_info.address_house" ng-disabled="controls.ok.btn">
+					<input type="text" class="form-control" name="address_sitio" ng-model="personal_info.address_sitio" ng-disabled="controls.ok.btn">
 				</div>			
 			</div>
 			
@@ -111,11 +111,11 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Contact Number</label>
-					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn">
+					<input type="text" class="form-control" name="contact_no" ng-model="personal_info.contact_no" ng-disabled="controls.ok.btn">
 				</div>			
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group">
 					<label class="label-control">E-mail</label>
-					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
+					<input type="text" class="form-control" name="contact_email" ng-model="personal_info.contact_email" ng-disabled="controls.ok.btn">
 				</div>
 			</div>
 			
