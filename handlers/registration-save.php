@@ -6,6 +6,8 @@ include_once '../db.php';
 
 $con = new pdo_db("personal_infos");
 
+$_POST['personal_info']['address_barangay'] = $_POST['personal_info']['address_barangay']['id'];
+
 if ($_POST['personal_info']['id']) {
 	
 	$personal_info = $con->updateData($_POST['personal_info'],'id');
