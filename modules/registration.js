@@ -207,6 +207,36 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 			scope.personal_info.address_municipality = $item;
 			
 		};
+		
+		self.print = function(scope,personal_info) {
+			
+			$http({
+			  method: 'POST',
+			  url: 'handlers/print-registration.php',
+			  data: {id: personal_info.id}
+			}).then(function mySucces(response) {
+				
+				print(scope,response.data);
+				
+			}, function myError(response) {
+				 
+			  // error
+				
+			});			
+			
+		};
+		
+		function print(scope,personal_info) {
+			console.log(scope.personal_info);
+			
+			var doc = new jsPDF();
+			
+			
+			doc.addPage();
+			
+			doc.text(40, 98, 'Family:');
+			doc.output('dataurlnewwindow');
+		};
 	};
 	
 	return new form();
