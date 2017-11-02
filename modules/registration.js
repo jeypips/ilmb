@@ -207,6 +207,29 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 			scope.personal_info.address_municipality = $item;
 			
 		};
+		
+		self.print = function(scope,registration) {
+			
+			$http({
+			  method: 'POST',
+			  url: 'handlers/registration.php',
+			  data: {id: personal_infos.id}
+			}).then(function mySucces(response) {
+				
+				print(scope,response.data);
+				console.log(response.data);
+				
+			}, function myError(response) {
+				 
+			  // error
+				
+			});			
+			
+		};
+		
+		function print(scope,registration) {
+		alert(1);	
+		};
 	};
 	
 	return new form();
