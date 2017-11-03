@@ -40,11 +40,11 @@
 					<label class="label-control">Civil Status</label>
 					<div>
 						<select class="form-control" name="civil_status" ng-model="personal_info.civil_status" ng-disabled="controls.ok.btn">
-							<option value>Single</option>
-							<option>Married</option>
-							<option>Widow/er</option>
-							<option>Legally Separated</option>
-							<option>Annulled</option>
+							<option value="Single">Single</option>
+							<option value="Married">Married</option>
+							<option value="Widow/er">Widow/er</option>
+							<option value="Legally Separated">Legally Separated</option>
+							<option value="Annulled">Annulled</option>
 						</select>
 					</div>
 				</div>
@@ -68,8 +68,8 @@
 					<label class="label-control">Gender</label>
 					<div>
 						<select class="form-control" name="gender" ng-model="personal_info.gender" ng-disabled="controls.ok.btn">
-							<option value>Male</option>
-							<option>Female</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
 						</select>
 					</div>
 				</div>
@@ -120,27 +120,31 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Contact Number</label>
 					<input type="text" class="form-control" name="contact_no" ng-model="personal_info.contact_no" uib-typeahead="b.barangay_description for b in barangays | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn">
 				</div>			
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
 					<label class="label-control">E-mail</label>
 					<input type="text" class="form-control" name="contact_email" ng-model="personal_info.contact_email" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
 				</div>
-				<div class="col-lg-4 col-md-3 col-sm-12 form-group">
+				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
 					<label class="label-control">Highest Educational Attainment</label>
 					<div>
 						<select class="form-control" name="educational_attainment" ng-model="personal_info.educational_attainment" ng-disabled="controls.ok.btn">
-							<option>Elementary</option>
-							<option>Secondary</option>
-							<option>College Undergraduate</option>
-							<option>College Graduate</option>
-							<option>Master</option>
-							<option>Doctorate</option>
-							<option>Vocational</option>
+							<option value="Elementary">Elementary</option>
+							<option value="Secondary">Secondary</option>
+							<option value="College Undergraduate">College Undergraduate</option>
+							<option value="College Graduate">College Graduate</option>
+							<option value="Master">Master</option>
+							<option value="Doctorate">Doctorate</option>
+							<option value="Vocational">Vocational</option>
 						</select>
 					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Occupation</label>
+					<input type="text" class="form-control" name="occupation" ng-model="personal_info.occupation" ng-disabled="controls.ok.btn">
 				</div>
 			</div>
 			<hr>
