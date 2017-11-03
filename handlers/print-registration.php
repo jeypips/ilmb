@@ -15,6 +15,12 @@ $personal_info = $con->getData("SELECT *, DATE_FORMAT(birth_date, '%M %l, %Y') b
 // $personal_info[0]['family_head'] = ($personal_info[0]['family_head'])?"Yes":"No";
 // $personal_info[0]['employment_status'] = ($personal_info[0]['employment_status'] == "true")?"Yes":"No";
 
+foreach ($personal_info[0] as $i => $p) {
+	
+	if ($p == null) $personal_info[0][$i] = ""; //pdf equals null
+	
+}
+
 header("Content-Type: application/json");
 echo json_encode($personal_info[0]);
 
