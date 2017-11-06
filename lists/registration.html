@@ -11,6 +11,7 @@
 			<tr>
 			  <th>No.</th>
 			  <th>Name</th>
+			  <th>Event</th>
 			  <th>Barangay</th>
 			  <th>Municipality</th>
 			  <th>&nbsp;</th>
@@ -20,6 +21,7 @@
 			<tr ng-repeat="personal_info in personal_infos">
 			  <td>{{personal_info.id}}</td>
 			  <td>{{personal_info.firstname}} {{personal_info.middlename}} {{personal_info.lastname}}</td>
+			  <td></td>
 			  <td>{{personal_info.address_barangay.barangay_description}}</td>
 			  <td>{{personal_info.address_municipality.municipality}}</td>
 			  <td>

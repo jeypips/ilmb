@@ -15,6 +15,7 @@ $personal_infos = $con->getData("SELECT * FROM personal_infos WHERE id = $_POST[
 foreach($personal_infos as $key => $personal_info){
 	
 $personal_infos[$key]['family_head'] = ($personal_infos[$key]['family_head'])?true:false; 
+$personal_infos[$key]['attendance'] = ($personal_infos[$key]['attendance'])?true:false; 
 	
 	$barangay = $con->getData("SELECT id, barangay_description FROM barangays WHERE barangays.id = ".$personal_info['address_barangay']);
 	$personal_infos[$key]['address_barangay'] = $barangay[0];
