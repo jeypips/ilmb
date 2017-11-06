@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2017 at 02:30 PM
+-- Generation Time: Nov 06, 2017 at 05:09 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -641,7 +641,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `description`, `town`, `date`, `is_active`) VALUES
-(1, 'Oplan Tulong', '1', '2017-11-10T08:00:00.000Z', NULL);
+(1, 'Oplan Tulong', '1', '2017-11-10T08:00:00.000Z', 1),
+(2, 'agasdg', '14', '2017-11-05T16:00:00.000Z', 0);
 
 -- --------------------------------------------------------
 
@@ -738,8 +739,22 @@ CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `description` varchar(550) DEFAULT NULL,
   `min_age` int(11) DEFAULT NULL,
-  `max_age` int(11) DEFAULT NULL
+  `max_age` int(11) DEFAULT NULL,
+  `color_code` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `description`, `min_age`, `max_age`, `color_code`) VALUES
+(1, 'Medical', NULL, NULL, NULL),
+(2, 'Dental', NULL, NULL, NULL),
+(3, 'Feeding & Distribution of Hygiene Kit', NULL, NULL, NULL),
+(4, 'Distribution of Seeds', NULL, NULL, NULL),
+(5, 'Legal Counseling', NULL, NULL, NULL),
+(6, 'Free Massage', NULL, NULL, NULL),
+(7, 'Disaster', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -800,7 +815,7 @@ ALTER TABLE `barangays`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `municipalities`
 --
@@ -815,7 +830,7 @@ ALTER TABLE `personal_infos`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
