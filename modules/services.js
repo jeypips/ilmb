@@ -1,4 +1,4 @@
-angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form', function($compile,$timeout,$http,bootstrapModal) {
+angular.module('service-module',['ui.bootstrap','bootstrap-modal']).factory('form', function($compile,$timeout,$http,bootstrapModal) {
 	
 	function form() {
 		
@@ -19,35 +19,24 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 				},
 			};			
 
-			scope.event = {};
-			scope.event.id = 0;
+			scope.service = {};
+			scope.service.id = 0;
 
-			scope.events = []; // list
-			
-			$http({
-				method: 'POST',
-				url: 'api/suggestions/municipalities'
-			}).then(function mySucces(response) {
-				
-				scope.municipalities = response.data;
-				
-			},function myError(response) {
-				
-			});
+			scope.services = []; // list
 			
 		
 		};
 
 		function validate(scope) {
 			
-			var controls = scope.formHolder.event.$$controls;
+			var controls = scope.formHolder.service.$$controls;
 			
 			angular.forEach(controls,function(elem,i) {
 				
 				if (elem.$$attr.$attr.required) elem.$touched = elem.$invalid;
 									
 			});
-			return scope.formHolder.event.$invalid;
+			return scope.formHolder.service.$invalid;
 			
 		};
 		
@@ -67,13 +56,13 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 			
 		};
 		
-		self.event = function(scope,row) {			
+		self.service = function(scope,row) {			
 		
-			scope.event = {};
-			scope.event.id = 0;
+			scope.service = {};
+			scope.service.id = 0;
 			mode(scope,row);
 			$('#x_content').html(loading);
-			$('#x_content').load('forms/event.html',function() {
+			$('#x_content').load('forms/service.html',function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 			});
 	
@@ -82,12 +71,11 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 				if (scope.$id > 2) scope = scope.$parent;				
 				$http({
 				  method: 'POST',
-				  url: 'handlers/event-view.php',
+				  url: 'handlers/service-view.php',
 				  data: {id: row.id}
 				}).then(function mySucces(response) {
 					
-					angular.copy(response.data, scope.event);
-					scope.event.date = new Date(response.data.date);
+					angular.copy(response.data, scope.service);
 					
 				}, function myError(response) {
 					 
@@ -111,12 +99,12 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/event-save.php',
-			  data: {event: scope.event}
+			  url: 'handlers/service-save.php',
+			  data: {service: scope.service}
 			}).then(function mySucces(response) {					
 				
-				if (scope.event.id == 0) scope.event.id = response.data;
-				mode(scope,scope.event);
+				if (scope.service.id == 0) scope.service.id = response.data;
+				mode(scope,scope.service);
 				
 				
 			}, function myError(response) {
@@ -135,7 +123,7 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/event-delete.php',
+			  url: 'handlers/service-delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 
@@ -154,18 +142,18 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 		};		
 		
 		
-		self.list = function(scope) {			
+		self.list = function(scope) {
 			
 			// load list
 			scope.mode = 'list';
-			scope.event = {};
-			scope.event.id = 0;			
+			scope.service = {};
+			scope.service.id = 0;			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/event-list.php',
+			  url: 'handlers/service-list.php',
 			}).then(function mySucces(response) {
 				
-				scope.events = response.data;
+				scope.services = response.data;
 				
 			}, function myError(response) {
 				 
@@ -175,49 +163,16 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 			//
 
 			$('#x_content').html(loading);
-			$('#x_content').load('lists/events.html', function() {
+			$('#x_content').load('lists/services.html', function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 				// instantiate datable
 				$timeout(function() {
-					$('#event').DataTable({
+					$('#service').DataTable({
 						"ordering": false
 					});	
-
-					var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
-					elems.forEach(function(elem) {
-						var switchery = new Switchery(elem, { size: 'small' });
-						elem.onchange = function(e) {
-						  self.toggleActive(scope,e);
-						};					  
-					});				
 				},200);
 				
 			});
-		};
-		
-		self.municipalitySelect = function($item, scope) {
-			
-			scope.event.town = $item;
-			
-		};
-		
-		self.toggleActive = function(scope,e) {
-
-			$http({
-			  method: 'POST',
-			  url: 'handlers/activate-event.php',
-			  data: {id: e.target.dataset.eventId, checked: e.target.checked}
-			}).then(function mySucces(response) {
-				
-				self.list(scope);
-				
-			}, function myError(response) {
-				 
-			  // error
-				
-			});
-			
 		};
 	
 	};

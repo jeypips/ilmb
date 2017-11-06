@@ -61,12 +61,6 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            <form role="search" class="navbar-left app-search pull-left hidden-xs">
-			                     <input type="text" placeholder="Search..." class="form-control">
-			                     <a href=""><i class="fa fa-search"></i></a>
-			                </form>
-
-
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
@@ -182,8 +176,6 @@
                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
                                         <li><a href="javascript:;" logout-account><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                     </ul>
                                 </li>
@@ -208,6 +200,7 @@
                             <li><a href="index.php" class="active"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
                             <li><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
+							<li><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>
 							<li><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>

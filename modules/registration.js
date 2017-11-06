@@ -1,4 +1,4 @@
-angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory('form', function($compile,$timeout,$http,bootstrapModal) {
+angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
 	
 	function form() {
 		
@@ -128,6 +128,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 				if (scope.personal_info.id == 0) scope.personal_info.id = response.data;
 				mode(scope,scope.personal_info);
 				
+				growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');				
+				
 				
 			}, function myError(response) {
 				 
@@ -245,81 +247,81 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 			doc.setFontType('bold');
 			doc.text(90, 50, personal_info.lastname);
 			doc.setFontType('normal');
-			doc.text(20, 55, 'Given Name: ');
+			doc.text(20, 58, 'Given Name: ');
 			doc.setFontType('bold');
-			doc.text(90, 55, personal_info.firstname+' '+personal_info.extension_name);
+			doc.text(90, 58, personal_info.firstname+' '+personal_info.extension_name);
 			doc.setFontType('normal');
-			doc.text(20, 60, 'Middle Name: ');
+			doc.text(20, 66, 'Middle Name: ');
 			doc.setFontType('bold');
-			doc.text(90, 60, personal_info.middlename);
+			doc.text(90, 66, personal_info.middlename);
 			doc.setFontType('normal');
-			doc.text(20, 65, 'Civil Status: ');
+			doc.text(20, 74, 'Civil Status: ');
 			doc.setFontType('bold');
-			doc.text(90, 65,personal_info.civil_status);
+			doc.text(90, 74,personal_info.civil_status);
 			doc.setFontType('normal');
-			doc.text(20, 73, 'Head of the family? ');
+			doc.text(20, 82, 'Head of the family? ');
 			doc.setFontType('bold');
-			doc.text(90, 73,personal_info.family_head);
+			doc.text(90, 82,personal_info.family_head);
 			doc.setFontType('normal');
-			doc.text(20, 78, 'How many members of the family? ');
+			doc.text(20, 90, 'How many members of the family? ');
 			doc.setFontType('bold');
-			doc.text(90, 78, ''+personal_info.family_members);
+			doc.text(90, 90, ''+personal_info.family_members);
 			doc.setFontType('normal');
-			doc.text(20, 86, 'Gender: ');
+			doc.text(20, 98, 'Gender: ');
 			doc.setFontType('bold');
-			doc.text(90, 86, personal_info.gender);
+			doc.text(90, 98, personal_info.gender);
 			doc.setFontType('normal');
-			doc.text(20, 91, 'Age: ');
+			doc.text(20, 106, 'Age: ');
 			doc.setFontType('bold');
-			doc.text(90, 91, ''+personal_info.age);
+			doc.text(90, 106, ''+personal_info.age);
 			doc.setFontType('normal');
-			doc.text(20, 96, 'Birthday: ');
+			doc.text(20, 114, 'Birthday: ');
 			doc.setFontType('bold');
-			doc.text(90, 96,personal_info.birth_date);
+			doc.text(90, 114,personal_info.birth_date);
 			doc.setFontType('normal');
-			doc.text(20, 104, 'House Number: ');
+			doc.text(20, 122, 'House Number: ');
 			doc.setFontType('bold');
-			doc.text(90, 104, ''+personal_info.address_house);
+			doc.text(90, 122, ''+personal_info.address_house);
 			doc.setFontType('normal');
-			doc.text(20, 109, 'Purok: ');
+			doc.text(20, 130, 'Purok: ');
 			doc.setFontType('bold');
-			doc.text(90, 109, ''+personal_info.address_purok);
+			doc.text(90, 130, ''+personal_info.address_purok);
 			doc.setFontType('normal');
-			doc.text(20, 114, 'Sitio: ');
+			doc.text(20, 138, 'Sitio: ');
 			doc.setFontType('bold');
-			doc.text(90, 114, personal_info.address_sitio);
+			doc.text(90, 138, personal_info.address_sitio);
 			doc.setFontType('normal');
-			doc.text(20, 119, 'Barangay: ');
+			doc.text(20, 146, 'Barangay: ');
 			doc.setFontType('bold');
-			doc.text(90, 119,personal_info.address_barangay);
+			doc.text(90, 146,personal_info.address_barangay);
 			doc.setFontType('normal');
-			doc.text(20, 124, 'Municipality: ');
+			doc.text(20, 154, 'Municipality: ');
 			doc.setFontType('bold');
-			doc.text(90, 124, personal_info.address_municipality);
+			doc.text(90, 154, personal_info.address_municipality);
 			doc.setFontType('normal');
-			doc.text(20, 132, 'Contact Number: ');
+			doc.text(20, 162, 'Contact Number: ');
 			doc.setFontType('bold');
-			doc.text(90, 132, ''+personal_info.contact_no);
+			doc.text(90, 162, ''+personal_info.contact_no);
 			doc.setFontType('normal');
-			doc.text(20, 137, 'e-mail: ');
+			doc.text(20, 170, 'e-mail: ');
 			doc.setFontType('bold');
-			doc.text(90, 137, personal_info.contact_email);
+			doc.text(90, 170, personal_info.contact_email);
 			doc.setFontType('normal');
-			doc.text(20, 145, 'Employment Status: ');
+			doc.text(20, 178, 'Employment Status: ');
 			doc.setFontType('bold');
-			doc.text(90, 145, personal_info.employment_status);
+			doc.text(90, 178, personal_info.employment_status);
 			doc.setFontType('normal');
-			doc.text(20, 150, 'Occupation: ');
+			doc.text(20, 186, 'Occupation: ');
 			doc.setFontType('bold');
-			doc.text(90, 150, personal_info.occupation);
+			doc.text(90, 186, personal_info.occupation);
 			doc.setFontType('normal');
-			doc.text(20, 155, 'Highest educational attainment: ');
+			doc.text(20, 194, 'Highest educational attainment: ');
 			doc.setFontType('bold');
-			doc.text(90, 155, personal_info.educational_attainment);
+			doc.text(90, 194, personal_info.educational_attainment);
 			doc.setFontType('normal');
-			doc.text(20, 163, 'Philhealth member? ');			
+			doc.text(20, 202, 'Philhealth member? ');			
 			doc.setFontType('bold');
-			doc.text(90, 163, personal_info.philhealth_member);			
+			doc.text(90, 202, personal_info.philhealth_member);			
 			doc.setLineWidth(.1)
 			doc.line(190,250,120,250)
 			doc.text(150, 255, 'Signature');				
