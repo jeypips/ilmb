@@ -8,9 +8,12 @@
 			</div>
 			<hr>
 	<div class="panel-body">
-	<div class="row">
+		<div class="row">
+			<button class="btn btn-white waves-effect" type="submit" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
+			<button class="btn btn-twitter waves-effect waves-light m-l-5" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
 			<button class="waves-effect waves-light pull-right btn btn-facebook" ng-click="form.print(this,personal_info)"><i class="icon-printer"></i> Print</button>
-			</div>
+		</div>
+		<hr>
 	<form name="formHolder.personal_info" id="formHolder.personal_info" novalidate autocomplete="off">
 		<div class="panel panel-inverse panel-border card-box">
 			<div class="row">

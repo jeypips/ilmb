@@ -1,6 +1,6 @@
 <div class="panel panel-border panel-primary">
 	<div class="panel-heading">
-		<h4><i class="icon-calender"></i> Events
+		<h4><i class="icon-layers"></i> Events
 		<button class="btn btn-facebook waves-effect waves-light pull-right" ng-click="form.event(this)">Add <i class="fa fa-plus"></i></button>
 		</h4>
 	</div>
@@ -12,7 +12,6 @@
 			  <th>No.</th>
 			  <th>Description</th>
 			  <th>Municipality</th>
-			  <th>Date</th>
 			  <th>Active</th>
 			  <th>&nbsp;</th>
 			</tr>
@@ -22,7 +21,6 @@
 			  <td>{{event.id}}</td>
 			  <td>{{event.description}}</td>
 			  <td>{{event.town.municipality}}</td>
-			  <td>{{event.date}}</td>
 			  <td><input type="checkbox" checked data-plugin="switchery" data-color="#81c868"/></td>
 			  <td>
 			  <button class="btn btn-sm btn-white" ng-click="form.event(this,event)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
