@@ -114,19 +114,8 @@
 				</div>			
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid}">
 					<label class="label-control">Municipality</label>
-<<<<<<< HEAD
-					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
-<<<<<<< HEAD
-				</div>	
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">Province</label>
-					<input type="text" class="form-control" name="address_province" ng-model="personal_info.address_province" ng-disabled="controls.ok.btn">
-				</div>	
-=======
-=======
 					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid">Municipality is required</span>
->>>>>>> refs/remotes/origin/jp
 				</div>
 			</div>
 			
@@ -195,11 +184,6 @@
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
-					
->>>>>>> refs/remotes/origin/jp
-=======
->>>>>>> refs/remotes/origin/jp
 			</div>
 		</div>
 	</form>

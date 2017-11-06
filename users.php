@@ -9,11 +9,11 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB | Dashboard</title>
-
-        <!--Morris Chart CSS -->
-		    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
-
+        <title>ILMB | Accounts</title>
+		
+		<!-- DataTables -->
+        <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
+		
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="dashboard" ng-controller="dashboardCtrl" account-profile>
+    <body class="fixed-left" ng-app="users" ng-controller="usersCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -179,7 +179,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
+								<a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
@@ -203,11 +203,10 @@
                     <!--- Divider -->
                     <div id="sidebar-menu">
                         <ul>
-
                         	<li class="text-muted menu-title">Navigation</li>
-                            <li><a href="index.php" class="active"><i class="icon-home"></i><span> Dashboard </span></a></li>
+                            <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
-							<li><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
+							<li><a href="users.php" class="active"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -229,10 +228,16 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Dashboard</h4>
-                                <p class="text-muted page-title-alt">Welcome to PGLU, I Love my Barangay.</p>
+                             
                             </div>
                         </div>
+						<br>
+						<div class="row">
+                            <div class="col-sm-12">
+								<div id="x_content" class="x_content"></div>
+                            </div>
+                        </div>
+		
 
                     </div> <!-- container -->
 
@@ -380,41 +385,27 @@
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
-
+		<script src="assets/plugins/peity/jquery.peity.min.js"></script>
+		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
-        <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
-
-        <script src="assets/plugins/morris/morris.min.js"></script>
-        <script src="assets/plugins/raphael/raphael-min.js"></script>
-        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-        <script src="assets/pages/jquery.dashboard.js"></script>
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
-		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 		<script src="assets/js/bootbox.min.js"></script>
 
 		<!-- Angular  -->
 		<script src="angular/angular.min.js"></script>
+		<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
 		<script src="modules/account.js"></script>
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
-		<script src="controllers/dashboard.js"></script>
-
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-
-                $(".knob").knob();
-
-            });
-        </script>
+		<script src="modules/users.js"></script>
+		<script src="controllers/users.js"></script>
 
     </body>
 </html>

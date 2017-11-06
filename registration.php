@@ -34,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl">
+    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -206,6 +206,7 @@
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php" class="active"><i class="icon-note"></i><span> Registration </span></a></li>
+                            <li><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -388,7 +389,10 @@
 		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 
+		<script src="dist/jspdf.min.js"></script>
+		<script src="dist/jspdf.debug.js"></script>
+		<script src="dist/jspdf.plugin.autotable.js"></script>				
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
