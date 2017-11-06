@@ -154,7 +154,7 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 		};		
 		
 		
-		self.list = function(scope) {
+		self.list = function(scope) {			
 			
 			// load list
 			scope.mode = 'list';
@@ -182,6 +182,15 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 					$('#event').DataTable({
 						"ordering": false
 					});	
+
+					var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+					elems.forEach(function(elem) {
+						var switchery = new Switchery(elem, { size: 'small' });
+						elem.onchange = function(e) {
+						  self.toggleActive(scope,e);
+						};					  
+					});				
 				},200);
 				
 			});
@@ -190,6 +199,24 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 		self.municipalitySelect = function($item, scope) {
 			
 			scope.event.town = $item;
+			
+		};
+		
+		self.toggleActive = function(scope,e) {
+
+			$http({
+			  method: 'POST',
+			  url: 'handlers/activate-event.php',
+			  data: {id: e.target.dataset.eventId, checked: e.target.checked}
+			}).then(function mySucces(response) {
+				
+				self.list(scope);
+				
+			}, function myError(response) {
+				 
+			  // error
+				
+			});
 			
 		};
 	
