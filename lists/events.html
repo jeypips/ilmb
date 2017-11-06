@@ -21,7 +21,9 @@
 			  <td>{{e.id}}</td>
 			  <td>{{e.description}}</td>
 			  <td>{{e.town.municipality}}</td>
-			  <td><input type="checkbox" checked data-plugin="switchery" data-color="#81c868"/></td>
+
+			  <td><input data-event-id="{{e.id}}" type="checkbox" class="js-switch" ng-model="e.is_active"></td>
+
 			  <td>
 			  <button class="btn btn-sm btn-white" ng-click="form.event(this,e)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
 			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,e)"><i class="fa fa-close" style="cursor: pointer;"></i></button>

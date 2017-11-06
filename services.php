@@ -9,11 +9,11 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB | Events</title>
+        <title>ILMB | Services</title>
 		
 		<!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
-		<link href="assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+		
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="events" ng-controller="eventsCtrl" account-profile>
+    <body class="fixed-left" ng-app="services" ng-controller="servicesCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -60,13 +60,7 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
-
-                            <form role="search" class="navbar-left app-search pull-left hidden-xs">
-			                     <input type="text" placeholder="Search..." class="form-control">
-			                     <a href=""><i class="fa fa-search"></i></a>
-			                </form>
-
-
+							
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
@@ -204,8 +198,8 @@
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
-							<li><a href="events.php" class="active"><i class="icon-calender"></i><span> Events </span></a></li>
-							<li><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>
+							<li><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
+							<li><a href="services.php" class="active"><i class="icon-wrench"></i><span> Services </span></a></li>
 							<li><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
@@ -237,6 +231,7 @@
 								<div id="x_content" class="x_content"></div>
                             </div>
                         </div>
+		
 
                     </div> <!-- container -->
 
@@ -388,8 +383,7 @@
 		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-		<script src="assets/js/jquery.bootstrap-growl.min.js"></script>
-		<script src="assets/plugins/switchery/dist/switchery.min.js"></script>		
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
@@ -404,8 +398,8 @@
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
-		<script src="modules/events.js"></script>
-		<script src="controllers/events.js"></script>
+		<script src="modules/services.js"></script>
+		<script src="controllers/services.js"></script>
 
     </body>
 </html>
