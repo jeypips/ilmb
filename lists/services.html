@@ -1,0 +1,31 @@
+<div class="panel panel-border panel-primary">
+	<div class="panel-heading">
+		<h4><i class="icon-layers"></i> Services
+		<button class="btn btn-facebook waves-effect waves-light pull-right" ng-click="form.service(this)">Add <i class="fa fa-plus"></i></button>
+		</h4>
+	</div>
+<hr>
+	<div class="panel-body">
+		<table id="service" class="table table-striped m-0">
+		  <thead>
+			<tr>
+			  <th>No.</th>
+			  <th>Name</th>
+			  <th>Color</th>
+			  <th>&nbsp;</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr ng-repeat="s in services">
+			  <td>{{s.id}}</td>
+			  <td>{{s.description}}</td>
+			  <td>{{s.color_code}}</td>
+			  <td>
+			  <button class="btn btn-sm btn-white" ng-click="form.service(this,s)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,s)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
+			  </td>
+			</tr>
+		  </tbody>
+		</table>
+	</div>
+</div>
