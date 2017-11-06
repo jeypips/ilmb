@@ -106,7 +106,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 			if (Object.size(scope.activeEvent) == 0) {
 				
-				growl.show('danger',{from: 'top', amount: 55},'No event is active, please active one at Events page');
+				growl.show('danger',{from: 'top', amount: 55},'No event is active, please activate one at Events page');
 				return;
 				
 			};

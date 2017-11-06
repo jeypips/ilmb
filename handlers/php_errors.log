@@ -188,3 +188,9 @@ Stack trace:
 [06-Nov-2017 17:28:24 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php on line 23
 [06-Nov-2017 17:28:24 Asia/Manila] PHP Stack trace:
 [06-Nov-2017 17:28:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php:0
+[06-Nov-2017 17:29:15 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php on line 23
+[06-Nov-2017 17:29:15 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 17:29:15 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php:0
+[06-Nov-2017 17:30:18 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php on line 23
+[06-Nov-2017 17:30:18 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 17:30:18 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php:0
