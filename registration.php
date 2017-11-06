@@ -206,6 +206,7 @@
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php" class="active"><i class="icon-note"></i><span> Registration </span></a></li>
+							<li><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
                             <li><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
