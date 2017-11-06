@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2017 at 10:27 PM
+-- Generation Time: Nov 06, 2017 at 02:30 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -728,6 +728,19 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 (3, 0, 0, 'Therosha', 'Iglesias', 'Ballesteros', '', 'Married', 'Female', '1996-07-18T07:00:00.000Z', NULL, 21, 1, NULL, 'true', 'true', NULL, NULL, NULL, '224', '7', NULL, '09274510106', 'theroshaballesteros@gmail.com', 'College Graduate', 'Programmer', NULL, NULL, NULL),
 (4, 0, 0, 'Loren', 'Munar', 'Obillo', NULL, 'Single', 'Female', '1996-10-11T07:00:00.000Z', NULL, 22, 0, NULL, 'true', 'true', 169, NULL, NULL, '309', '11', NULL, '09123656512', 'oyenobillo@gmail.com', 'College Graduate', 'Government Employee', NULL, NULL, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` int(11) NOT NULL,
+  `description` varchar(550) DEFAULT NULL,
+  `min_age` int(11) DEFAULT NULL,
+  `max_age` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -764,6 +777,12 @@ ALTER TABLE `personal_infos`
   ADD KEY `event_id` (`event_id`);
 
 --
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -792,6 +811,11 @@ ALTER TABLE `municipalities`
 --
 ALTER TABLE `personal_infos`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
