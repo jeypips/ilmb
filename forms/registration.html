@@ -7,8 +7,12 @@
 				</h4>
 			</div>
 			<hr>
+	
 	<div class="panel-body">
 	<form name="formHolder.personal_info" id="formHolder.personal_info" novalidate autocomplete="off">
+		<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-12 form-group" ><input type="text" class="form-control"  placeholder="Search" ng-model="" required ></div>
+		</div>
 		<div class="panel panel-inverse panel-border card-box">
 			<div class="row">
 				<button class="btn btn-white waves-effect" type="submit" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
