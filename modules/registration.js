@@ -2,6 +2,14 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 	
 	function form() {
 		
+		Object.size = function(obj) {
+			var size = 0, key;
+			for (key in obj) {
+				if (obj.hasOwnProperty(key)) size++;
+			}
+			return size;
+		};		
+		
 		var self = this;
 		
 		var loading = '<div class="col-sm-offset-4 col-sm-8"><button type="button" class="btn btn-inverse" title="Loading" disabled><i class="fa fa-spin fa-refresh"></i>&nbsp; Please wait...</button></div>';
@@ -22,9 +30,21 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			scope.personal_info = {};
 			scope.personal_info.id = 0;
 
-			scope.personal_infos = []; // list
+			scope.personal_infos = []; // list			
 			
 			$http({
+				method: 'POST',
+				url: 'api/suggestions/municipalities'
+			}).then(function mySucces(response) {
+				
+				scope.municipalities = response.data;
+				scope.barangays = [];
+				
+			},function myError(response) {
+				
+			});
+			
+			/* $http({
 				method: 'POST',
 				url: 'api/suggestions/barangays'
 			}).then(function mySucces(response) {
@@ -33,18 +53,23 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				
 			},function myError(response) {
 				
-			});
+			});	 */
 			
+			/*
+			** Fetch active event
+			*/
 			$http({
-				method: 'POST',
-				url: 'api/suggestions/municipalities'
+			  method: 'POST',
+			  url: 'handlers/active-event.php'
 			}).then(function mySucces(response) {
 				
-				scope.municipalities = response.data;
+				scope.activeEvent = response.data;
 				
-			},function myError(response) {
+			}, function myError(response) {
+				 
+			  // error
 				
-			});			
+			});				
 
 		};
 
@@ -78,16 +103,33 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		};
 		
 		self.registration = function(scope,row) {			
-		
+			
+			if (Object.size(scope.activeEvent) == 0) {
+				
+				growl.show('danger',{from: 'top', amount: 55},'No event is active, please active one at Events page');
+				return;
+				
+			};
+			
 			scope.personal_info = {};
-			scope.personal_info.id = 0;
+			scope.personal_info.id = 0;			
+			scope.personal_info.attendance = false;
+			scope.personal_info.family_head = false;
+			scope.personal_info.event_id = scope.activeEvent.id;
+			
+			if (row == null) {
+				scope.personal_info.address_municipality = scope.activeEvent.municipality;
+				scope.barangays = scope.activeEvent.municipality.barangays;
+			};
+			
 			mode(scope,row);
+			
 			$('#x_content').html(loading);
 			$('#x_content').load('forms/registration.html',function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 			});
 	
-			if (row != null) {		
+			if (row != null) {
 				
 				if (scope.$id > 2) scope = scope.$parent;				
 				$http({
@@ -117,7 +159,10 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		
 		self.save = function(scope) {			
 			
-			if (validate(scope)) return;
+			if (validate(scope)) {
+				growl.show('danger',{from: 'top', amount: 55},'Please complete required fields');				
+				return;
+			}
 			
 			$http({
 			  method: 'POST',
@@ -208,6 +253,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		self.municipalitySelect = function($item, scope) {
 			
 			scope.personal_info.address_municipality = $item;
+			scope.barangays = $item.barangays;
 			
 		};
 		

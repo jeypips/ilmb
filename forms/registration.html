@@ -14,7 +14,7 @@
 				<input type="text" class="form-control"  placeholder="Search">
 			</div>
 		</div>
-		
+	<hr>
 	<!--forms-->
 	<form name="formHolder.personal_info" id="formHolder.personal_info" novalidate autocomplete="off">
 		<div class="panel panel-inverse panel-border card-box">
@@ -133,17 +133,17 @@
 				</div>			
 			</div>
 			
-			<div class="row">
+			<div class="row">		
+				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid}">
+					<label class="label-control">Municipality</label>
+					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn" required>
+					<span class="help-block" ng-show="formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid">Municipality is required</span>
+				</div>
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid}">
 					<label class="label-control">Barangay</label>
 					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid">Barangay is required</span>
-				</div>			
-				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid}">
-					<label class="label-control">Municipality</label>
-					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
-
-				</div>
+				</div>					
 			</div>
 			
 			<div class="row">
