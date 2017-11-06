@@ -60,13 +60,7 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
-
-                            <form role="search" class="navbar-left app-search pull-left hidden-xs">
-			                     <input type="text" placeholder="Search..." class="form-control">
-			                     <a href=""><i class="fa fa-search"></i></a>
-			                </form>
-
-
+							
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
@@ -390,10 +384,10 @@
 		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 		<script src="dist/jspdf.min.js"></script>
 		<script src="dist/jspdf.debug.js"></script>
-		<script src="dist/jspdf.plugin.autotable.js"></script>				
+		<script src="dist/jspdf.plugin.autotable.js"></script>		
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
