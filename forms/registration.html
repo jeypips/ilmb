@@ -7,8 +7,12 @@
 				</h4>
 			</div>
 			<hr>
+	
 	<div class="panel-body">
 	<form name="formHolder.personal_info" id="formHolder.personal_info" novalidate autocomplete="off">
+		<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-12 form-group" ><input type="text" class="form-control"  placeholder="Search" ng-model="" required ></div>
+		</div>
 		<div class="panel panel-inverse panel-border card-box">
 			<div class="row">
 				<button class="btn btn-white waves-effect" type="submit" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
@@ -17,6 +21,7 @@
 			</div>
 			<hr>
 			<div class="row">
+
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.id.$touched && formHolder.personal_info.id.$invalid}">
 					<label class="label-control">ID</label>
 					<input type="text" class="form-control" name="id" ng-model="personal_info.id" disabled>
@@ -32,6 +37,7 @@
 				</div>
 			</div>
 			<div class="row">
+
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.lastname.$touched && formHolder.personal_info.lastname.$invalid}">
 					<label class="label-control">Family Name</label>
 					<input type="text" class="form-control" name="lastname" ng-model="personal_info.lastname" required ng-disabled="controls.ok.btn">
@@ -132,8 +138,8 @@
 				</div>			
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid}">
 					<label class="label-control">Municipality</label>
-					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn" required>
-					<span class="help-block" ng-show="formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid">Municipality is required</span>
+					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn">
+
 				</div>
 			</div>
 			
@@ -201,6 +207,7 @@
 							</label>
 						</div>
 					</div>
+
 					</div>			
 					</div>			
 				<hr>
@@ -213,6 +220,7 @@
 					<label class="label-control">Presented ID Number</label>
 					<input type="text" class="form-control" name="presented_id_no" ng-model="personal_info.presented_id_no" ng-disabled="controls.ok.btn">
 				</div>	
+
 			</div>
 			<hr>
 			<div class="row">
