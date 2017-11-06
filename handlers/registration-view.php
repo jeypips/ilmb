@@ -19,6 +19,11 @@ $personal_infos[$key]['family_head'] = ($personal_infos[$key]['family_head'])?tr
 	$barangay = $con->getData("SELECT id, barangay_description FROM barangays WHERE barangays.id = ".$personal_info['address_barangay']);
 	$personal_infos[$key]['address_barangay'] = $barangay[0];
 	
+<<<<<<< HEAD
+}
+
+header("Content-Type: application/json");
+=======
 	$municipalities = $con->getData("SELECT id, municipality FROM municipalities WHERE municipalities.id = ".$personal_info['address_municipality']);
 	$personal_infos[$key]['address_municipality'] = $municipalities[0];
 }
@@ -26,6 +31,7 @@ $personal_infos[$key]['family_head'] = ($personal_infos[$key]['family_head'])?tr
 
 
 
+>>>>>>> refs/remotes/origin/jp
 echo json_encode($personal_infos[0]);
 
 ?>
