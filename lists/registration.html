@@ -18,15 +18,15 @@
 			</tr>
 		  </thead>
 		  <tbody>
-			<tr ng-repeat="personal_info in personal_infos">
-			  <td>{{personal_info.id}}</td>
-			  <td>{{personal_info.firstname}} {{personal_info.middlename}} {{personal_info.lastname}}</td>
+			<tr ng-repeat="p in personal_infos">
+			  <td>{{p.id}}</td>
+			  <td>{{p.firstname}} {{p.middlename}} {{p.lastname}}</td>
 			  <td></td>
-			  <td>{{personal_info.address_barangay.barangay_description}}</td>
-			  <td>{{personal_info.address_municipality.municipality}}</td>
+			  <td>{{p.address_barangay.barangay_description}}</td>
+			  <td>{{p.address_municipality.municipality}}</td>
 			  <td>
-			  <button class="btn btn-sm btn-white" ng-click="form.registration(this,personal_info)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
-			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,personal_info)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-white" ng-click="form.registration(this,p)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,p)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
 			  </td>
 			</tr>
 		  </tbody>
