@@ -1,4 +1,4 @@
-angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory('form', function($compile,$timeout,$http,bootstrapModal) {
+angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
 	
 	function form() {
 		
@@ -127,6 +127,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal']).factory
 				
 				if (scope.personal_info.id == 0) scope.personal_info.id = response.data;
 				mode(scope,scope.personal_info);
+				
+				growl.show('info',{from: 'top', amount: 55},'Info updated successfully');				
 				
 				
 			}, function myError(response) {

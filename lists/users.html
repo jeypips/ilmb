@@ -15,12 +15,12 @@
 			</tr>
 		  </thead>
 		  <tbody>
-			<tr ng-repeat="account_info in account_infos">
-			  <td>{{account_info.account_id}}</td>
-			  <td>{{account_info.account_firstname}} {{account_info.account_middlename}} {{account_info.account_lastname}}</td>
+			<tr ng-repeat="a in account_infos">
+			  <td>{{a.account_id}}</td>
+			  <td>{{a.account_firstname}} {{a.account_middlename}} {{a.account_lastname}}</td>
 			  <td>
-			  <button class="btn btn-sm btn-white" ng-click="form.user(this,account_info)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
-			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,account_info)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-white" ng-click="form.user(this,a)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,a)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
 			  </td>
 			</tr>
 		  </tbody>
