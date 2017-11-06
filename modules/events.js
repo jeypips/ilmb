@@ -189,7 +189,7 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 		
 		self.municipalitySelect = function($item, scope) {
 			
-			scope.personal_info.address_municipality = $item;
+			scope.event.town = $item;
 			
 		};
 	

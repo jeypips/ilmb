@@ -8,7 +8,7 @@ $con = new pdo_db();
 
 $id = $_POST['id'];
 
-$personal_info = $con->getData("SELECT *, DATE_FORMAT(birth_date, '%M %l, %Y') birth_date, IF(family_head=1,'Yes','No') family_head, IF(employment_status='true','Yes','No') employment_status, IF(philhealth_member='true','Yes','No') philhealth_member FROM personal_infos where id= $_POST[id]");
+$personal_info = $con->getData("SELECT *, DATE_FORMAT(birth_date, '%M %d, %Y') birth_date, IF(family_head=1,'Yes','No') family_head, IF(employment_status='true','Yes','No') employment_status, IF(philhealth_member='true','Yes','No') philhealth_member FROM personal_infos where id= $_POST[id]");
 // $personal_info = $con->getData("SELECT * FROM personal_infos where id= $_POST[id]");
 
 // $personal_info[0]['birth_date'] = date("F j, Y", strtotime($personal_info[0]['birth_date']));
