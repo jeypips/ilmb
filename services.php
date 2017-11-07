@@ -11,6 +11,8 @@
 
         <title>ILMB | Services</title>
 		
+		<link href="assets/plugins/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+		
 		<!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
 		
@@ -362,8 +364,6 @@
         </div>
         <!-- END wrapper -->
 
-
-
         <script>
             var resizefunc = [];
         </script>
@@ -384,6 +384,7 @@
         <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
 		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
+		<script src="assets/plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
