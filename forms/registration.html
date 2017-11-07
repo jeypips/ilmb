@@ -9,9 +9,12 @@
 			<hr>
 
 	<div class="panel-body">
+		<div class="col-lg-1 col-md-1 col-sm-1 form-group">
+				<h4 style="margin-left: 10px;">Search:</h4>
+		</div>
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 form-group" style="margin-left: 12px;">
-				<input type="text" class="form-control"  placeholder="Search">
+				<input type="text" class="form-control" placeholder="Search" ng-disabled="views.list" ng-model="views.profile" uib-typeahead="p.suggestion for p in profileSuggestions | filter:{suggestion:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.profileSelect($item, this)">
 			</div>
 		</div>
 	<hr>
@@ -25,10 +28,9 @@
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.id.$touched && formHolder.personal_info.id.$invalid}">
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">ID</label>
-					<input type="text" class="form-control" name="id" ng-model="personal_info.id" disabled>
-					
+					<input type="text" class="form-control" name="personal_info_no" ng-model="personal_info.personal_info_no" disabled>					
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
 					<div class="checkbox checkbox-custom">
@@ -102,7 +104,7 @@
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.birth_date.$touched && formHolder.personal_info.birth_date.$invalid}">
 					<label class="label-control">Birthday</label>
-					<input type="date" class="form-control" name="birth_date" ng-model="personal_info.birth_date" ng-disabled="controls.ok.btn" required>
+					<input type="date" class="form-control" name="birth_date" ng-model="personal_info.birth_date" ng-change="form.birthday(this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.birth_date.$touched && formHolder.personal_info.birth_date.$invalid">Birthday is required</span>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.age.$touched && formHolder.personal_info.age.$invalid}">
@@ -136,12 +138,12 @@
 			<div class="row">		
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid}">
 					<label class="label-control">Municipality</label>
-					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn" required>
+					<input type="text" class="form-control" name="address_municipality" ng-model="personal_info.address_municipality" uib-typeahead="m.municipality for m in municipalities | filter:{municipality:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.address_municipality.$touched && formHolder.personal_info.address_municipality.$invalid">Municipality is required</span>
 				</div>
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid}">
 					<label class="label-control">Barangay</label>
-					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
+					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid">Barangay is required</span>
 				</div>					
 			</div>

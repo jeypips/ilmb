@@ -18,7 +18,7 @@
 					</div>	
 					<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.event.town.$touched && formHolder.event.town.$invalid}">
 						<label class="label-control">Municipality</label>
-						<input type="text" class="form-control" name="town" ng-model="event.town" uib-typeahead="m.municipality for m in municipalities | filter:$viewValue" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" required ng-disabled="controls.ok.btn">
+						<input type="text" class="form-control" name="town" ng-model="event.town" uib-typeahead="m.municipality for m in municipalities | filter:{municipality:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.municipalitySelect($item, this)" required ng-disabled="controls.ok.btn">
 						<span class="help-block" ng-show="formHolder.event.town.$touched && formHolder.event.town.$invalid">Municipality is required</span>
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.event.date.$touched && formHolder.event.date.$invalid}">
