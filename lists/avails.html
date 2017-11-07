@@ -10,84 +10,12 @@
 				<h4 style="margin-left: 20px;">Search:</h4>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-8 form-group" style="margin-left: 10px;">
-				<input type="text" class="form-control"  placeholder="Search...">
+				<input type="text" class="form-control"  placeholder="Search..." ng-model="views.profile" uib-typeahead="p.suggestion for p in profileSuggestions | filter:{suggestion:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.profileSelect($item, this)">
 			</div>
 		</div>
 		<hr>
 		<form>
-			<div class="row">
-				<div class="col-lg-5 col-md-6 col-sm-12">
-					<b class="text-muted">Fullname</b><h4 style="margin-left: 20px;">Dexter G. Lazada</h4><br>
-					<b class="text-muted">Birth Date</b><h4 style="margin-left: 20px;">December 6, 2017</h4><br>
-					<b class="text-muted">Barangay</b><h4 style="margin-left: 20px;">Ilocanos Norte</h4>
-				</div>
-				<h4>Services</h4>
-				<div class="col-lg-7 col-md-6 col-sm-12">
-					<div class="checkbox checkbox-circle">
-						<input id="checkbox7" type="checkbox">
-						<label for="checkbox7">
-							Default
-						</label>
-					</div>
-					<div class="checkbox checkbox-custom checkbox-circle">
-						<input id="checkbox71" type="checkbox">
-						<label for="checkbox71">
-							Custom
-						</label>
-					</div>
-					<div class="checkbox checkbox-info checkbox-circle">
-						<input id="checkbox8" type="checkbox">
-						<label for="checkbox8">
-							Info
-						</label>
-					</div>
-					<div class="checkbox checkbox-primary checkbox-circle">
-						<input id="checkbox-9" type="checkbox">
-						<label for="checkbox-9">
-							Primary
-						</label>
-					</div>
-					<div class="checkbox checkbox-success checkbox-circle">
-						<input id="checkbox-10" type="checkbox">
-						<label for="checkbox-10">
-							Success
-						</label>
-					</div>
-					<div class="checkbox checkbox-warning checkbox-circle">
-						<input id="checkbox-11" type="checkbox">
-						<label for="checkbox-11">
-							Warning
-						</label>
-					</div>
-					<div class="checkbox checkbox-danger checkbox-circle">
-						<input id="checkbox-12" type="checkbox">
-						<label for="checkbox-12">
-							Danger
-						</label>
-					</div>
-					
-					<div class="checkbox checkbox-purple checkbox-circle">
-						<input id="checkbox-13" type="checkbox">
-						<label for="checkbox-13">
-							Purple
-						</label>
-					</div>
-					
-					<div class="checkbox checkbox-pink checkbox-circle">
-						<input id="checkbox-14" type="checkbox">
-						<label for="checkbox-14">
-							Pink
-						</label>
-					</div>
-					
-					<div class="checkbox checkbox-inverse checkbox-circle">
-						<input id="checkbox-15" type="checkbox">
-						<label for="checkbox-15">
-							Inverse
-						</label>
-					</div>
-				</div>
-			</div>
+			<div class="row" id="services-availed"></div>
 		</form>
 	</div>
 

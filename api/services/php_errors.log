@@ -1,0 +1,6 @@
+[07-Nov-2017 16:28:27 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') fullname, DATE_FORMAT(birth_date,'%M %, %Y') birth_date FROM personal_infos WH' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT CONCAT_W...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\api\services\profile.php(12): pdo_db->getData('SELECT CONCAT_W...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
