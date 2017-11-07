@@ -3,9 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
-
--- Generation Time: Nov 06, 2017 at 05:28 PM
-
+-- Generation Time: Nov 07, 2017 at 08:30 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -634,7 +632,7 @@ CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `description` varchar(550) DEFAULT NULL,
   `town` int(10) DEFAULT NULL,
-  `date` varchar(50) DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -643,10 +641,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `description`, `town`, `date`, `is_active`) VALUES
-
-(1, 'Oplan Tulong', 1, '2017-11-10T08:00:00.000Z', 0),
-(2, 'agdg', 1, '2017-11-05T16:00:00.000Z', 0);
-
+(1, 'agadg', 1, '2017-11-07', 1);
 
 -- --------------------------------------------------------
 
@@ -722,6 +717,13 @@ CREATE TABLE `personal_infos` (
   `presented_id_no` varchar(100) DEFAULT NULL,
   `attendance` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `personal_infos`
+--
+
+INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`, `middlename`, `lastname`, `extension_name`, `civil_status`, `gender`, `birth_date`, `birth_place`, `age`, `family_head`, `family_members`, `employment_status`, `philhealth_member`, `address_house`, `address_sitio`, `address_purok`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`, `contact_email`, `educational_attainment`, `occupation`, `presented_id`, `presented_id_no`, `attendance`) VALUES
+(1, 1, NULL, 'ag', 'asg', 'afa', NULL, NULL, NULL, '2017-11-07', NULL, 3, 0, 0, NULL, NULL, NULL, NULL, NULL, '433', '14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -809,7 +811,7 @@ ALTER TABLE `barangays`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `municipalities`
 --
@@ -819,7 +821,7 @@ ALTER TABLE `municipalities`
 -- AUTO_INCREMENT for table `personal_infos`
 --
 ALTER TABLE `personal_infos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `services`
 --
