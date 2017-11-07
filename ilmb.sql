@@ -3,7 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2017 at 05:09 PM
+
+-- Generation Time: Nov 06, 2017 at 05:28 PM
+
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -631,7 +633,7 @@ INSERT INTO `barangays` (`id`, `barangay_municipality`, `barangay_description`) 
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `description` varchar(550) DEFAULT NULL,
-  `town` varchar(550) DEFAULT NULL,
+  `town` int(10) DEFAULT NULL,
   `date` varchar(50) DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -641,8 +643,10 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `description`, `town`, `date`, `is_active`) VALUES
-(1, 'Oplan Tulong', '1', '2017-11-10T08:00:00.000Z', 1),
-(2, 'agasdg', '14', '2017-11-05T16:00:00.000Z', 0);
+
+(1, 'Oplan Tulong', 1, '2017-11-10T08:00:00.000Z', 0),
+(2, 'agdg', 1, '2017-11-05T16:00:00.000Z', 0);
+
 
 -- --------------------------------------------------------
 
@@ -689,8 +693,8 @@ INSERT INTO `municipalities` (`id`, `municipality`) VALUES
 
 CREATE TABLE `personal_infos` (
   `id` int(10) NOT NULL,
-  `event_id` int(11) NOT NULL,
-  `personal_info_no` int(50) NOT NULL,
+  `event_id` int(11) NOT NULL DEFAULT '0',
+  `personal_info_no` int(50) DEFAULT NULL,
   `firstname` varchar(500) DEFAULT NULL,
   `middlename` varchar(500) DEFAULT NULL,
   `lastname` varchar(500) DEFAULT NULL,
@@ -718,16 +722,6 @@ CREATE TABLE `personal_infos` (
   `presented_id_no` varchar(100) DEFAULT NULL,
   `attendance` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `personal_infos`
---
-
-INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`, `middlename`, `lastname`, `extension_name`, `civil_status`, `gender`, `birth_date`, `birth_place`, `age`, `family_head`, `family_members`, `employment_status`, `philhealth_member`, `address_house`, `address_sitio`, `address_purok`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`, `contact_email`, `educational_attainment`, `occupation`, `presented_id`, `presented_id_no`, `attendance`) VALUES
-(1, 0, 0, 'John Paul', 'Garcia', 'Balanon', 'Jr', 'Married', 'Male', '1997-08-07T07:00:00.000Z', NULL, 20, 0, 0, 'true', 'false', NULL, '', NULL, '431', '14', NULL, '09123456798', 'jpbalanon@hotmail.com', 'College Graduate', 'Magician', NULL, NULL, NULL),
-(2, 0, 0, 'Dexter', 'Rivera', 'Florendo', 'Jr', 'Single', 'Male', '1997-01-16T08:00:00.000Z', NULL, 19, 0, 0, 'true', 'true', 353, '', NULL, '403', '14', NULL, '09078067548', 'dexterflorendo6@gmail.com', 'College Graduate', 'Programmer', NULL, NULL, NULL),
-(3, 0, 0, 'Therosha', 'Iglesias', 'Ballesteros', '', 'Married', 'Female', '1996-07-18T07:00:00.000Z', NULL, 21, 1, NULL, 'true', 'true', NULL, NULL, NULL, '224', '7', NULL, '09274510106', 'theroshaballesteros@gmail.com', 'College Graduate', 'Programmer', NULL, NULL, NULL),
-(4, 0, 0, 'Loren', 'Munar', 'Obillo', NULL, 'Single', 'Female', '1996-10-11T07:00:00.000Z', NULL, 22, 0, NULL, 'true', 'true', 169, NULL, NULL, '309', '11', NULL, '09123656512', 'oyenobillo@gmail.com', 'College Graduate', 'Government Employee', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -825,7 +819,7 @@ ALTER TABLE `municipalities`
 -- AUTO_INCREMENT for table `personal_infos`
 --
 ALTER TABLE `personal_infos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services`
 --
