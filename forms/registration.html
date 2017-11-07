@@ -9,9 +9,12 @@
 			<hr>
 
 	<div class="panel-body">
+		<div class="col-lg-1 col-md-1 col-sm-1 form-group">
+				<h4 style="margin-left: 10px;">Search:</h4>
+		</div>
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-12 form-group" style="margin-left: 12px;">
-				<input type="text" class="form-control"  placeholder="Search">
+			<div class="col-lg-3 col-md-3 col-sm-8 form-group" style="margin-left: 12px;">
+				<input type="text" class="form-control"  placeholder="Search...">
 			</div>
 		</div>
 	<hr>
@@ -25,10 +28,9 @@
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.id.$touched && formHolder.personal_info.id.$invalid}">
-					<label class="label-control">ID</label>
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+					<label class="label-control">Personal Number</label>
 					<input type="text" class="form-control" name="id" ng-model="personal_info.id" disabled>
-					
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
 					<div class="checkbox checkbox-custom">

@@ -9,7 +9,7 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB | Events</title>
+        <title>ILMB | Avail Services</title>
 		
 		<!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
@@ -34,7 +34,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="events" ng-controller="eventsCtrl" account-profile>
+    <body class="fixed-left" ng-app="avails" ng-controller="availsCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -89,7 +89,7 @@
                                                  </div>
                                               </div>
                                            </a>
-                                        </li>
+										</li>
                                         <li>
                                             <a href="javascript:void(0);" class="list-group-item text-right">
                                                 <small class="font-600">See all notifications</small>
@@ -126,8 +126,8 @@
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
-							<li><a href="availservice.php"><i class="icon-like"></i><span> Avail Services </span></a></li>
-							<li ng-show="accountProfile.account_type == 'Admin'"><a href="events.php" class="active"><i class="icon-calender"></i><span> Events </span></a></li>
+							<li><a href="availservice.php" class="active"><i class="icon-like"></i><span> Avail Services </span></a></li>
+							<li ng-show="accountProfile.account_type == 'Admin'"><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
 							<li ng-show="accountProfile.account_type == 'Admin'"><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>
 							<li ng-show="accountProfile.account_type == 'Admin'"><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
@@ -215,8 +215,8 @@
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
-		<script src="modules/events.js"></script>
-		<script src="controllers/events.js"></script>
+		<script src="modules/avails.js"></script>
+		<script src="controllers/avails.js"></script>
 
     </body>
 </html>

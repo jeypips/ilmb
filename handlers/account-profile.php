@@ -12,7 +12,7 @@ header("Content-Type: application/json");
 
 $con = new pdo_db();
 
-$sql = "SELECT account_id, CONCAT(account_firstname, ' ', account_lastname) fullname, account_password, account_username FROM account_infos WHERE account_id = $_SESSION[account_id]";
+$sql = "SELECT account_id, CONCAT(account_firstname, ' ', account_lastname) fullname, account_password, account_username, account_type FROM account_infos WHERE account_id = $_SESSION[account_id]";
 
 $staff = $con->getData($sql);
 
