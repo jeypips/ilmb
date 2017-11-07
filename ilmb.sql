@@ -3,7 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+
 -- Generation Time: Nov 06, 2017 at 05:28 PM
+
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -641,8 +643,10 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `description`, `town`, `date`, `is_active`) VALUES
+
 (1, 'Oplan Tulong', 1, '2017-11-10T08:00:00.000Z', 0),
 (2, 'agdg', 1, '2017-11-05T16:00:00.000Z', 0);
+
 
 -- --------------------------------------------------------
 
