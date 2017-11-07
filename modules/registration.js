@@ -173,7 +173,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				if (scope.personal_info.id == 0) scope.personal_info.id = response.data;
 				mode(scope,scope.personal_info);
 				
-				growl.show('info',{from: 'top', amount: 55},'Info updated successfully');				
+				growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');				
 				
 				
 			}, function myError(response) {
