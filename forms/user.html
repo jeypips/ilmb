@@ -30,15 +30,24 @@
 				</div>
 				<hr>
 				<div class="row">
-					<div class="col-lg-5 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.account_info.account_username.$touched && formHolder.account_info.account_username.$invalid}">
+					<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.account_info.account_username.$touched && formHolder.account_info.account_username.$invalid}">
 						<label class="label-control">Username</label>
 						<input type="text" class="form-control" name="account_username" ng-model="account_info.account_username" required ng-disabled="controls.ok.btn">
 						<span class="help-block" ng-show="formHolder.account_info.account_username.$touched && formHolder.account_info.account_username.$invalid">Username is required</span>
 					</div>
-					<div class="col-lg-5 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.account_info.account_password.$touched && formHolder.account_info.account_password.$invalid}">
+					<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.account_info.account_password.$touched && formHolder.account_info.account_password.$invalid}">
 						<label class="label-control">Password</label>
 						<input type="password" class="form-control" name="account_password" ng-model="account_info.account_password" required ng-disabled="controls.ok.btn">
 						<span class="help-block" ng-show="formHolder.account_info.account_password.$touched && formHolder.account_info.account_password.$invalid">Password is required</span>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 form-group">
+						<label class="label-control">Account Type</label>
+						<div>
+							<select class="form-control" name="account_type" ng-model="account_info.account_type" ng-disabled="controls.ok.btn">
+								<option value="Admin">Admin</option>
+								<option value="Encoder">Encoder</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<hr>

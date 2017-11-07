@@ -9,7 +9,7 @@
 		<table id="personal" class="table table-striped m-0">
 		  <thead>
 			<tr>
-			  <th>No.</th>
+			  <th>Id</th>
 			  <th>Name</th>
 			  <th>Event</th>
 			  <th>Barangay</th>
@@ -19,14 +19,14 @@
 		  </thead>
 		  <tbody>
 			<tr ng-repeat="p in personal_infos">
-			  <td>{{p.id}}</td>
+			  <td>{{p.personal_info_no}}</td>
 			  <td>{{p.firstname}} {{p.middlename}} {{p.lastname}}</td>
 			  <td>{{p.description}}</td>
 			  <td>{{p.address_barangay.barangay_description}}</td>
 			  <td>{{p.address_municipality.municipality}}</td>
 			  <td>
-			  <button class="btn btn-sm btn-white" ng-click="form.registration(this,p)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
-			  <button class="btn btn-sm btn-white" ng-click="form.delete(this,p)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-primary" ng-click="form.registration(this,p)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-googleplus" ng-click="form.delete(this,p)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
 			  </td>
 			</tr>
 		  </tbody>
