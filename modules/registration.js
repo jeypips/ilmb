@@ -106,7 +106,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 			if (Object.size(scope.activeEvent) == 0) {
 				
-				growl.show('danger',{from: 'top', amount: 55},'No event is active, please activate one at Events page');
+				growl.show('btn btn-danger',{from: 'top', amount: 55},'No event is active, please activate one at Events page');
 				return;
 				
 			};
@@ -160,7 +160,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		self.save = function(scope) {			
 			
 			if (validate(scope)) {
-				growl.show('danger',{from: 'top', amount: 55},'Please complete required fields');				
+				growl.show('btn btn-danger',{from: 'top', amount: 55},'Please complete required fields');				
 				return;
 			}
 			

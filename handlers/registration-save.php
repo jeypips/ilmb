@@ -6,7 +6,7 @@ include_once '../db.php';
 
 $con = new pdo_db("personal_infos");
 
-$_POST['personal_info']['birth_date'] =  date("Y-m-d",strtotime($_POST['personal_info']['birth_date']));
+$_POST['personal_info']['birth_date'] =  date("Y-m-d",strtotime($_POST['personal_info']['birth_date'])); // date Format
 $_POST['personal_info']['family_head'] = ($_POST['personal_info']['family_head'])?1:0; //for checkbox
 $_POST['personal_info']['attendance'] = ($_POST['personal_info']['attendance'])?1:0; //for checkbox
 $_POST['personal_info']['address_barangay'] = $_POST['personal_info']['address_barangay']['id'];
