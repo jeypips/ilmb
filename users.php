@@ -153,6 +153,7 @@
                                                     </div>
                                               </div>
                                            </a>
+
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" class="list-group-item text-right">
@@ -164,9 +165,11 @@
                                 <li class="hidden-xs">
                                     <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="icon-size-fullscreen"></i></a>
                                 </li>
+
                                 <li class="hidden-xs">
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>-->
+
                                 <li class="dropdown">
 								<a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
@@ -193,9 +196,10 @@
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
-							<li><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
-							<li><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>
-							<li><a href="users.php" class="active"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
+							<li><a href="availservice.php"><i class="icon-like"></i><span> Avail Services </span></a></li>
+							<li ng-show="accountProfile.account_type == 'Admin'"><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
+							<li ng-show="accountProfile.account_type == 'Admin'"><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>
+							<li ng-show="accountProfile.account_type == 'Admin'"><a href="users.php" class="active"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -243,121 +247,8 @@
             <!-- End Right content here -->
             <!-- ============================================================== -->
 
-
-            <!-- Right Sidebar -->
-            <div class="side-bar right-bar nicescroll">
-                <h4 class="text-center">Chat</h4>
-                <div class="contact-list nicescroll">
-                    <ul class="list-group contacts-list">
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="">
-                                </div>
-                                <span class="name">Chadengle</span>
-                                <i class="fa fa-circle online"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-2.jpg" alt="">
-                                </div>
-                                <span class="name">Tomaslau</span>
-                                <i class="fa fa-circle online"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-3.jpg" alt="">
-                                </div>
-                                <span class="name">Stillnotdavid</span>
-                                <i class="fa fa-circle online"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-4.jpg" alt="">
-                                </div>
-                                <span class="name">Kurafire</span>
-                                <i class="fa fa-circle online"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-5.jpg" alt="">
-                                </div>
-                                <span class="name">Shahedk</span>
-                                <i class="fa fa-circle away"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-6.jpg" alt="">
-                                </div>
-                                <span class="name">Adhamdannaway</span>
-                                <i class="fa fa-circle away"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-7.jpg" alt="">
-                                </div>
-                                <span class="name">Ok</span>
-                                <i class="fa fa-circle away"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-8.jpg" alt="">
-                                </div>
-                                <span class="name">Arashasghari</span>
-                                <i class="fa fa-circle offline"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-9.jpg" alt="">
-                                </div>
-                                <span class="name">Joshaustin</span>
-                                <i class="fa fa-circle offline"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                <div class="avatar">
-                                    <img src="assets/images/users/avatar-10.jpg" alt="">
-                                </div>
-                                <span class="name">Sortino</span>
-                                <i class="fa fa-circle offline"></i>
-                            </a>
-                            <span class="clearfix"></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /Right-bar -->
-
-        </div>
+		</div>
         <!-- END wrapper -->
-
-
 
         <script>
             var resizefunc = [];
