@@ -2,6 +2,17 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 	
 	function form() {
 		
+		function getAge(dateString) {
+			var today = new Date();
+			var birthDate = new Date(dateString);
+			var age = today.getFullYear() - birthDate.getFullYear();
+			var m = today.getMonth() - birthDate.getMonth();
+			if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+				age--;
+			}
+			return age;
+		};
+		
 		Object.size = function(obj) {
 			var size = 0, key;
 			for (key in obj) {
@@ -68,8 +79,10 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			}, function myError(response) {
 				 
 			  // error
-				
-			});				
+
+			});
+			
+			scope.profileSuggestions = [];
 
 		};
 
@@ -82,6 +95,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				if (elem.$$attr.$attr.required) elem.$touched = elem.$invalid;
 									
 			});
+
 			return scope.formHolder.personal_info.$invalid;
 			
 		};
@@ -93,12 +107,79 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				scope.controls.ok.btn = false;
 				scope.controls.cancel.label = 'Cancel';
 				scope.controls.cancel.btn = false;
-			} else {
+				scope.views.list = true;
+				
+				scope.profileSuggestions = [];
+			} else {			
 				scope.controls.ok.label = 'Update';
 				scope.controls.ok.btn = true;
 				scope.controls.cancel.label = 'Close';
-				scope.controls.cancel.btn = false;				
+				scope.controls.cancel.btn = false;
+				scope.views.list = false;				
 			}
+			
+		};
+		
+		function profiles(scope) {
+			
+			/*
+			**  Profile Suggestions
+			*/
+			$timeout(function() {
+				$http({
+				  method: 'POST',
+				  url: 'api/suggestions/profiles'
+				}).then(function mySucces(response) {
+					
+					scope.profileSuggestions = angular.copy(response.data);
+					
+				}, function myError(response) {
+					 
+				  // error
+					
+				});
+			},200);				
+
+		};
+		
+		function profile(scope,id) {
+			
+			scope.views.profile = "";			
+
+			if (scope.$id > 2) scope = scope.$parent;
+
+			$http({
+			  method: 'POST',
+			  url: 'handlers/registration-view.php',
+			  data: {id: id}
+			}).then(function mySucces(response) {
+				
+				angular.copy(response.data, scope.personal_info);
+				scope.personal_info.birth_date = new Date(response.data.birth_date);
+				
+			}, function myError(response) {
+				 
+			  // error
+				
+			});			
+			
+		};
+		
+		function profileAdd(scope) {
+			
+			scope.views.onAdd = true;
+			scope.views.profile = "";
+			
+			scope.personal_info = {};
+			scope.personal_info.id = 0;			
+			scope.personal_info.attendance = false;
+			scope.personal_info.family_head = false;
+			scope.personal_info.event_id = scope.activeEvent.id;
+			
+			scope.personal_info.address_municipality = scope.activeEvent.municipality;
+			scope.barangays = scope.activeEvent.municipality.barangays;			
+			
+			mode(scope,null);			
 			
 		};
 		
@@ -110,6 +191,9 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				return;
 				
 			};
+			
+			scope.views.onAdd = true;
+			scope.views.profile = "";
 			
 			scope.personal_info = {};
 			scope.personal_info.id = 0;			
@@ -126,12 +210,18 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 			$('#x_content').html(loading);
 			$('#x_content').load('forms/registration.html',function() {
-				$timeout(function() { $compile($('#x_content')[0])(scope); },200);
+				$timeout(function() {
+					$compile($('#x_content')[0])(scope);
+					profiles(scope);
+				},200);
 			});
 	
 			if (row != null) {
 				
-				if (scope.$id > 2) scope = scope.$parent;				
+				if (scope.$id > 2) scope = scope.$parent;
+				
+				scope.views.onAdd = false;
+				
 				$http({
 				  method: 'POST',
 				  url: 'handlers/registration-view.php',
@@ -145,7 +235,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					 
 				  // error
 					
-				});					
+				});
+				
 			};
 			
 		};
@@ -157,7 +248,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 		};
 		
-		self.save = function(scope) {			
+		self.save = function(scope) {	
 			
 			if (validate(scope)) {
 				growl.show('danger',{from: 'top', amount: 55},'Please complete required fields');				
@@ -169,12 +260,20 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			  url: 'handlers/registration-save.php',
 			  data: {personal_info: scope.personal_info}
 			}).then(function mySucces(response) {					
+
+				if (scope.views.onAdd) {
+					/* if (scope.personal_info.id == 0) {
+						scope.personal_info.id = response.data.id;
+						scope.personal_info.personal_info_no = response.data.personal_info_no;
+					}; */
+					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');					
+					profileAdd(scope);
+				} else {
+					mode(scope,scope.personal_info);
+					growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');
+				}
 				
-				if (scope.personal_info.id == 0) scope.personal_info.id = response.data;
-				mode(scope,scope.personal_info);
-				
-				growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');				
-				
+				profiles(scope);
 				
 			}, function myError(response) {
 				 
@@ -214,7 +313,6 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		self.list = function(scope) {
 			
 			// load list
-			scope.mode = 'list';
 			scope.personal_info = {};
 			scope.personal_info.id = 0;			
 			$http({
@@ -257,6 +355,12 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 		};
 		
+		self.profileSelect = function($item, scope) {
+			
+			profile(scope,$item.id);
+			
+		};
+		
 		self.print = function(scope,personal_info) {
 			
 			$http({
@@ -273,6 +377,12 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				
 			});			
 			
+		};
+		
+		self.birthday = function(scope) {
+
+			scope.personal_info.age = getAge(scope.personal_info.birth_date);
+
 		};
 		
 		function print(scope,personal_info) {
