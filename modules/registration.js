@@ -381,7 +381,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		
 		self.birthday = function(scope) {
 
-			scope.personal_info.age = getAge(scope.personal_info.birth_date);
+			scope.personal_info.age = getAge(scope.personal_info.birth_date); //for birthday autocompute
 
 		};
 		
