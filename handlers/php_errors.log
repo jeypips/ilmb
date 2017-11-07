@@ -194,3 +194,18 @@ Stack trace:
 [06-Nov-2017 17:30:18 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php on line 23
 [06-Nov-2017 17:30:18 Asia/Manila] PHP Stack trace:
 [06-Nov-2017 17:30:18 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\active-event.php:0
+[07-Nov-2017 10:56:20 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 28
+[07-Nov-2017 10:56:20 Asia/Manila] PHP Stack trace:
+[07-Nov-2017 10:56:20 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[07-Nov-2017 10:56:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 28
+[07-Nov-2017 10:56:24 Asia/Manila] PHP Stack trace:
+[07-Nov-2017 10:56:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[07-Nov-2017 11:00:47 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 28
+[07-Nov-2017 11:00:47 Asia/Manila] PHP Stack trace:
+[07-Nov-2017 11:00:47 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[07-Nov-2017 11:00:49 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 28
+[07-Nov-2017 11:00:49 Asia/Manila] PHP Stack trace:
+[07-Nov-2017 11:00:49 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[07-Nov-2017 11:00:57 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 28
+[07-Nov-2017 11:00:57 Asia/Manila] PHP Stack trace:
+[07-Nov-2017 11:00:57 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
