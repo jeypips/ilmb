@@ -13,7 +13,7 @@
 				<h4 style="margin-left: 10px;">Search:</h4>
 		</div>
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-12 form-group" style="margin-left: 12px;">
+			<div class="col-lg-3 col-md-3 col-sm-8 form-group" style="margin-left: 12px;">
 				<input type="text" class="form-control" placeholder="Search" ng-disabled="views.list" ng-model="views.profile" uib-typeahead="p.suggestion for p in profileSuggestions | filter:{suggestion:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.profileSelect($item, this)">
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 			<br>
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">ID</label>
+					<label class="label-control">Personal Number</label>
 					<input type="text" class="form-control" name="personal_info_no" ng-model="personal_info.personal_info_no" disabled>					
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
