@@ -143,7 +143,7 @@
 				</div>
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid}">
 					<label class="label-control">Barangay</label>
-					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
+					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid">Barangay is required</span>
 				</div>					
 			</div>

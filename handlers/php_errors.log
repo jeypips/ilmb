@@ -298,3 +298,15 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 13:31:29 Asia/Manila] PHP Notice:  Undefined index: family_head in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 10
+[08-Nov-2017 13:31:29 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 13:31:29 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[08-Nov-2017 13:31:29 Asia/Manila] PHP Notice:  Undefined index: attendance in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 11
+[08-Nov-2017 13:31:29 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 13:31:29 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[08-Nov-2017 13:35:17 Asia/Manila] PHP Notice:  Undefined index: family_head in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 10
+[08-Nov-2017 13:35:17 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 13:35:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[08-Nov-2017 13:35:17 Asia/Manila] PHP Notice:  Undefined index: attendance in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 11
+[08-Nov-2017 13:35:17 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 13:35:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
