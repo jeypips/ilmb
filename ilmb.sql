@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2017 at 01:07 PM
+-- Generation Time: Nov 08, 2017 at 01:47 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -726,7 +726,8 @@ CREATE TABLE `personal_infos` (
 --
 
 INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`, `middlename`, `lastname`, `extension_name`, `civil_status`, `gender`, `birth_date`, `birth_place`, `age`, `family_head`, `family_members`, `employment_status`, `philhealth_member`, `address_house`, `address_sitio`, `address_purok`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`, `contact_email`, `educational_attainment`, `occupation`, `presented_id`, `presented_id_no`, `attendance`) VALUES
-(1, 1, 'A0001', 'Sylvester', 'Bulilan', 'Flores', NULL, 'Single', NULL, '1981-11-14', NULL, 35, 0, 0, NULL, NULL, NULL, NULL, NULL, '344', '13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+(1, 1, '0001', 'Leonarda', NULL, 'Baldemor', NULL, NULL, NULL, '1982-11-14', NULL, 34, 0, 0, NULL, NULL, NULL, NULL, NULL, '344', '13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
+(2, 1, '0002', 'Ernesto', NULL, 'Ballesteros', NULL, NULL, NULL, '1982-11-14', NULL, 34, 0, 0, NULL, NULL, NULL, NULL, NULL, '344', '13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -775,13 +776,20 @@ CREATE TABLE `services_availed` (
 --
 
 INSERT INTO `services_availed` (`id`, `service_id`, `profile_id`, `event_id`, `service_availed`) VALUES
-(1, 1, 1, 1, 1),
+(1, 1, 1, 1, 0),
 (2, 2, 1, 1, 0),
 (3, 3, 1, 1, 0),
 (4, 4, 1, 1, 0),
 (5, 5, 1, 1, 0),
 (6, 6, 1, 1, 0),
-(7, 7, 1, 1, 0);
+(7, 7, 1, 1, 0),
+(8, 1, 2, 1, 0),
+(9, 2, 2, 1, 0),
+(10, 3, 2, 1, 0),
+(11, 4, 2, 1, 0),
+(12, 5, 2, 1, 0),
+(13, 6, 2, 1, 0),
+(14, 7, 2, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -859,7 +867,7 @@ ALTER TABLE `municipalities`
 -- AUTO_INCREMENT for table `personal_infos`
 --
 ALTER TABLE `personal_infos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -869,7 +877,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `services_availed`
 --
 ALTER TABLE `services_availed`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
