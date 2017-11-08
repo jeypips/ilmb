@@ -17,23 +17,7 @@ angular.module('avail-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 					btn: false,
 					label: 'Cancel'
 				},
-			};			
-		
-			/*
-			** Fetch active event
-			*/
-			$http({
-			  method: 'POST',
-			  url: 'handlers/active-event.php'
-			}).then(function mySucces(response) {
-				
-				scope.activeEvent = response.data;
-				
-			}, function myError(response) {
-				 
-			  // error
-
-			});					
+			};
 			
 			scope.profile = {};
 			scope.views.profile = "";
@@ -52,7 +36,7 @@ angular.module('avail-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 			
 		};
 		
-		function profiles(scope) {
+		function profiles(scope) {	
 			
 			/*
 			**  Profile Suggestions
@@ -76,10 +60,12 @@ angular.module('avail-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 		
 		function profile(scope,id) {
 			
+			scope.views.profile = "";			
+			
 			$http({
 			  method: 'POST',
 			  url: 'api/services/profile',
-			  data: {id: id, event: scope.activeEvent.id}
+			  data: {id: id}
 			}).then(function mySucces(response) {
 				
 				scope.profile = response.data;
@@ -95,9 +81,38 @@ angular.module('avail-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 				$timeout(function() {
 					$compile($('#services-availed')[0])(scope);
 				},200);
+				$timeout(function() {
+					
+					var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+					elems.forEach(function(elem) {
+						var switchery = new Switchery(elem, { size: 'small',  color: '#7c8bc7', secondaryColor: '#7c8bc7' });
+						elem.onchange = function(e) {
+						  self.toggleActive(scope,e);
+						};					  
+					});
+					
+				},300);
 			});			
 			
 		};
+		
+		self.toggleActive = function(scope,e) {
+
+			$http({
+			  method: 'POST',
+			  url: 'handlers/avail-service.php',
+			  data: {id: e.target.dataset.availedId, checked: e.target.checked}
+			}).then(function mySucces(response) {
+				
+				
+			}, function myError(response) {
+				 
+			  // error
+				
+			});
+			
+		};		
 		
 		self.profileSelect = function($item, scope) {
 			

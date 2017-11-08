@@ -281,3 +281,20 @@ Stack trace:
 #1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
 #2 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 12:03:56 Asia/Manila] PHP Parse error:  syntax error, unexpected '=', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 13
+[08-Nov-2017 12:04:29 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 12:04:30 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 12:04:31 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 12:04:32 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
