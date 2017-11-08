@@ -8,7 +8,7 @@
 <hr>
 <div class="col-lg-7 col-md-6 col-sm-12">
 	<div ng-repeat="service in profile.services" style="margin-bottom: 25px;">
-		<input data-availed-id="{{service.id}}" type="checkbox" class="js-switch" ng-model="service.service_availed">
-		<label style="padding-left: 15px;">{{service.description}}</label>
+		<input data-availed-id="{{service.id}}" data-color-code="{{service.color_code}}" type="checkbox" class="js-switch" ng-model="service.service_availed">
+		<label style="padding-left: 15px;">{{service.description}} ({{service.color}})</label>
 	</div>
 </div>

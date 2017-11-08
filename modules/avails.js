@@ -86,14 +86,23 @@ angular.module('avail-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 					var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
 					elems.forEach(function(elem) {
-						var switchery = new Switchery(elem, { size: 'small',  color: '#7c8bc7', secondaryColor: '#7c8bc7' });
+
+						var colorCode = $(elem).data('colorCode');
+						var switchery = new Switchery(elem, { size: 'small',  color: '#'+colorCode, secondaryColor: '#'+colorCode });
 						elem.onchange = function(e) {
 						  self.toggleActive(scope,e);
-						};					  
+						};
+	
 					});
 					
 				},300);
 			});			
+			
+		};
+		
+		function getColorCode(scope,id) {
+			
+			// scope.profile.services.
 			
 		};
 		

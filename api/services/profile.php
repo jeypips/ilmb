@@ -42,7 +42,8 @@ foreach ($profile[0]['services'] as $key => $service) {
 	$service_q = $con->getData("SELECT * FROM services WHERE id = ".$service['service_id']);
 	
 	$profile[0]['services'][$key]['description'] = $service_q[0]['description'];
-	$profile[0]['services'][$key]['color_code'] = $service_q[0]['color_code'];
+	$profile[0]['services'][$key]['color'] = $service_q[0]['color'];
+	$profile[0]['services'][$key]['color_code'] = (($service_q[0]['color_code']==NULL)||($service_q[0]['color_code']==""))?"c0c7e3":$service_q[0]['color_code'];
 	
 };
 
