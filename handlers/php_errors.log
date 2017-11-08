@@ -209,3 +209,92 @@ Stack trace:
 [07-Nov-2017 11:00:57 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 28
 [07-Nov-2017 11:00:57 Asia/Manila] PHP Stack trace:
 [07-Nov-2017 11:00:57 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[07-Nov-2017 15:29:38 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:29:41 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:29:43 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:29:45 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:29:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:29:53 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:29:55 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:30:10 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:30:20 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:30:24 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:30:26 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[07-Nov-2017 15:30:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account_type' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT account_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\account-profile.php(17): pdo_db->getData('SELECT account_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 12:03:56 Asia/Manila] PHP Parse error:  syntax error, unexpected '=', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 13
+[08-Nov-2017 12:04:29 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 12:04:30 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 12:04:31 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16
+[08-Nov-2017 12:04:32 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method pdo_db::updateDate() in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\avail-service.php on line 16

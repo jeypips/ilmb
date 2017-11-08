@@ -17,68 +17,115 @@ angular.module('avail-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 					btn: false,
 					label: 'Cancel'
 				},
-			};			
-
-			scope.service_availed = {};
-			scope.service_availed.id = 0;
-
-			scope.service_availeds = []; // list
+			};
 			
+			scope.profile = {};
+			scope.views.profile = "";
 		
-		};
-
-		function validate(scope) {
-			
-			var controls = scope.formHolder.service_availed.$$controls;
-			
-			angular.forEach(controls,function(elem,i) {
-				
-				if (elem.$$attr.$attr.required) elem.$touched = elem.$invalid;
-									
-			});
-			return scope.formHolder.service_availed.$invalid;
-			
-		};
-		
-		function mode(scope,row) {
-			
-			if (row == null) {
-				scope.controls.ok.label = 'Save';
-				scope.controls.ok.btn = false;
-				scope.controls.cancel.label = 'Cancel';
-				scope.controls.cancel.btn = false;
-			} else {
-				scope.controls.ok.label = 'Update';
-				scope.controls.ok.btn = true;
-				scope.controls.cancel.label = 'Close';
-				scope.controls.cancel.btn = false;				
-			}
-			
 		};
 		
 		self.list = function(scope) {
+
+			scope.views.profile = "";		
+		
+			$('#x_content').html(loading);
+			$('#x_content').load('lists/avails.html', function() {
+				$timeout(function() { $compile($('#x_content')[0])(scope); },100);
+				profiles(scope);
+			});
 			
-			scope.service_availed = {};
-			scope.service_availed.id = 0;			
+		};
+		
+		function profiles(scope) {	
+			
+			/*
+			**  Profile Suggestions
+			*/
+			$timeout(function() {
+				$http({
+				  method: 'POST',
+				  url: 'api/suggestions/profiles'
+				}).then(function mySucces(response) {
+					
+					scope.profileSuggestions = angular.copy(response.data);
+					
+				}, function myError(response) {
+					 
+				  // error
+					
+				});
+			},200);				
+
+		};		
+		
+		function profile(scope,id) {
+			
+			scope.views.profile = "";			
+			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/avail-list.php',
+			  url: 'api/services/profile',
+			  data: {id: id}
 			}).then(function mySucces(response) {
 				
-				scope.service_availeds = response.data;
+				scope.profile = response.data;
 				
 			}, function myError(response) {
 				 
 			  // error
 				
 			});
-			//
 
-			$('#x_content').html(loading);
-			$('#x_content').load('lists/avails.html', function() {
-				$timeout(function() { $compile($('#x_content')[0])(scope); },100);	
+			$('#services-availed').html(loading);
+			$('#services-availed').load('forms/services-availed.html',function() {
+				$timeout(function() {
+					$compile($('#services-availed')[0])(scope);
+				},200);
+				$timeout(function() {
+					
+					var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+					elems.forEach(function(elem) {
+
+						var colorCode = $(elem).data('colorCode');
+						var switchery = new Switchery(elem, { size: 'small',  color: '#'+colorCode, secondaryColor: '#'+colorCode });
+						elem.onchange = function(e) {
+						  self.toggleActive(scope,e);
+						};
+	
+					});
+					
+				},300);
+			});			
+			
+		};
+		
+		function getColorCode(scope,id) {
+			
+			// scope.profile.services.
+			
+		};
+		
+		self.toggleActive = function(scope,e) {
+
+			$http({
+			  method: 'POST',
+			  url: 'handlers/avail-service.php',
+			  data: {id: e.target.dataset.availedId, checked: e.target.checked}
+			}).then(function mySucces(response) {
+				
+				
+			}, function myError(response) {
+				 
+			  // error
 				
 			});
+			
+		};		
+		
+		self.profileSelect = function($item, scope) {
+			
+			profile(scope,$item.id);
 			
 		};
 	
