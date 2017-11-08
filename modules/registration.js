@@ -282,11 +282,11 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					}; */
 					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');					
 					// profileAdd(scope);
-					mode(scope,scope.personal_info);					
 				} else {
-					mode(scope,scope.personal_info);
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');
 				}
+				
+				mode(scope,scope.personal_info);
 				
 				profiles(scope);
 				
@@ -323,8 +323,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		bootstrapModal.confirm(scope,'Confirmation','Are you sure you want to delete this record?',onOk,function() {});
 			
 		};		
-		
-		
+
 		self.list = function(scope) {
 			
 			// load list
@@ -395,7 +394,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		};
 		
 		self.birthday = function(scope) {
-
+			
+			if (scope.personal_info.birth_date == null) return;
 			scope.personal_info.age = getAge(scope.personal_info.birth_date); //for birthday autocompute
 
 		};

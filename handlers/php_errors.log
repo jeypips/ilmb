@@ -310,3 +310,108 @@ Stack trace:
 [08-Nov-2017 13:35:17 Asia/Manila] PHP Notice:  Undefined index: attendance in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 11
 [08-Nov-2017 13:35:17 Asia/Manila] PHP Stack trace:
 [08-Nov-2017 13:35:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[08-Nov-2017 15:12:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(20): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:14:18 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(20): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:41:32 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(20): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:41:42 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(20): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:42:08 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(22): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:42:50 Asia/Manila] PHP Notice:  Undefined variable: sql in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php on line 18
+[08-Nov-2017 15:42:50 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 15:42:50 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php:0
+[08-Nov-2017 15:42:50 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(22): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:43:09 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(22): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:44:14 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(22): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:46:54 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, bara...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(19): pdo_db->getData('SELECT id, bara...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:47:37 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php on line 20
+[08-Nov-2017 15:47:37 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 15:47:37 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php:0
+[08-Nov-2017 15:47:37 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, muni...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(24): pdo_db->getData('SELECT id, muni...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:48:43 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php on line 20
+[08-Nov-2017 15:48:43 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 15:48:43 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php:0
+[08-Nov-2017 15:48:43 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, muni...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(24): pdo_db->getData('SELECT id, muni...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:51:16 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, muni...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(24): pdo_db->getData('SELECT id, muni...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 15:57:34 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT id, muni...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list.php(24): pdo_db->getData('SELECT id, muni...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 16:19:48 Asia/Manila] PHP Notice:  Undefined index: birth_date in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 9
+[08-Nov-2017 16:19:48 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 16:19:48 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[08-Nov-2017 16:41:34 Asia/Manila] PHP Notice:  Undefined index: birth_date in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 9
+[08-Nov-2017 16:41:34 Asia/Manila] PHP Stack trace:
+[08-Nov-2017 16:41:34 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[08-Nov-2017 16:56:50 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'barangay_description' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\print-registration.php(11): pdo_db->getData('SELECT *, DATE_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[08-Nov-2017 16:58:48 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'municipality.id' in 'where clause' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\print-registration.php(11): pdo_db->getData('SELECT *, DATE_...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
