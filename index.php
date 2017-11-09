@@ -11,9 +11,6 @@
 
         <title>ILMB | Dashboard</title>
 
-        <!--Morris Chart CSS -->
-		    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
-
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -231,11 +228,101 @@
 
                         <!-- Page-Title -->
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
                                 <h4 class="page-title">Dashboard</h4>
                                 <p class="text-muted page-title-alt">Welcome to PGLU, I Love my Barangay.</p>
                             </div>
                         </div>
+						<div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="widget-panel widget-style-2 bg-white">
+                                    <i class="md md-account-child text-primary"></i>
+                                    <h2 class="m-0 text-dark counter font-600">{{dashboard.total_population}}</h2>
+                                    <div class="text-muted m-t-5">Total Population</div>
+                                </div>						
+							</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="widget-panel widget-style-2 bg-white">
+                                    <i class="md md-account-child text-primary"></i>
+                                    <h2 class="m-0 text-dark counter font-600">{{dashboard.total_attendance}}</h2>
+                                    <div class="text-muted m-t-5">Total Attendance</div>
+                                </div>							
+							</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="widget-panel widget-style-2 bg-white">
+                                    <i class="md md-account-child text-primary"></i>
+                                    <h2 class="m-0 text-dark counter font-600">{{dashboard.total_family_head}}</h2>
+                                    <div class="text-muted m-t-5">Total Head Of The Family</div>
+                                </div>							
+							</div>							
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 header-title"><b>Gender</b></h4>
+									<p class="text-muted m-b-15 font-13">Population count from total attendance by gender</p>
+									
+									<ul class="list-inline chart-detail-list text-center">
+                                		<li><h5><i class="fa fa-circle m-r-5" style="color: #5d9cec"></i>Male ({{dashboard.gender.male}})</h5></li>
+                                		<li><h5><i class="fa fa-circle m-r-5" style="color: #5fbeaa"></i>Female ({{dashboard.gender.female}})</h5></li>
+                            		</ul>
+                                    <canvas id="pie-gender" height="260"></canvas> 
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 header-title"><b>Category</b></h4>
+									<p class="text-muted m-b-15 font-13">Population count from total attendance by category</p>
+									
+									<ul class="list-inline chart-detail-list text-center">
+                                		<li><h5><i class="fa fa-circle m-r-5" style="color: #E74C3C"></i>Indigents ({{dashboard.category.indigents}})</h5></li>
+                                		<li><h5><i class="fa fa-circle m-r-5" style="color: #DAF7A6"></i>Senior Citizens ({{dashboard.category.senior_citizens}})</h5></li>
+                                		<li><h5><i class="fa fa-circle m-r-5" style="color: #FFC300"></i>Children ({{dashboard.category.children}})</h5></li>
+                                		<li><h5><i class="fa fa-circle m-r-5" style="color: #5499C7"></i>Walk-ins ({{dashboard.category.walkins}})</h5></li>
+                            		</ul>
+                                    <canvas id="pie-category" height="260"></canvas> 
+								</div>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<h4 class="m-t-0 header-title"><b>Age</b></h4>
+									<p class="text-muted m-b-15 font-13">Population count from total attendance by age</p>
+									
+									<ul class="list-inline chart-detail-list text-center">
+                                		<li ng-repeat="age in dashboard.ages"><h5><i class="fa fa-circle m-r-5" style="color: {{age.color}}"></i>{{age.label}} ({{age.count}})</h5></li>
+                            		</ul>
+                                    <canvas id="pie-ages" height="260"></canvas> 
+								</div>
+							</div>						
+						</div>						
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<h4 class="m-t-0 header-title"><b>Services</b></h4>
+									<p class="text-muted m-b-15 font-13">Population count from total attendance by service</p>
+									
+									<ul class="list-inline chart-detail-list text-center">
+                                		<li ng-repeat="service in dashboard.services"><h5><i class="fa fa-circle m-r-5" style="color: #{{service.color}}"></i>{{service.label}} ({{service.count}})</h5></li>
+                            		</ul>
+                                    <canvas id="pie-services" height="260"></canvas> 
+								</div>
+							</div>						
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<h4 class="m-t-0 header-title"><b>Encoders</b></h4>
+									<p class="text-muted m-b-15 font-13">Population count by encoder</p>
+									
+									<ul class="list-inline chart-detail-list text-center">
+                                		<li ng-repeat="service in dashboard.services"><h5><i class="fa fa-circle m-r-5" style="color: #{{service.color}}"></i>{{service.label}} ({{service.count}})</h5></li>
+                            		</ul>
+                                    <canvas id="pie-services" height="260"></canvas> 
+								</div>
+							</div>						
+						</div>
 
                     </div> <!-- container -->
 
@@ -277,34 +364,23 @@
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
         <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
 
-        <script src="assets/plugins/morris/morris.min.js"></script>
         <script src="assets/plugins/raphael/raphael-min.js"></script>
         <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-        <script src="assets/pages/jquery.dashboard.js"></script>
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
 		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 		<script src="assets/js/bootbox.min.js"></script>
-
+        <!-- Chart JS -->
+        <script src="assets/plugins/Chart.js/Chart.min.js"></script>
+		
 		<!-- Angular  -->
 		<script src="angular/angular.min.js"></script>
 		<script src="modules/account.js"></script>
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
+		<script src="modules/dashboard.js"></script>
 		<script src="controllers/dashboard.js"></script>
-
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-
-                $(".knob").knob();
-
-            });
-        </script>
 
     </body>
 </html>
