@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2017 at 03:09 PM
+-- Generation Time: Nov 09, 2017 at 06:15 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -995,7 +995,7 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 (263, 1, 'A0194', 'Ambrosio', NULL, 'Emocling', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
 (264, 1, 'A0195', 'Hipolito', NULL, 'Garcia', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
 (265, 1, 'A0196', 'Priscilla', NULL, 'De Guzman', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
-(266, 1, 'A0197', 'Pacita', NULL, 'Rivera', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
+(266, 1, 'A0197', 'Pacita', NULL, 'Rivera', '', NULL, NULL, '1970-01-01', NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, 1, '2017-11-09 14:49:44', 3),
 (267, 1, 'A0198', 'Evangelina', NULL, 'Basto', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
 (268, 1, 'A0199', 'Susana', NULL, 'Estimada', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
 (269, 1, 'A0200', 'Danilo', NULL, 'Estimada', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '353', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:49:44', NULL),
@@ -1619,7 +1619,7 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 (885, 1, 'A0670', 'Johnavel', NULL, 'Refugia', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
 (886, 1, 'A0671', 'Kylle Drixx', NULL, 'De Vera', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
 (887, 1, 'A0672', 'Ferlin Jade', NULL, 'Rimando', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
-(888, 1, 'A0673', 'Jennilyn', NULL, 'Camacho', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
+(888, 1, 'A0673', 'Jennilyn', '', 'Camacho', '', NULL, NULL, '1970-01-01', NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, 1, '2017-11-09 14:49:54', 3),
 (889, 1, 'A0674', 'Precy', NULL, 'Mejia', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
 (890, 1, 'A0675', 'Julie', NULL, 'Lucero', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
 (891, 1, 'A0676', 'Alberto', NULL, 'Asuncion', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '356', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:49:54', NULL),
@@ -2241,7 +2241,7 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 (1504, 1, 'A1189', 'Rodel', NULL, 'Caoile', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
 (1505, 1, 'A1190', 'Efren', NULL, 'Lachica', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
 (1506, 1, 'A1191', 'Dic', NULL, 'Dacoy', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
-(1507, 1, 'A1192', 'Ludenvencia', NULL, 'Morales', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
+(1507, 1, 'A1192', 'Ludenvencia', NULL, 'Morales', '', NULL, NULL, '1970-01-01', NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, 1, '2017-11-09 14:50:05', 3),
 (1508, 1, 'A1193', 'Jerry', NULL, 'Marquez', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
 (1509, 1, 'A1194', 'Liezel', NULL, 'Juralbal', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
 (1510, 1, 'A1195', 'Lea', NULL, 'Peralta', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '374', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:50:05', NULL),
@@ -4450,7 +4450,7 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 (3703, 1, 'A2813', 'Barcenas', NULL, 'Aurora', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
 (3704, 1, 'A2814', 'Soriano', NULL, 'Demosthenis', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
 (3705, 1, 'A2815', 'Godboy', NULL, 'Geronimo', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
-(3706, 1, 'A2816', 'Morales', NULL, 'Chito', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
+(3706, 1, 'A2816', 'Chito', NULL, 'Morales', '', NULL, NULL, '1970-01-01', NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, 1, '2017-11-09 14:52:06', 3),
 (3707, 1, 'A2817', 'Mayo', NULL, 'Virgilio', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
 (3708, 1, 'A2818', 'Fernandez', NULL, 'Norberto', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
 (3709, 1, 'A2819', 'Pascua', NULL, 'Revelina', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Senior', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
@@ -4494,7 +4494,7 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 (3747, 1, 'A2857', 'Mayo', NULL, 'Edwin', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
 (3748, 1, 'A2858', 'Arellano', NULL, 'Norberto', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
 (3749, 1, 'A2859', 'Salvador', NULL, 'Teresita', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
-(3750, 1, 'A2860', 'Morales', NULL, 'Juliana', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:06', NULL),
+(3750, 1, 'A2860', 'Juliana', NULL, 'Morales', '', NULL, NULL, '1970-01-01', NULL, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, 1, '2017-11-09 14:52:06', 3),
 (3751, 1, 'A2861', 'Duran', NULL, 'Hernando', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:07', NULL),
 (3752, 1, 'A2862', 'Carpio', NULL, 'Eduardo', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:07', NULL),
 (3753, 1, 'A2863', 'Gaudia', NULL, 'Marilou', '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '375', '13', NULL, NULL, NULL, NULL, NULL, 'Indigent', NULL, NULL, NULL, '2017-11-09 14:52:07', NULL),
@@ -6041,21 +6041,22 @@ CREATE TABLE `services_availed` (
   `service_id` int(11) DEFAULT NULL,
   `profile_id` int(11) DEFAULT NULL,
   `event_id` int(11) DEFAULT NULL,
-  `service_availed` tinyint(4) NOT NULL DEFAULT '0'
+  `service_availed` tinyint(4) NOT NULL DEFAULT '0',
+  `last_modified_by` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `services_availed`
 --
 
-INSERT INTO `services_availed` (`id`, `service_id`, `profile_id`, `event_id`, `service_availed`) VALUES
-(1, 1, 1, 1, 0),
-(2, 2, 1, 1, 0),
-(3, 3, 1, 1, 0),
-(4, 4, 1, 1, 0),
-(5, 5, 1, 1, 0),
-(6, 6, 1, 1, 0),
-(7, 7, 1, 1, 0);
+INSERT INTO `services_availed` (`id`, `service_id`, `profile_id`, `event_id`, `service_availed`, `last_modified_by`) VALUES
+(1, 1, 156, 1, 1, 1),
+(2, 2, 156, 1, 1, 4),
+(3, 3, 156, 1, 0, NULL),
+(4, 4, 156, 1, 0, NULL),
+(5, 5, 156, 1, 0, NULL),
+(6, 6, 156, 1, 0, NULL),
+(7, 7, 156, 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -6142,7 +6143,7 @@ ALTER TABLE `municipalities`
 -- AUTO_INCREMENT for table `personal_infos`
 --
 ALTER TABLE `personal_infos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5233;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5234;
 --
 -- AUTO_INCREMENT for table `services`
 --

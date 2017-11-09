@@ -32,6 +32,8 @@ foreach ($personal_infos['data'] as $i => $personal_info) {
 	
 	$personal_infos['data'][$i][6] = $action;
 	
+	unset($personal_infos['data'][$i][7]);
+	
 };
 
 header("Content-Type: application/json");

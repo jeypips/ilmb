@@ -83,6 +83,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			});
 			
 			scope.profileSuggestions = [];
+			profiles(scope);
 
 		};
 
@@ -404,6 +405,12 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			profile(scope,$item.id);
 			
 		};
+		
+		self.profileSelectList = function($item, scope) {
+
+			self.registration(scope,{id: $item.id});
+
+		};		
 		
 		self.print = function(scope,personal_info) {
 			

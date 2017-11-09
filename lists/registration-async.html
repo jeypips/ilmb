@@ -6,6 +6,12 @@
 	</div>
 <hr>
 	<div class="panel-body">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-8 form-group" style="margin-left: 12px;">			
+				<input type="text" class="form-control" placeholder="Quick View" ng-disabled="views.list" ng-model="views.profile" uib-typeahead="p.suggestion for p in profileSuggestions | filter:{suggestion:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.profileSelectList($item, this)">
+			</div>
+		</div>
+		<hr>
 		<table id="personal" class="table table-striped m-0">
 		  <thead>
 			<tr>
