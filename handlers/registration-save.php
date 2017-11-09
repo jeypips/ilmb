@@ -20,14 +20,33 @@ if ($_POST['personal_info']['id']) {
 
 } else {
 
-	$personal_info_no = personal_info_no($con,$_POST['personal_info']['age']);
-	$_POST['personal_info']['personal_info_no'] = $personal_info_no;
-	$personal_info = $con->insertData($_POST['personal_info']);
+	// $personal_info_no = personal_info_no_only($con,$_POST['personal_info']['age']);
+	// $_POST['personal_info']['personal_info_no'] = $personal_info_no;
+	// $personal_info = $con->insertData($_POST['personal_info']);
 
-	header("Content-type: application/json");
-	echo json_encode(array("id"=>$con->insertId,"personal_info_no"=>$personal_info_no));
+	// header("Content-type: application/json");
+	// echo json_encode(array("id"=>$con->insertId,"personal_info_no"=>$personal_info_no));
 
 }
+
+function personal_info_no_only($con,$age) {
+
+	$personal_info_nos = $con->getData("SELECT personal_info_no FROM personal_infos ORDER BY personal_info_no DESC LIMIT 1");
+
+	$id = 1;
+	foreach ($personal_info_nos as $pin) {
+
+		$id = (int)$pin['personal_info_no']+1;
+		
+	};
+
+	$l = (strlen($id)>4)?strlen($id):4;	
+	
+	$personal_info_no = str_pad((string)$id,$l,"0",STR_PAD_LEFT);
+
+	return $personal_info_no;
+	
+};
 
 function personal_info_no($con,$age) {
 
@@ -43,7 +62,6 @@ function personal_info_no($con,$age) {
 		
 	};
 
-	$age = 8;
 	$l = (strlen($id)>4)?strlen($id):4;	
 	
 	$personal_info_no = $pre.str_pad((string)$id,$l,"0",STR_PAD_LEFT);

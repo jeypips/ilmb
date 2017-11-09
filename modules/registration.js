@@ -183,7 +183,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 		};
 		
-		self.registration = function(scope,row) {			
+		self.registration = function(scope,row) {		
 			
 			if (Object.size(scope.activeEvent) == 0) {
 				
@@ -197,14 +197,6 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 			scope.personal_info = {};
 			scope.personal_info.id = 0;			
-			scope.personal_info.attendance = false;
-			scope.personal_info.family_head = false;
-			scope.personal_info.event_id = scope.activeEvent.id;
-			
-			if (row == null) {
-				scope.personal_info.address_municipality = scope.activeEvent.municipality;
-				scope.barangays = scope.activeEvent.municipality.barangays;
-			};
 			
 			mode(scope,row);
 			
@@ -237,7 +229,29 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					
 				});
 				
-			};
+			} else { // add 							
+				
+				$http({
+				  method: 'POST',
+				  url: 'handlers/registration-new.php'
+				}).then(function mySucces(response) {
+					
+					angular.copy(response.data, scope.personal_info);
+					
+					scope.personal_info.attendance = false;
+					scope.personal_info.family_head = false;
+					scope.personal_info.event_id = scope.activeEvent.id;
+					
+					scope.personal_info.address_municipality = scope.activeEvent.municipality;
+					scope.barangays = scope.activeEvent.municipality.barangays;	
+					
+				}, function myError(response) {
+					 
+				  // error
+					
+				});
+				
+			}
 			
 		};
 		
@@ -248,7 +262,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 		};
 		
-		self.save = function(scope) {	
+		self.save = function(scope) {
 			
 			if (validate(scope)) {
 				growl.show('btn btn-danger',{from: 'top', amount: 55},'Please complete required fields');				
@@ -267,11 +281,12 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 						scope.personal_info.personal_info_no = response.data.personal_info_no;
 					}; */
 					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');					
-					profileAdd(scope);
+					// profileAdd(scope);
 				} else {
-					mode(scope,scope.personal_info);
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');
 				}
+				
+				mode(scope,scope.personal_info);
 				
 				profiles(scope);
 				
@@ -308,8 +323,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		bootstrapModal.confirm(scope,'Confirmation','Are you sure you want to delete this record?',onOk,function() {});
 			
 		};		
-		
-		
+
 		self.list = function(scope) {
 			
 			// load list
@@ -380,7 +394,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		};
 		
 		self.birthday = function(scope) {
-
+			
+			if (scope.personal_info.birth_date == null) return;
 			scope.personal_info.age = getAge(scope.personal_info.birth_date); //for birthday autocompute
 
 		};

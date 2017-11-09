@@ -67,7 +67,7 @@ angular.module('event-module',['ui.bootstrap','bootstrap-modal']).factory('form'
 			
 		};
 		
-		self.event = function(scope,row) {			
+		self.event = function(scope,row) {	
 		
 			scope.event = {};
 			scope.event.id = 0;

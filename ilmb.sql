@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2017 at 03:34 PM
+-- Generation Time: Nov 08, 2017 at 01:47 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -43,7 +43,8 @@ CREATE TABLE `account_infos` (
 INSERT INTO `account_infos` (`account_id`, `account_firstname`, `account_middlename`, `account_lastname`, `account_username`, `account_password`, `account_type`) VALUES
 (1, 'John Paul', 'Garcia', 'Balanon', 'admin', 'admin', 'Admin'),
 (2, 'Dexter', 'Rivera', 'Florendo', 'dex.r.florendo@hotmail.com', '12345', 'Admin'),
-(3, 'Sha', 'Iglesias', 'Ballesteros', 'encoder', 'encoder', 'Encoder');
+(3, 'Sha', 'Iglesias', 'Ballesteros', 'encoder', 'encoder', 'Encoder'),
+(4, 'Sylvester', 'Bulilan', 'Flores', 'sly', 'legend', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -643,7 +644,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `description`, `town`, `date`, `is_active`) VALUES
-(1, 'Taray', 14, '2017-12-30', 1);
+(1, 'I love my barangay', 13, '2017-11-10', 1);
 
 -- --------------------------------------------------------
 
@@ -725,8 +726,8 @@ CREATE TABLE `personal_infos` (
 --
 
 INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`, `middlename`, `lastname`, `extension_name`, `civil_status`, `gender`, `birth_date`, `birth_place`, `age`, `family_head`, `family_members`, `employment_status`, `philhealth_member`, `address_house`, `address_sitio`, `address_purok`, `address_barangay`, `address_municipality`, `address_province`, `contact_no`, `contact_email`, `educational_attainment`, `occupation`, `presented_id`, `presented_id_no`, `attendance`) VALUES
-(1, 1, NULL, 'John Paul', 'Garcia', 'Balanon', NULL, 'Single', 'Male', '1998-06-11', NULL, 19, 0, 0, 'true', 'true', 2, '3', 3, '10', '1', NULL, '099999932', NULL, 'Secondary', 'PGLU', 'SSS', '098389293', 0),
-(2, 1, 'C0001', 'sd', 's', 'asd', '', NULL, NULL, '2017-11-03', NULL, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, '431', '14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+(1, 1, '0001', 'Leonarda', NULL, 'Baldemor', NULL, NULL, NULL, '1982-11-14', NULL, 34, 0, 0, NULL, NULL, NULL, NULL, NULL, '344', '13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
+(2, 1, '0002', 'Ernesto', NULL, 'Ballesteros', NULL, NULL, NULL, '1982-11-14', NULL, 34, 0, 0, NULL, NULL, NULL, NULL, NULL, '344', '13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -737,6 +738,7 @@ INSERT INTO `personal_infos` (`id`, `event_id`, `personal_info_no`, `firstname`,
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `description` varchar(550) DEFAULT NULL,
+  `color` varchar(50) DEFAULT NULL,
   `min_age` int(11) DEFAULT NULL,
   `max_age` int(11) DEFAULT NULL,
   `color_code` varchar(500) DEFAULT NULL
@@ -746,14 +748,14 @@ CREATE TABLE `services` (
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `description`, `min_age`, `max_age`, `color_code`) VALUES
-(1, 'Medical', 1, 10, 'red'),
-(2, 'Dental', NULL, NULL, NULL),
-(3, 'Feeding & Distribution of Hygiene Kit', NULL, NULL, NULL),
-(4, 'Distribution of Seeds', NULL, NULL, NULL),
-(5, 'Legal Counseling', NULL, NULL, NULL),
-(6, 'Free Massage', NULL, NULL, NULL),
-(7, 'Disaster', NULL, NULL, NULL);
+INSERT INTO `services` (`id`, `description`, `color`, `min_age`, `max_age`, `color_code`) VALUES
+(1, 'Medical', NULL, 1, 100, 'e81dbb'),
+(2, 'Dental', NULL, 1, 100, NULL),
+(3, 'Feeding & Distribution of Hygiene Kit', NULL, 1, 100, NULL),
+(4, 'Distribution of Seeds', NULL, 1, 100, NULL),
+(5, 'Legal Counseling', NULL, 1, 100, NULL),
+(6, 'Free Massage', NULL, 1, 100, NULL),
+(7, 'Disaster', NULL, 1, 100, NULL);
 
 -- --------------------------------------------------------
 
@@ -765,8 +767,29 @@ CREATE TABLE `services_availed` (
   `id` int(11) NOT NULL,
   `service_id` int(11) DEFAULT NULL,
   `profile_id` int(11) DEFAULT NULL,
-  `event_id` int(11) DEFAULT NULL
+  `event_id` int(11) DEFAULT NULL,
+  `service_availed` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `services_availed`
+--
+
+INSERT INTO `services_availed` (`id`, `service_id`, `profile_id`, `event_id`, `service_availed`) VALUES
+(1, 1, 1, 1, 0),
+(2, 2, 1, 1, 0),
+(3, 3, 1, 1, 0),
+(4, 4, 1, 1, 0),
+(5, 5, 1, 1, 0),
+(6, 6, 1, 1, 0),
+(7, 7, 1, 1, 0),
+(8, 1, 2, 1, 0),
+(9, 2, 2, 1, 0),
+(10, 3, 2, 1, 0),
+(11, 4, 2, 1, 0),
+(12, 5, 2, 1, 0),
+(13, 6, 2, 1, 0),
+(14, 7, 2, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -824,7 +847,7 @@ ALTER TABLE `services_availed`
 -- AUTO_INCREMENT for table `account_infos`
 --
 ALTER TABLE `account_infos`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `barangays`
 --
@@ -844,7 +867,7 @@ ALTER TABLE `municipalities`
 -- AUTO_INCREMENT for table `personal_infos`
 --
 ALTER TABLE `personal_infos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -854,7 +877,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `services_availed`
 --
 ALTER TABLE `services_availed`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
