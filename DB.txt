@@ -1,0 +1,1 @@
+ALTER TABLE `personal_infos`  ADD `category` VARCHAR(50) NULL  AFTER `occupation`;

@@ -9,9 +9,9 @@ session_start();
 
 $con = new pdo_db();
 
-$service_availeds = $con->getData("SELECT * FROM services");
+$personal_infos = $con->getData("SELECT * FROM personal_infos");
 
 header("Content-Type: application/json");
-echo json_encode($service_availeds);
+echo json_encode($personal_infos);
 
 ?>

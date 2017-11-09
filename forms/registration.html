@@ -13,7 +13,7 @@
 				<h4 style="margin-left: 10px;">Search:</h4>
 		</div>
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-12 form-group" style="margin-left: 12px;">
+			<div class="col-lg-3 col-md-3 col-sm-8 form-group" style="margin-left: 12px;">			
 				<input type="text" class="form-control" placeholder="Search" ng-disabled="views.list" ng-model="views.profile" uib-typeahead="p.suggestion for p in profileSuggestions | filter:{suggestion:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.profileSelect($item, this)">
 			</div>
 		</div>
@@ -24,12 +24,19 @@
 			<div class="row">
 				<button class="btn btn-white waves-effect" type="submit" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
 				<button class="btn btn-twitter waves-effect waves-light m-l-5" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
+				<button style="margin-left: 15px;" class="btn btn-facebook waves-effect waves-light" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>				
 				<button class="waves-effect waves-light pull-right btn btn-facebook" ng-click="form.print(this,personal_info)"><i class="icon-printer"></i> Print</button>
 			</div>
-			<br>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+				<hr>
+					<h3>{{personal_info.personal_info_no}} / {{personal_info.lastname}}, {{personal_info.firstname}} {{personal_info.middlename}}</h3>
+				<hr>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
-					<label class="label-control">ID</label>
+					<label class="label-control">No</label>
 					<input type="text" class="form-control" name="personal_info_no" ng-model="personal_info.personal_info_no" disabled>					
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
@@ -53,10 +60,9 @@
 					<input type="text" class="form-control" name="firstname" ng-model="personal_info.firstname" required ng-disabled="controls.ok.btn">
 					<span class="help-block" ng-show="formHolder.personal_info.firstname.$touched && formHolder.personal_info.firstname.$invalid">First name is required</span>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.middlename.$touched && formHolder.personal_info.middlename.$invalid}">
+				<div class="col-lg-3 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Middle Name</label>
-					<input type="text" class="form-control" name="middlename" ng-model="personal_info.middlename" required ng-disabled="controls.ok.btn">
-					<span class="help-block" ng-show="formHolder.personal_info.middlename.$touched && formHolder.personal_info.middlename.$invalid">Middle name is required</span>
+					<input type="text" class="form-control" name="middlename" ng-model="personal_info.middlename" ng-disabled="controls.ok.btn">
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Extension Name</label>
@@ -102,15 +108,13 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.birth_date.$touched && formHolder.personal_info.birth_date.$invalid}">
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Birthday</label>
-					<input type="date" class="form-control" name="birth_date" ng-model="personal_info.birth_date" ng-change="form.birthday(this)" ng-disabled="controls.ok.btn" required>
-					<span class="help-block" ng-show="formHolder.personal_info.birth_date.$touched && formHolder.personal_info.birth_date.$invalid">Birthday is required</span>
+					<input type="date" class="form-control" name="birth_date" ng-model="personal_info.birth_date" ng-change="form.birthday(this)" ng-disabled="controls.ok.btn">
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.age.$touched && formHolder.personal_info.age.$invalid}">
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<label class="label-control">Age</label>
-					<input type="number" class="form-control" name="age" ng-model="personal_info.age" ng-disabled="controls.ok.btn" required>
-					<span class="help-block" ng-show="formHolder.personal_info.age.$touched && formHolder.personal_info.age.$invalid">Age is required</span>
+					<input type="number" class="form-control" name="age" ng-model="personal_info.age" ng-disabled="controls.ok.btn">
 				</div>
 			</div>
 			<!-- <div class="row">
@@ -143,7 +147,7 @@
 				</div>
 				<div class="col-lg-6 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid}">
 					<label class="label-control">Barangay</label>
-					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="3" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
+					<input type="text" class="form-control" name="address_barangay" ng-model="personal_info.address_barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="form.barangaySelect($item, this)" ng-disabled="controls.ok.btn" required>
 					<span class="help-block" ng-show="formHolder.personal_info.address_barangay.$touched && formHolder.personal_info.address_barangay.$invalid">Barangay is required</span>
 				</div>					
 			</div>

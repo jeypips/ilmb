@@ -11,9 +11,6 @@
 
         <title>ILMB | Dashboard</title>
 
-        <!--Morris Chart CSS -->
-		    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
-
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -29,7 +26,13 @@
         <![endif]-->
 
         <script src="assets/js/modernizr.min.js"></script>
-
+		
+		<style>
+		.not-active {
+			pointer-events: none;
+			cursor: default;
+		}
+		</style>
 
     </head>
 
@@ -177,8 +180,8 @@
                                 <li class="dropdown">
                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-                                        <li><a href="javascript:;" logout-account><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                        <li><a href="#" class="not-active"><i class="ti-user m-r-5"></i>{{accountProfile.fullname}}</a></li>
+                                        <li><a href="javascript:;" logout-account><i class="ti-power-off m-r-5 text-danger"></i> Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -230,6 +233,12 @@
                                 <p class="text-muted page-title-alt">Welcome to PGLU, I Love my Barangay.</p>
                             </div>
                         </div>
+						
+						<div class="row">
+							<div class="col-lg-12">
+								<div id="x_content" class="x_content"></div>
+							</div>
+						</div>
 
                     </div> <!-- container -->
 
@@ -274,31 +283,34 @@
         <script src="assets/plugins/morris/morris.min.js"></script>
         <script src="assets/plugins/raphael/raphael-min.js"></script>
         <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-        <script src="assets/pages/jquery.dashboard.js"></script>
+        <!-- <script src="assets/pages/jquery.dashboard.js"></script> -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
 		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
 		<script src="assets/js/bootbox.min.js"></script>
+		
+        <script src="assets/plugins/flot-chart/jquery.flot.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.time.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.pie.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.orderBars.min.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>	
+		
 
 		<!-- Angular  -->
 		<script src="angular/angular.min.js"></script>
 		<script src="modules/account.js"></script>
 		<script src="modules/fullscreen.js"></script>
+		<script src="modules/gender-charts.js"></script>
+		<script src="modules/age-charts.js"></script>
+		<script src="modules/services-charts.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
+		<script src="modules/dashboard.js"></script>
 		<script src="controllers/dashboard.js"></script>
-
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-
-                $(".knob").knob();
-
-            });
-        </script>
 
     </body>
 </html>
