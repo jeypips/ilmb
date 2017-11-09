@@ -15,7 +15,7 @@ angular.module('dashboard-module',['bootstrap-modal','bootstrap-growl','flot-mod
 				
 					$http({
 					  method: 'POST',
-					  url: 'api/suggestions/profiles.php'
+					  url: 'handlers/charts.php'
 					}).then(function mySucces(response) {
 						
 						scope.personal_infos = angular.copy(response.data);
@@ -30,7 +30,7 @@ angular.module('dashboard-module',['bootstrap-modal','bootstrap-growl','flot-mod
 			
 			$timeout(function() {
 				
-					console.log();					
+					console.log(scope.personal_infos);					
 					// pie chart
 					flot.pie(scope.perfsonal_infos);
 					flotAge.pie(scope.perfsonal_infos);
