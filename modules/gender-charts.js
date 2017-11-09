@@ -4,7 +4,7 @@ angular.module('flot-module',[]).factory('flot',function() {
 		
 		var self = this;
 		
-		self.pie = function() {
+		self.pie = function(personal_infos) {
 			
 			! function($) {
 				"use strict";
