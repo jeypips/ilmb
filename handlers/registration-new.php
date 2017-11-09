@@ -6,11 +6,10 @@ include_once '../db.php';
 
 $con = new pdo_db("personal_infos");
 
-$personal_info_no = personal_info_no_only($con,$_POST['personal_info']['age']);
-$personal_info = $con->insertData(array("personal_info_no"=>$personal_info_no));
+$personal_info = $con->insertData(array("personal_info_no"=>""));
 
 header("Content-type: application/json");
-echo json_encode(array("id"=>$con->insertId,"personal_info_no"=>$personal_info_no));
+echo json_encode(array("id"=>$con->insertId));
 
 function personal_info_no_only($con,$age) {
 

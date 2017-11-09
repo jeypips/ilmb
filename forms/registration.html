@@ -39,7 +39,16 @@
 					<label class="label-control">No</label>
 					<input type="text" class="form-control" name="personal_info_no" ng-model="personal_info.personal_info_no" disabled>					
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-12 form-group">
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group" ng-class="{'has-error': formHolder.personal_info.category.$touched && formHolder.personal_info.category.$invalid}">
+					<label class="label-control">Category</label>
+					<select class="form-control" name="category" ng-model="personal_info.category" ng-disabled="controls.ok.btn" required>
+						<option value="Indigent">Indigent</option>
+						<option value="Senior">Senior</option>
+						<option value="Child">Child</option>
+					</select>
+					<span class="help-block" ng-show="formHolder.personal_info.category.$touched && formHolder.personal_info.category.$invalid">Category is required</span>					
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 form-group">
 					<div class="checkbox checkbox-custom">
 							<input id="check1" type="checkbox" ng-model="personal_info.attendance" ng-disabled="controls.ok.btn">
 							<label class="label-control" for="check1" style="margin-top: 23px;">

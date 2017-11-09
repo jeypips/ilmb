@@ -242,6 +242,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					scope.personal_info.family_head = false;
 					scope.personal_info.event_id = scope.activeEvent.id;
 					
+					scope.personal_info.personal_info_no = "";										
+					
 					scope.personal_info.address_municipality = scope.activeEvent.municipality;
 					scope.barangays = scope.activeEvent.municipality.barangays;	
 					
@@ -280,6 +282,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 						scope.personal_info.id = response.data.id;
 						scope.personal_info.personal_info_no = response.data.personal_info_no;
 					}; */
+					scope.personal_info.personal_info_no = response.data.personal_info_no;					
 					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');					
 					// profileAdd(scope);
 				} else {

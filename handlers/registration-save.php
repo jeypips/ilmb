@@ -8,9 +8,9 @@ $con = new pdo_db("personal_infos");
 
 session_start();
 
-$_POST['personal_info']['birth_date'] =  date("Y-m-d",strtotime($_POST['personal_info']['birth_date'])); // date Format
-$_POST['personal_info']['family_head'] = ($_POST['personal_info']['family_head'])?1:0; //for checkbox
-$_POST['personal_info']['attendance'] = ($_POST['personal_info']['attendance'])?1:0; //for checkbox
+if (isset($_POST['personal_info']['birth_date'])) $_POST['personal_info']['birth_date'] =  date("Y-m-d",strtotime($_POST['personal_info']['birth_date'])); // date Format
+$_POST['personal_info']['family_head'] = ($_POST['personal_info']['family_head'])?1:0; // for checkbox
+$_POST['personal_info']['attendance'] = ($_POST['personal_info']['attendance'])?1:0; // for checkbox
 $_POST['personal_info']['address_barangay'] = $_POST['personal_info']['address_barangay']['id'];
 $_POST['personal_info']['address_municipality'] = $_POST['personal_info']['address_municipality']['id'];
 
@@ -20,7 +20,13 @@ if ($_POST['personal_info']['id']) {
 	
 	$_POST['personal_info']['attendance'] = 1;
 	$_POST['personal_info']['last_modified_by'] = $_SESSION['account_id'];
+	
+	$personal_info_no = personal_info_no($con,$_POST['personal_info']['category']);
+	$_POST['personal_info']['personal_info_no'] = ($_POST['personal_info']['personal_info_no']=="")?$personal_info_no:$_POST['personal_info']['personal_info_no'];
+	
 	$personal_info = $con->updateData($_POST['personal_info'],'id');
+	
+	echo json_encode(array("personal_info_no"=>$personal_info_no));
 
 } else {
 
@@ -52,9 +58,9 @@ function personal_info_no_only($con,$age) {
 	
 };
 
-function personal_info_no($con,$age) {
+function personal_info_no($con,$cat) {
 
-	$pre = ($age<=7)?"C":"A";
+	$pre = ($cat=='Child')?"C":"A";
 
 	$personal_info_nos = $con->getData("SELECT personal_info_no FROM personal_infos WHERE personal_info_no LIKE '$pre%' ORDER BY personal_info_no DESC LIMIT 1");
 	

@@ -589,3 +589,30 @@ Stack trace:
 #1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php(22): pdo_db->updateData(Array, 'id')
 #2 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 175
+[09-Nov-2017 14:22:42 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'last_modified_by' doesn't have a default value in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:82
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(82): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php(10): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 82
+[09-Nov-2017 14:31:54 Asia/Manila] PHP Notice:  Undefined variable: personal_info_no in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php on line 9
+[09-Nov-2017 14:31:54 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:31:54 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php:0
+[09-Nov-2017 14:34:07 Asia/Manila] PHP Notice:  Undefined variable: personal_info_no in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php on line 9
+[09-Nov-2017 14:34:07 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:34:07 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php:0
+[09-Nov-2017 14:34:25 Asia/Manila] PHP Notice:  Undefined index: family_head in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 12
+[09-Nov-2017 14:34:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:34:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[09-Nov-2017 14:34:25 Asia/Manila] PHP Notice:  Undefined index: attendance in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 13
+[09-Nov-2017 14:34:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:34:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[09-Nov-2017 14:34:46 Asia/Manila] PHP Notice:  Undefined variable: personal_info_no in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php on line 9
+[09-Nov-2017 14:34:46 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:34:46 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-new.php:0
+[09-Nov-2017 14:40:42 Asia/Manila] PHP Notice:  Undefined index: birth_date in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 11
+[09-Nov-2017 14:40:42 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:40:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[09-Nov-2017 14:44:23 Asia/Manila] PHP Notice:  Undefined index: personal_info_no in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 25
+[09-Nov-2017 14:44:23 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 14:44:23 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
