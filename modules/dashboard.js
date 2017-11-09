@@ -11,14 +11,14 @@ angular.module('dashboard-module',['bootstrap-modal','bootstrap-growl','flot-mod
 				
 			scope.personal_infos = [];
 			
-			/* $timeout(function() {
+			$timeout(function() {
 				
 					$http({
 					  method: 'POST',
-					  url: 'handlers/consolidated-sectors.php'
+					  url: 'api/suggestions/profiles.php'
 					}).then(function mySucces(response) {
 						
-						scope.consolidated = angular.copy(response.data);
+						scope.personal_infos = angular.copy(response.data);
 						
 					}, function myError(response) {
 						 
@@ -26,19 +26,18 @@ angular.module('dashboard-module',['bootstrap-modal','bootstrap-growl','flot-mod
 						
 					});
 					
-				},100); */
+				},100);
 			
 			$timeout(function() {
 				
 					console.log();					
 					// pie chart
-					flot.pie();
-					flotAge.pie();
-					flotService.pie();
+					flot.pie(scope.perfsonal_infos);
+					flotAge.pie(scope.perfsonal_infos);
+					flotService.pie(scope.perfsonal_infos);
 				
-			},200);
+			},1000);
 			
-			  
 			$timeout(function() {
 				
 				$('#x_content').html(loading);
