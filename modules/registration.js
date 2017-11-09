@@ -361,19 +361,23 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			*/
 			$('#x_content').html(loading);
 			$('#x_content').load('lists/registration-async.html', function() {
-
-				$('#personal').DataTable({
-					"ordering": false,
-					"processing": true,
-					"serverSide": true,
-					"ajax": "handlers/registration-list-async.php",
-					"drawCallback": function(settings) {
-						$compile($('#x_content')[0])(scope);
-					},
-					"fnServerParams": function(aoData) {
-						aoData['list_filters'] = {id:1};
-					}
-				});				
+				
+				$timeout(function() {
+					$('#personal').DataTable({
+						"ordering": false,
+						"processing": true,
+						"serverSide": true,
+						"ajax": "handlers/registration-list-async.php",
+						"drawCallback": function(settings) {
+							$timeout(function() {
+								$compile($('#x_content')[0])(scope);
+							},200);
+						},
+						"fnServerParams": function(aoData) {
+							aoData['list_filters'] = {id:1};
+						}
+					});
+				},100);
 				
 			});			
 			

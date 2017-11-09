@@ -26,7 +26,7 @@
 
 			  <td>
 			  <button class="btn btn-sm btn-primary" ng-click="form.event(this,e)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
-			  <button class="btn btn-sm btn-googleplus" ng-click="form.delete(this,e)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-googleplus" ng-click="form.delete(this,e)" ng-show="accountProfile.account_type == 'Admin'"><i class="fa fa-close" style="cursor: pointer;"></i></button>
 			  </td>
 			</tr>
 		  </tbody>

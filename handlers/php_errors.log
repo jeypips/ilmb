@@ -580,3 +580,12 @@ Stack trace:
 [09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
 [09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
 [09-Nov-2017 13:18:25 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:36
+[09-Nov-2017 13:39:02 Asia/Manila] PHP Notice:  Undefined index: acount_id in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php on line 21
+[09-Nov-2017 13:39:02 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:39:02 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php:0
+[09-Nov-2017 13:39:02 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'last_modified_by' cannot be null in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php:175
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php(175): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-save.php(22): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 175
