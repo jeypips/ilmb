@@ -173,6 +173,7 @@ angular.module('service-module',['ui.bootstrap','bootstrap-modal']).factory('for
 				},200);
 				
 			});
+			
 		};
 	
 	};

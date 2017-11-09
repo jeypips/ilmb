@@ -9,11 +9,11 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB | Registration</title>
+        <title>ILMB | Avail Services</title>
 		
 		<!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
-		
+		<link href="assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
@@ -40,7 +40,7 @@
     </head>
 
 
-    <body class="fixed-left" ng-app="registration" ng-controller="registrationCtrl" account-profile>
+    <body class="fixed-left" ng-app="avails" ng-controller="availsCtrl" account-profile>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -66,12 +66,49 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
-							
+
+                            <!--<form role="search" class="navbar-left app-search pull-left hidden-xs">
+			                     <input type="text" placeholder="Search..." class="form-control">
+			                     <a href=""><i class="fa fa-search"></i></a>
+			                </form>-->
+
                             <ul class="nav navbar-nav navbar-right pull-right">
+                                <!--<li class="dropdown hidden-xs">
+                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                        <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-lg">
+                                        <li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>
+                                        <li class="list-group nicescroll notification-list">
+
+                                           <a href="javascript:void(0);" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="pull-left p-r-10">
+                                                    <em class="fa fa-diamond fa-2x text-primary"></em>
+                                                 </div>
+                                                 <div class="media-body">
+                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                    <p class="m-0">
+                                                        <small>There are new settings available</small>
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </a>
+										</li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="list-group-item text-right">
+                                                <small class="font-600">See all notifications</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hidden-xs">
+                                    <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="icon-size-fullscreen"></i></a>
+                                </li>-->
                                 <li class="dropdown">
 								<a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{accountProfile.picture}}" alt="user-img" class="img-circle"> </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#" class="not-active"><i class="ti-user m-r-5"></i>{{accountProfile.fullname}}</a></li>
+								   <ul class="dropdown-menu">
+										<li><a href="#" class="not-active"><i class="ti-user m-r-5"></i>{{accountProfile.fullname}}</a></li>
                                         <li><a href="javascript:;" logout-account><i class="ti-power-off m-r-5 text-danger"></i> Logout</a></li>
                                     </ul>
                                 </li>
@@ -93,11 +130,11 @@
                         <ul>
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
-                            <li><a href="registration.php" class="active"><i class="icon-note"></i><span> Registration </span></a></li>
-							<li><a href="availservice.php"><i class="icon-like"></i><span> Avail Services </span></a></li>
+                            <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
+							<li><a href="availservice.php" class="active"><i class="icon-like"></i><span> Avail Services </span></a></li>
 							<li ng-show="accountProfile.account_type == 'Admin'"><a href="events.php"><i class="icon-calender"></i><span> Events </span></a></li>
 							<li ng-show="accountProfile.account_type == 'Admin'"><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>
-                            <li ng-show="accountProfile.account_type == 'Admin'"><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
+							<li ng-show="accountProfile.account_type == 'Admin'"><a href="users.php"><i class="icon-user-follow"></i><span> Manage Account </span></a></li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -128,7 +165,6 @@
 								<div id="x_content" class="x_content"></div>
                             </div>
                         </div>
-		
 
                     </div> <!-- container -->
 
@@ -167,10 +203,9 @@
 		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-		<script src="assets/js/jquery.bootstrap-growl.min.js"></script> 	
-		<script src="dist/jspdf.min.js"></script>
-		<script src="dist/jspdf.debug.js"></script>
-		<script src="dist/jspdf.plugin.autotable.js"></script>		
+		<script src="assets/js/jquery.bootstrap-growl.min.js"></script>
+		<script src="assets/plugins/switchery/dist/switchery.min.js"></script>
+		
 
         <!-- jQuery  -->
         <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
@@ -185,8 +220,8 @@
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
-		<script src="modules/registration.js"></script>
-		<script src="controllers/registration.js"></script>
+		<script src="modules/avails.js"></script>
+		<script src="controllers/avails.js"></script>
 
     </body>
 </html>
