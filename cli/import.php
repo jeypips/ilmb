@@ -3,7 +3,7 @@
 header("Content-Type: text/html; charset=UTF-8");
 
 $data = [];
-$file = fopen("../data/jp.csv","rb");
+$file = fopen("../data/sha.csv","rb");
 
 $c = 0;
 while (! feof($file)) {

@@ -415,3 +415,168 @@ Stack trace:
 #1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\print-registration.php(11): pdo_db->getData('SELECT *, DATE_...')
 #2 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[09-Nov-2017 13:13:08 Asia/Manila] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 20
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:09 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Notice:  Undefined index:  in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Notice:  Undefined variable: i in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:30) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 36
+[09-Nov-2017 13:14:10 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:10 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:36
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: draw in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: draw in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: recordsTotal in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: recordsTotal in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: recordsFiltered in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: recordsFiltered in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: data in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Notice:  Undefined index: data in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:30) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 36
+[09-Nov-2017 13:14:27 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:14:27 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:36
+[09-Nov-2017 13:16:14 Asia/Manila] PHP Parse error:  syntax error, unexpected 'array' (T_ARRAY), expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 19
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Notice:  Undefined index: draw in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:16:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Notice:  Undefined index: recordsTotal in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:16:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Notice:  Undefined index: recordsFiltered in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:16:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Notice:  Undefined index: data in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:16:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:33) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 37
+[09-Nov-2017 13:16:42 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:16:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:16:42 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:37
+[09-Nov-2017 13:17:04 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:33) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 37
+[09-Nov-2017 13:17:04 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:04 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:04 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:37
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 33
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:33) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 37
+[09-Nov-2017 13:17:24 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:24 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:37
+[09-Nov-2017 13:17:38 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:33) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 37
+[09-Nov-2017 13:17:38 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:17:38 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:17:38 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:37
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Warning:  Cannot use a scalar value as an array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Warning:  Cannot use a scalar value as an array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Warning:  Cannot use a scalar value as an array in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 32
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 29
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 30
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:29) in C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php on line 36
+[09-Nov-2017 13:18:25 Asia/Manila] PHP Stack trace:
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:0
+[09-Nov-2017 13:18:25 Asia/Manila] PHP   2. header() C:\Users\sly\Desktop\UwAmp310\www\ilmb\handlers\registration-list-async.php:36

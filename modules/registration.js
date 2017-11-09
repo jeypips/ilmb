@@ -325,10 +325,11 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		};		
 
 		self.list = function(scope) {
-			
-			// load list
+
 			scope.personal_info = {};
 			scope.personal_info.id = 0;			
+		
+			/* // load list		
 			$http({
 			  method: 'POST',
 			  url: 'handlers/registration-list.php',
@@ -341,9 +342,9 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			  // error
 				
 			});
-			//
+			// */
 
-			$('#x_content').html(loading);
+			/* $('#x_content').html(loading);			
 			$('#x_content').load('lists/registration.html', function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 				// instantiate datable
@@ -353,7 +354,29 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					});	
 				},200);
 				
-			});
+			}); */
+			
+			/*
+			** async
+			*/
+			$('#x_content').html(loading);
+			$('#x_content').load('lists/registration-async.html', function() {
+
+				$('#personal').DataTable({
+					"ordering": false,
+					"processing": true,
+					"serverSide": true,
+					"ajax": "handlers/registration-list-async.php",
+					"drawCallback": function(settings) {
+						$compile($('#x_content')[0])(scope);
+					},
+					"fnServerParams": function(aoData) {
+						aoData['list_filters'] = {id:1};
+					}
+				});				
+				
+			});			
+			
 		};
 		
 		self.barangaySelect = function($item, scope) {
