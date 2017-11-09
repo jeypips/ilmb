@@ -56,9 +56,9 @@ angular.module('flot-module',[]).factory('flot',function() {
 				FlotChart.prototype.init = function() {
 
 					//Pie graph data
-					var pielabels = ["Jp", "Sha", "Dex"];
-					var datas = ["1", "2", "3"];
-					var colors = ["#5fbeaa", "#6c85bd", "#34d3eb"];
+					var pielabels = ["Female", "Male"];
+					var datas = ["2163", "2861"];
+					var colors = ["#5fbeaa", "#6c85bd"];
 					this.createPieGraph("#pie-chart #pie-chart-container", pielabels, datas, colors);
 
 				}

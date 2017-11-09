@@ -56,8 +56,8 @@ angular.module('flotAge-module',[]).factory('flotAge',function() {
 				FlotChart.prototype.init = function() {
 
 					//Pie graph data
-					var pielabels = ["Jp", "Sha", "Dex"];
-					var datas = ["1", "2", "3"];
+					var pielabels = ["Age 1-20", "Age 21-50", "Age 51 and above"];
+					var datas = ["1524", "2411", "712"];
 					var colors = ["#5fbeaa", "#6c85bd", "#34d3eb"];
 					this.createPieGraph("#age-pie-chart #age-pie-chart-container", pielabels, datas, colors);
 

@@ -25,6 +25,18 @@ angular.module('flotService-module',[]).factory('flotService',function() {
 					}, {
 						label : labels[2],
 						data : datas[2]
+					}, {
+						label : labels[3],
+						data : datas[3]
+					}, {
+						label : labels[4],
+						data : datas[4]
+					}, {
+						label : labels[5],
+						data : datas[5]
+					}, {
+						label : labels[6],
+						data : datas[6]
 					}];
 					var options = {
 						series : {
@@ -56,9 +68,9 @@ angular.module('flotService-module',[]).factory('flotService',function() {
 				FlotChart.prototype.init = function() {
 
 					//Pie graph data
-					var pielabels = ["Jp", "Sha", "Dex"];
-					var datas = ["1", "2", "3"];
-					var colors = ["#5fbeaa", "#6c85bd", "#34d3eb"];
+					var pielabels = ["Medical", "Dental", "Feeding & Distribution of Hygiene Kit", "	Distribution of Seeds", "Legal Counseling", "Free Massage", "Disaster"];
+					var datas = ["800", "600", "500", "1400", "300", "1100", "900"];
+					var colors = ["#5fbeaa", "#6c85bd", "#34d3eb","#5fbeaa", "#6c85bd", "#34d3eb","#34d3eb"];
 					this.createPieGraph("#service-pie-chart #service-pie-chart-container", pielabels, datas, colors);
 
 				}
