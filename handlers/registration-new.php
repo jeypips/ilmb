@@ -30,9 +30,9 @@ function personal_info_no_only($con,$age) {
 	
 };
 
-function personal_info_no($con,$age) {
+function personal_info_no($con,$cat) {
 
-	$pre = ($age<=7)?"C":"A";
+	$pre = ($cat=='Child')?"C":"A";
 
 	$personal_info_nos = $con->getData("SELECT personal_info_no FROM personal_infos WHERE personal_info_no LIKE '$pre%' ORDER BY personal_info_no DESC LIMIT 1");
 	
