@@ -123,6 +123,12 @@ angular.module('dashboard-module',['bootstrap-modal']).factory('dashboard', func
 							services.push({value: service.count, color: '#'+service.color, label: service.label});
 						});
 						this.respChart($("#pie-services"),'Pie',services);
+						
+						var encoders = [];
+						angular.forEach(dashboard.encoders, function(encoder,i) {
+							encoders.push({value: encoder.count, color: encoder.color, label: encoder.label});
+						});
+						this.respChart($("#pie-encoders"),'Pie',encoders);					
 
 					},
 					$.ChartJs = new ChartJs, $.ChartJs.Constructor = ChartJs

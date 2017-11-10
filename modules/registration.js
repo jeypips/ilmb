@@ -223,6 +223,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					
 					angular.copy(response.data, scope.personal_info);
 					scope.personal_info.birth_date = new Date(response.data.birth_date);
+					scope.barangays = scope.activeEvent.municipality.barangays;					
 					
 				}, function myError(response) {
 					 
@@ -237,13 +238,14 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				  url: 'handlers/registration-new.php'
 				}).then(function mySucces(response) {
 					
-					angular.copy(response.data, scope.personal_info);
+					// angular.copy(response.data, scope.personal_info);
+					scope.personal_info.id = response.data['id'];				
 					
 					scope.personal_info.attendance = false;
 					scope.personal_info.family_head = false;
 					scope.personal_info.event_id = scope.activeEvent.id;
 					
-					scope.personal_info.personal_info_no = "";										
+					scope.personal_info.personal_info_no = "";									
 					
 					scope.personal_info.address_municipality = scope.activeEvent.municipality;
 					scope.barangays = scope.activeEvent.municipality.barangays;	

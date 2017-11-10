@@ -317,9 +317,9 @@
 									<p class="text-muted m-b-15 font-13">Population count by encoder</p>
 									
 									<ul class="list-inline chart-detail-list text-center">
-                                		<li ng-repeat="service in dashboard.services"><h5><i class="fa fa-circle m-r-5" style="color: #{{service.color}}"></i>{{service.label}} ({{service.count}})</h5></li>
+                                		<li ng-repeat="encoder in dashboard.encoders"><h5><i class="fa fa-circle m-r-5" style="color: {{encoder.color}}"></i>{{encoder.label}} ({{encoder.count}})</h5></li>
                             		</ul>
-                                    <canvas id="pie-services" height="260"></canvas> 
+                                    <canvas id="pie-encoders" height="260"></canvas> 
 								</div>
 							</div>						
 						</div>
