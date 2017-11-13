@@ -84,6 +84,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 			scope.profileSuggestions = [];
 			profiles(scope);
+			
+			scope.currentPage = 4;
 
 		};
 
@@ -345,7 +347,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				},100);
 				
 				$timeout(function() {
-					$('#personal').DataTable({
+					var list = $('#personal').DataTable({
+						"displayStart": scope.currentPage*10,
 						"ordering": false,
 						"processing": true,
 						"serverSide": true,
@@ -354,11 +357,16 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 							$timeout(function() {
 								$compile($('#x_content #personal')[0])(scope);
 							},200);
+						   var api = this.api();
+					 
+							// Output the data for the visible rows to the browser's console
+							console.log( api.rows( {page:'current'} ) );							
 						},
 						"fnServerParams": function(aoData) {
 							aoData['list_filters'] = {id:1};
 						}
 					});
+					// scope.currentPage = list.page.info().page;
 				},100);
 				
 			});			
