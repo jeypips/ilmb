@@ -21,7 +21,7 @@ $_POST['personal_info']['family_members'] = (!$_POST['personal_info']['family_he
 if ($_POST['personal_info']['id']) {
 	
 	$_POST['personal_info']['attendance'] = 1;
-	$_POST['personal_info']['last_modified_by'] = $_SESSION['account_id'];
+	// $_POST['personal_info']['last_modified_by'] = $_SESSION['account_id'];
 	
 	$personal_info_no = personal_info_no($con,$_POST['personal_info']['category']);
 	$_POST['personal_info']['personal_info_no'] = ($_POST['personal_info']['personal_info_no']=="")?$personal_info_no:$_POST['personal_info']['personal_info_no'];
