@@ -85,7 +85,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			scope.profileSuggestions = [];
 			profiles(scope);
 			
-			scope.currentPage = 4;
+			scope.currentPage = 0;
 
 		};
 
@@ -354,13 +354,15 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 						"serverSide": true,
 						"ajax": "handlers/registration-list-async.php",
 						"drawCallback": function(settings) {
+
 							$timeout(function() {
 								$compile($('#x_content #personal')[0])(scope);
 							},200);
-						   var api = this.api();
+							
+						    var api = this.api();
 					 
-							// Output the data for the visible rows to the browser's console
-							console.log( api.rows( {page:'current'} ) );							
+							scope.currentPage = api.page();
+
 						},
 						"fnServerParams": function(aoData) {
 							aoData['list_filters'] = {id:1};
