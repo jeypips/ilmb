@@ -116,11 +116,11 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				scope.controls.ok.btn = true;
 				scope.controls.cancel.label = 'Close';
 				scope.controls.cancel.btn = false;
-				scope.views.list = false;				
+				scope.views.list = false;			
 			}
 			
 		};
-		
+
 		function profiles(scope) {
 			
 			/*
@@ -191,13 +191,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				growl.show('btn btn-danger',{from: 'top', amount: 55},'No event is active, please activate one at Events page');
 				return;
 				
-			};
-			
-			scope.views.onAdd = true;
-			scope.views.profile = "";
-			
-			scope.personal_info = {};
-			scope.personal_info.id = 0;			
+			};					
 			
 			mode(scope,row);
 			
@@ -232,6 +226,12 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				});
 				
 			} else { // add 							
+				
+				scope.views.onAdd = true;
+				scope.views.profile = "";
+			
+				scope.personal_info = {};
+				scope.personal_info.id = 0;			
 				
 				$http({
 				  method: 'POST',
@@ -281,13 +281,9 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			}).then(function mySucces(response) {					
 
 				if (scope.views.onAdd) {
-					/* if (scope.personal_info.id == 0) {
-						scope.personal_info.id = response.data.id;
-						scope.personal_info.personal_info_no = response.data.personal_info_no;
-					}; */
+					scope.views.onAdd = false;
 					scope.personal_info.personal_info_no = response.data.personal_info_no;					
-					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');					
-					// profileAdd(scope);
+					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');
 				} else {
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');
 				}
@@ -332,41 +328,21 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 
 		self.list = function(scope) {
 
-			scope.personal_info = {};
-			scope.personal_info.id = 0;			
+			scope.views.list = false;
+			scope.views.profile = "";				
 		
-			/* // load list		
-			$http({
-			  method: 'POST',
-			  url: 'handlers/registration-list.php',
-			}).then(function mySucces(response) {
-				
-				scope.personal_infos = response.data;
-				
-			}, function myError(response) {
-				 
-			  // error
-				
-			});
-			// */
-
-			/* $('#x_content').html(loading);			
-			$('#x_content').load('lists/registration.html', function() {
-				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
-				// instantiate datable
-				$timeout(function() {
-					$('#personal').DataTable({
-						"ordering": false
-					});	
-				},200);
-				
-			}); */
+			scope.personal_info = {};
+			scope.personal_info.id = 0;	
 			
 			/*
 			** async
 			*/
 			$('#x_content').html(loading);
 			$('#x_content').load('lists/registration-async.html', function() {
+				
+				$timeout(function() {
+					$compile($('#x_content')[0])(scope);
+				},100);
 				
 				$timeout(function() {
 					$('#personal').DataTable({
@@ -376,7 +352,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 						"ajax": "handlers/registration-list-async.php",
 						"drawCallback": function(settings) {
 							$timeout(function() {
-								$compile($('#x_content')[0])(scope);
+								$compile($('#x_content #personal')[0])(scope);
 							},200);
 						},
 						"fnServerParams": function(aoData) {
@@ -407,13 +383,13 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			profile(scope,$item.id);
 			
 		};
-		
+
 		self.profileSelectList = function($item, scope) {
 
 			self.registration(scope,{id: $item.id});
 
 		};		
-		
+
 		self.print = function(scope,personal_info) {
 			
 			$http({

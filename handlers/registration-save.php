@@ -30,15 +30,6 @@ if ($_POST['personal_info']['id']) {
 	
 	echo json_encode(array("personal_info_no"=>$personal_info_no));
 
-} else {
-
-	// $personal_info_no = personal_info_no_only($con,$_POST['personal_info']['age']);
-	// $_POST['personal_info']['personal_info_no'] = $personal_info_no;
-	// $personal_info = $con->insertData($_POST['personal_info']);
-
-	// header("Content-type: application/json");
-	// echo json_encode(array("id"=>$con->insertId,"personal_info_no"=>$personal_info_no));
-
 }
 
 function personal_info_no_only($con,$age) {
