@@ -233,13 +233,6 @@
                                 <p class="text-muted page-title-alt">Welcome to PGLU, I Love my Barangay.</p>
                             </div>
                         </div>
-<<<<<<< HEAD
-						
-						<div class="row">
-							<div class="col-lg-12">
-								<div id="x_content" class="x_content"></div>
-							</div>
-=======
 						<div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="widget-panel widget-style-2 bg-white">
@@ -328,8 +321,7 @@
                             		</ul>
                                     <canvas id="pie-encoders" height="260"></canvas> 
 								</div>
-							</div>						
->>>>>>> refs/remotes/origin/sly
+							</div>	
 						</div>
 
                     </div> <!-- container -->
