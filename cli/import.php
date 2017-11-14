@@ -3,7 +3,7 @@
 header("Content-Type: text/html; charset=UTF-8");
 
 $data = [];
-$file = fopen("../data/jp.csv","rb");
+$file = fopen("../data/sha.csv","rb");
 
 $c = 0;
 while (! feof($file)) {
@@ -27,7 +27,7 @@ foreach ($data as $d) {
 	
 	$d = array(
 		"event_id"=>1,
-		"personal_info_no"=>personal_info_no_only($con),
+		"personal_info_no"=>personal_info_no($con,trim($d[4])),
 		"firstname"=>utf8_encode(trim($d[0])),
 		"lastname"=>utf8_encode(trim($d[1])),
 		"extension_name"=>trim($d[2]),
@@ -49,6 +49,28 @@ foreach ($data as $d) {
 }
 
 echo "$percent% completed...";
+
+function personal_info_no($con,$cat) {
+
+	$pre = ($cat=='Child')?"C":"A";
+
+	$personal_info_nos = $con->getData("SELECT personal_info_no FROM personal_infos WHERE personal_info_no LIKE '$pre%' ORDER BY personal_info_no DESC LIMIT 1");
+	
+	$id = 1;
+	foreach ($personal_info_nos as $pin) {
+		
+		$p = substr($pin['personal_info_no'],1,strlen($pin['personal_info_no']));
+		$id = (int)$p+1;
+		
+	};
+
+	$l = (strlen($id)>4)?strlen($id):4;	
+	
+	$personal_info_no = $pre.str_pad((string)$id,$l,"0",STR_PAD_LEFT);
+
+	return $personal_info_no;
+	
+};
 
 function personal_info_no_only($con) {
 
