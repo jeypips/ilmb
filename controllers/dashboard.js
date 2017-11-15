@@ -1,13 +1,11 @@
-var app = angular.module('dashboard',['toggle-fullscreen','account-module','account-module','dashboard-module']);
+var app = angular.module('dashboard',['toggle-fullscreen','account-module','dashboard-module']);
 
-app.controller('dashboardCtrl',function($scope,fullscreen,form) {
+app.controller('dashboardCtrl',function($scope,fullscreen,dashboard) {
 	
 	$scope.formHolder = {};
 	$scope.views = {};
 	
-	form.data($scope);
-	
-	$scope.form = form;
-	
+
+	dashboard.data($scope);
 
 });

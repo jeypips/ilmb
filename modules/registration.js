@@ -83,6 +83,9 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			});
 			
 			scope.profileSuggestions = [];
+			profiles(scope);
+			
+			scope.currentPage = 0;
 
 		};
 
@@ -115,11 +118,11 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				scope.controls.ok.btn = true;
 				scope.controls.cancel.label = 'Close';
 				scope.controls.cancel.btn = false;
-				scope.views.list = false;				
+				scope.views.list = false;			
 			}
 			
 		};
-		
+
 		function profiles(scope) {
 			
 			/*
@@ -190,13 +193,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				growl.show('btn btn-danger',{from: 'top', amount: 55},'No event is active, please activate one at Events page');
 				return;
 				
-			};
-			
-			scope.views.onAdd = true;
-			scope.views.profile = "";
-			
-			scope.personal_info = {};
-			scope.personal_info.id = 0;			
+			};					
 			
 			mode(scope,row);
 			
@@ -222,6 +219,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					
 					angular.copy(response.data, scope.personal_info);
 					scope.personal_info.birth_date = new Date(response.data.birth_date);
+					scope.barangays = scope.activeEvent.municipality.barangays;					
 					
 				}, function myError(response) {
 					 
@@ -231,16 +229,25 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				
 			} else { // add 							
 				
+				scope.views.onAdd = true;
+				scope.views.profile = "";
+			
+				scope.personal_info = {};
+				scope.personal_info.id = 0;			
+				
 				$http({
 				  method: 'POST',
 				  url: 'handlers/registration-new.php'
 				}).then(function mySucces(response) {
 					
-					angular.copy(response.data, scope.personal_info);
+					// angular.copy(response.data, scope.personal_info);
+					scope.personal_info.id = response.data['id'];				
 					
 					scope.personal_info.attendance = false;
 					scope.personal_info.family_head = false;
 					scope.personal_info.event_id = scope.activeEvent.id;
+					
+					scope.personal_info.personal_info_no = "";									
 					
 					scope.personal_info.address_municipality = scope.activeEvent.municipality;
 					scope.barangays = scope.activeEvent.municipality.barangays;	
@@ -276,12 +283,9 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			}).then(function mySucces(response) {					
 
 				if (scope.views.onAdd) {
-					/* if (scope.personal_info.id == 0) {
-						scope.personal_info.id = response.data.id;
-						scope.personal_info.personal_info_no = response.data.personal_info_no;
-					}; */
-					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');					
-					// profileAdd(scope);
+					scope.views.onAdd = false;
+					scope.personal_info.personal_info_no = response.data.personal_info_no;					
+					growl.show('btn btn-success',{from: 'top', amount: 55},'New profile added');
 				} else {
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Info updated successfully');
 				}
@@ -325,35 +329,50 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		};		
 
 		self.list = function(scope) {
-			
-			// load list
-			scope.personal_info = {};
-			scope.personal_info.id = 0;			
-			$http({
-			  method: 'POST',
-			  url: 'handlers/registration-list.php',
-			}).then(function mySucces(response) {
-				
-				scope.personal_infos = response.data;
-				
-			}, function myError(response) {
-				 
-			  // error
-				
-			});
-			//
 
+			scope.views.list = false;
+			scope.views.profile = "";				
+		
+			scope.personal_info = {};
+			scope.personal_info.id = 0;	
+			
+			/*
+			** async
+			*/
 			$('#x_content').html(loading);
-			$('#x_content').load('lists/registration.html', function() {
-				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
-				// instantiate datable
-				$timeout(function() {
-					$('#personal').DataTable({
-						"ordering": false
-					});	
-				},200);
+			$('#x_content').load('lists/registration-async.html', function() {
 				
-			});
+				$timeout(function() {
+					$compile($('#x_content')[0])(scope);
+				},100);
+				
+				$timeout(function() {
+					var list = $('#personal').DataTable({
+						"displayStart": scope.currentPage*10,
+						"ordering": false,
+						"processing": true,
+						"serverSide": true,
+						"ajax": "handlers/registration-list-async.php",
+						"drawCallback": function(settings) {
+
+							$timeout(function() {
+								$compile($('#x_content #personal')[0])(scope);
+							},200);
+							
+						    var api = this.api();
+					 
+							scope.currentPage = api.page();
+
+						},
+						"fnServerParams": function(aoData) {
+							aoData['list_filters'] = {id:1};
+						}
+					});
+					// scope.currentPage = list.page.info().page;
+				},100);
+				
+			});			
+			
 		};
 		
 		self.barangaySelect = function($item, scope) {
@@ -374,7 +393,13 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			profile(scope,$item.id);
 			
 		};
-		
+
+		self.profileSelectList = function($item, scope) {
+
+			self.registration(scope,{id: $item.id});
+
+		};		
+
 		self.print = function(scope,personal_info) {
 			
 			$http({

@@ -22,7 +22,7 @@
 			  <td>{{a.account_type}}</td>
 			  <td>
 			  <button class="btn btn-sm btn-primary" ng-click="form.user(this,a)" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>
-			  <button class="btn btn-sm btn-googleplus" ng-click="form.delete(this,a)"><i class="fa fa-close" style="cursor: pointer;"></i></button>
+			  <button class="btn btn-sm btn-googleplus" ng-click="form.delete(this,a)" ng-show="accountProfile.account_type == 'Admin'"><i class="fa fa-close" style="cursor: pointer;"></i></button>
 			  </td>
 			</tr>
 		  </tbody>

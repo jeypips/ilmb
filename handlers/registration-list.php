@@ -9,7 +9,7 @@ session_start();
 
 $con = new pdo_db();
 
-$personal_infos = $con->getData("SELECT personal_infos.id, personal_infos.personal_info_no, (SELECT events.description FROM events WHERE events.id = personal_infos.event_id) description, personal_infos.address_barangay, personal_infos.address_municipality,personal_infos.firstname, personal_infos.middlename, personal_infos.lastname FROM personal_infos");
+$personal_infos = $con->getData("SELECT personal_infos.id, personal_infos.personal_info_no, (SELECT events.description FROM events WHERE events.id = personal_infos.event_id) description, personal_infos.address_barangay, personal_infos.address_municipality, personal_infos.firstname, personal_infos.middlename, personal_infos.lastname FROM personal_infos");
 
  // Convert id to array
 foreach($personal_infos as $key => $personal_info) {
