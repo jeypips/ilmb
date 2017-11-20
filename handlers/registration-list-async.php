@@ -24,9 +24,13 @@ $columns = array(
 $whereResult = null;
 $whereAll = null;
 
+$whereAll = "gender IS NULL";
+
 $personal_infos = SSP::complex($_GET,$sql_details,$table,$primaryKey,$columns,$whereResult,$whereAll);
 
 foreach ($personal_infos['data'] as $i => $personal_info) {
+	
+	$personal_infos['data'][$i][1] = utf8_encode($personal_info[1]);
 	
 	$action = '<button class="btn btn-sm btn-primary" ng-click="form.registration(this,{id: '.$personal_infos['data'][$i][8].'})" style="margin-right: 5px;" ><i class="fa fa-search" style="cursor: pointer;"></i></button>';
 	$action .= '<button class="btn btn-sm btn-googleplus" ng-click="form.delete(this,{id: '.$personal_infos['data'][$i][8].'})" ng-show="accountProfile.account_type == \'Admin\'"><i class="fa fa-close" style="cursor: pointer;"></i></button>';

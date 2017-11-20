@@ -14,33 +14,33 @@ $dashboard = [];
 $q = $con->getData("SELECT count(id) total_population FROM personal_infos");
 $dashboard['total_population'] = $q[0]['total_population'];
 
-$q = $con->getData("SELECT count(id) total_attendance FROM personal_infos WHERE attendance = 1");
+$q = $con->getData("SELECT count(id) total_attendance FROM personal_infos WHERE attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['total_attendance'] = $q[0]['total_attendance'];
 
 $dashboard['gender'] = [];
-$q = $con->getData("SELECT count(id) total_male FROM personal_infos WHERE gender = 'Male'");
+$q = $con->getData("SELECT count(id) total_male FROM personal_infos WHERE gender = 'Male' AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['gender']['male'] = $q[0]['total_male'];
-$q = $con->getData("SELECT count(id) total_female FROM personal_infos WHERE gender = 'Female'");
+$q = $con->getData("SELECT count(id) total_female FROM personal_infos WHERE gender = 'Female' AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['gender']['female'] = $q[0]['total_female'];
 
-$q = $con->getData("SELECT count(id) total_family_head FROM personal_infos WHERE family_head = 1");
+$q = $con->getData("SELECT count(id) total_family_head FROM personal_infos WHERE family_head = 1 AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['total_family_head'] = $q[0]['total_family_head'];
 
 $dashboard['category'] = [];
-$q = $con->getData("SELECT count(id) total_indigents FROM personal_infos WHERE category = 'Indigent' AND attendance = 1");
+$q = $con->getData("SELECT count(id) total_indigents FROM personal_infos WHERE category = 'Indigent' AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['category']['indigents'] = $q[0]['total_indigents'];
-$q = $con->getData("SELECT count(id) total_senior_citizens FROM personal_infos WHERE category = 'Senior' AND attendance = 1");
+$q = $con->getData("SELECT count(id) total_senior_citizens FROM personal_infos WHERE category = 'Senior' AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['category']['senior_citizens'] = $q[0]['total_senior_citizens'];
-$q = $con->getData("SELECT count(id) total_children FROM personal_infos WHERE category = 'Child' AND attendance = 1");
+$q = $con->getData("SELECT count(id) total_children FROM personal_infos WHERE category = 'Child' AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['category']['children'] = $q[0]['total_children'];
-$q = $con->getData("SELECT count(id) total_walkins FROM personal_infos WHERE category = 'Walk-in' AND attendance = 1");
+$q = $con->getData("SELECT count(id) total_walkins FROM personal_infos WHERE category = 'Walk-in' AND attendance = 1 AND last_modified_by IS NOT NULL");
 $dashboard['category']['walkins'] = $q[0]['total_walkins'];
 
 $dashboard['ages'] = [];
-$ages = $con->getData("SELECT age FROM `personal_infos` WHERE attendance = 1 AND age > 0 GROUP by age");
+$ages = $con->getData("SELECT age FROM `personal_infos` WHERE attendance = 1 AND last_modified_by IS NOT NULL AND age > 0 GROUP by age");
 foreach ($ages as $key => $age) {
 	$age_key = ($age['age']==NULL)?0:$age['age'];
-	$q = $con->getData("SELECT count(id) total_count FROM personal_infos WHERE age = ".$age_key);
+	$q = $con->getData("SELECT count(id) total_count FROM personal_infos WHERE age = ".$age_key." AND attendance = 1 AND last_modified_by IS NOT NULL");
 	$dashboard['ages'][] = array(
 		"label"=>($age_key==0)?"Undefined":(string)$age_key,
 		"color"=>randomRgb(),
