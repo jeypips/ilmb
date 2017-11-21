@@ -94,6 +94,7 @@
                         	<li class="text-muted menu-title">Navigation</li>
                             <li><a href="index.php"><i class="icon-home"></i><span> Dashboard </span></a></li>
                             <li><a href="registration.php"><i class="icon-note"></i><span> Registration </span></a></li>
+                            <li><a href="attendance.php"><i class="icon-like"></i><span> Attendance </span></a></li>							
 							<li><a href="availservice.php"><i class="icon-like"></i><span> Avail Services </span></a></li>
 							<li ng-show="accountProfile.account_type == 'Admin'"><a href="events.php" class="active"><i class="icon-calender"></i><span> Events </span></a></li>
 							<li ng-show="accountProfile.account_type == 'Admin'"><a href="services.php"><i class="icon-wrench"></i><span> Services </span></a></li>

@@ -1,0 +1,14 @@
+<div class="col-lg-5 col-md-6 col-sm-12">
+	<b class="text-muted">Id</b><h4 style="margin-left: 20px;"><strong>{{profile.personal_info_no}}</strong></h4><br>
+	<b class="text-muted">Fullname</b><h4 style="margin-left: 20px;"><strong>{{profile.fullname}}</strong></h4><br>
+	<b class="text-muted">Birth Date</b><h4 style="margin-left: 20px;"><strong>{{profile.birth_date}}</strong></h4><br>
+	<b class="text-muted">Barangay</b><h4 style="margin-left: 20px;"><strong>{{profile.barangay}}</strong></h4>
+</div>
+<h4>Attendance</h4>
+<hr>
+<div class="col-lg-7 col-md-6 col-sm-12">
+	<div style="margin-bottom: 25px;">
+		<input data-attendance-id="{{profile.id}}" data-color-code="{{profile.color_code}}" type="checkbox" class="js-switch" ng-model="profile.attendance">
+		<label style="padding-left: 15px;"> {{(profile.attendance)?'Present':'Absent'}}</label>
+	</div>
+</div>
