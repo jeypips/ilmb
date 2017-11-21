@@ -24,7 +24,7 @@ $columns = array(
 $whereResult = null;
 $whereAll = null;
 
-$whereAll = "gender IS NULL";
+// $whereAll = "gender IS NULL";
 
 $personal_infos = SSP::complex($_GET,$sql_details,$table,$primaryKey,$columns,$whereResult,$whereAll);
 
