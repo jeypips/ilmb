@@ -76,3 +76,9 @@ Stack trace:
 #1 C:\Users\sly\Desktop\UwAmp310\www\ilmb\api\charts\dashboard.php(30): pdo_db->getData('SELECT count(id...')
 #2 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\ilmb\db.php on line 38
+[22-Nov-2017 10:52:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND age > 0 GROUP by age' at line 1 in C:\Users\SLY One\Desktop\UwAmp310\www\ilmb\db.php:38
+Stack trace:
+#0 C:\Users\SLY One\Desktop\UwAmp310\www\ilmb\db.php(38): PDO->query('SELECT age FROM...')
+#1 C:\Users\SLY One\Desktop\UwAmp310\www\ilmb\api\charts\dashboard.php(49): pdo_db->getData('SELECT age FROM...')
+#2 {main}
+  thrown in C:\Users\SLY One\Desktop\UwAmp310\www\ilmb\db.php on line 38

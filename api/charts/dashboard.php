@@ -45,7 +45,9 @@ $q = $con->getData("SELECT count(id) total_walkins FROM personal_infos WHERE cat
 $dashboard['category']['walkins'] = $q[0]['total_walkins'];
 
 $dashboard['ages'] = [];
-$ages = $con->getData("SELECT age FROM `personal_infos` WHERE attendance = 1 AND last_modified_by IS NOT NULL AND age > 0 GROUP by age");
+// $ages = $con->getData("SELECT age FROM `personal_infos` WHERE attendance = 1 AND last_modified_by IS NOT NULL AND age > 0 GROUP by age");
+// $ages = $con->getData("SELECT age FROM `personal_infos` WHERE attendance = 1 AND age > 0 GROUP by age");
+$ages = $con->getData("SELECT age FROM `personal_infos` WHERE age > 0 GROUP by age");
 foreach ($ages as $key => $age) {
 	$age_key = ($age['age']==NULL)?0:$age['age'];
 	// $q = $con->getData("SELECT count(id) total_count FROM personal_infos WHERE age = ".$age_key." AND attendance = 1 AND last_modified_by IS NOT NULL");
