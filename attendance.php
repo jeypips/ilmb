@@ -9,7 +9,7 @@
 
         <link rel="shortcut icon" href="assets/img/lovelaunion.png">
 
-        <title>ILMB | Avail Services</title>
+        <title>ILMB | Attendance</title>
 		
 		<!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />	
