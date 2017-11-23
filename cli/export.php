@@ -51,7 +51,7 @@ $objPHPExcel->getProperties()->setCreator("ILMB System")
 
 $objWorksheet = $objPHPExcel->getActiveSheet();
 
-$attendances = $con->getData("SELECT category, personal_info_no, lastname, firstname, middlename, extension_name, civil_status, gender, birth_date, birth_place, age, family_head, family_members, employment_status, occupation, philhealth_member, address_house, address_sitio, address_purok, address_barangay, address_municipality, address_province, contact_no, contact_email, educational_attainment, presented_id, presented_id_no FROM personal_infos WHERE attendance = 1 AND last_modified_by IS NOT NULL");
+$attendances = $con->getData("SELECT category, personal_info_no, lastname, firstname, middlename, extension_name, civil_status, gender, birth_date, birth_place, age, family_head, family_members, employment_status, occupation, philhealth_member, address_house, address_sitio, address_purok, address_barangay, address_municipality, address_province, contact_no, contact_email, educational_attainment, presented_id, presented_id_no FROM personal_infos WHERE attendance = 1");
 $profiles = $con->getData("SELECT category, personal_info_no, lastname, firstname, middlename, extension_name, civil_status, gender, birth_date, birth_place, age, family_head, family_members, employment_status, occupation, philhealth_member, address_house, address_sitio, address_purok, address_barangay, address_municipality, address_province, contact_no, contact_email, educational_attainment, presented_id, presented_id_no FROM personal_infos");
 
 foreach ($attendances as $i => $profile) {
