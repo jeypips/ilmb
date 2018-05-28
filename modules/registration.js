@@ -55,16 +55,16 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				
 			});
 			
-			/* $http({
+			 $http({
 				method: 'POST',
-				url: 'api/suggestions/barangays'
+				url: 'api/suggestions/barangays.php'
 			}).then(function mySucces(response) {
 				
 				scope.barangays = response.data;
 				
 			},function myError(response) {
 				
-			});	 */
+			});	 
 			
 			/*
 			** Fetch active event
@@ -158,7 +158,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				scope.personal_info.birth_date = new Date(response.data.birth_date);
 				
 			}, function myError(response) {
-				 
+				
 			  // error
 				
 			});			
@@ -347,6 +347,7 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			scope.personal_info.address_barangay = $item;
 			
 		};
+		
 		
 		self.municipalitySelect = function($item, scope) {
 			
