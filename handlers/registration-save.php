@@ -1,12 +1,12 @@
 <?php
 
+require_once 'check-session.php';
+
 $_POST = json_decode(file_get_contents('php://input'), true);
 
 include_once '../db.php';
 
 $con = new pdo_db("personal_infos");
-
-session_start();
 
 if (isset($_POST['personal_info']['birth_date'])) $_POST['personal_info']['birth_date'] =  date("Y-m-d",strtotime($_POST['personal_info']['birth_date'])); // date Format
 $_POST['personal_info']['family_head'] = ($_POST['personal_info']['family_head'])?1:0; // for checkbox
@@ -20,10 +20,10 @@ $_POST['personal_info']['family_members'] = (!$_POST['personal_info']['family_he
 
 if ($_POST['personal_info']['id']) {
 	
-	// $_POST['personal_info']['attendance'] = 1;
-	// $_POST['personal_info']['last_modified_by'] = $_SESSION['account_id'];
+	$_POST['personal_info']['attendance'] = 1;
+	$_POST['personal_info']['last_modified_by'] = $_SESSION['account_id'];
 	
-	$personal_info_no = personal_info_no($con,$_POST['personal_info']['category']);
+	$personal_info_no = personal_info_no_only($con,$_POST['personal_info']['category']);
 	$_POST['personal_info']['personal_info_no'] = ($_POST['personal_info']['personal_info_no']=="")?$personal_info_no:$_POST['personal_info']['personal_info_no'];
 	
 	$personal_info = $con->updateData($_POST['personal_info'],'id');

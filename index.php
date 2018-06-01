@@ -261,8 +261,7 @@
 							<div class="col-lg-6">
 								<div class="card-box">
 									<h4 class="m-t-0 header-title"><b>Gender</b></h4>
-									<p class="text-muted m-b-15 font-13">Population count from total attendance by gender</p>
-									
+									<p class="text-muted m-b-15 font-13">Population count from total attendance by gender</p>									
 									<ul class="list-inline chart-detail-list text-center">
                                 		<li><h5><i class="fa fa-circle m-r-5" style="color: #5d9cec"></i>Male ({{dashboard.gender.male}})</h5></li>
                                 		<li><h5><i class="fa fa-circle m-r-5" style="color: #5fbeaa"></i>Female ({{dashboard.gender.female}})</h5></li>
@@ -271,6 +270,17 @@
 								</div>
 							</div>
 							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 header-title"><b>Services</b></h4>
+									<p class="text-muted m-b-15 font-13">Population count from total attendance by service</p>
+									
+									<ul class="list-inline chart-detail-list text-center">
+                                		<li ng-repeat="service in dashboard.services"><h5><i class="fa fa-circle m-r-5" style="color: #{{service.color}}"></i>{{service.label}} ({{service.count}})</h5></li>
+                            		</ul>
+                                    <canvas id="pie-services" height="260"></canvas> 
+								</div>
+							</div>
+							<!--<div class="col-lg-6">
 								<div class="card-box">
 									<h4 class="m-t-0 header-title"><b>Category</b></h4>
 									<p class="text-muted m-b-15 font-13">Population count from total attendance by category</p>
@@ -283,9 +293,9 @@
                             		</ul>
                                     <canvas id="pie-category" height="260"></canvas> 
 								</div>
-							</div>							
+							</div>-->						
 						</div>
-						<div class="row">
+						<!--<div class="row">
 							<div class="col-lg-12">
 								<div class="card-box">
 									<h4 class="m-t-0 header-title"><b>Age</b></h4>
@@ -297,20 +307,7 @@
                                     <canvas id="pie-ages" height="260"></canvas> 
 								</div>
 							</div>						
-						</div>						
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="card-box">
-									<h4 class="m-t-0 header-title"><b>Services</b></h4>
-									<p class="text-muted m-b-15 font-13">Population count from total attendance by service</p>
-									
-									<ul class="list-inline chart-detail-list text-center">
-                                		<li ng-repeat="service in dashboard.services"><h5><i class="fa fa-circle m-r-5" style="color: #{{service.color}}"></i>{{service.label}} ({{service.count}})</h5></li>
-                            		</ul>
-                                    <canvas id="pie-services" height="260"></canvas> 
-								</div>
-							</div>						
-						</div>
+						</div>-->
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="card-box">

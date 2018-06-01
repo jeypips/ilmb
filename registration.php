@@ -178,6 +178,7 @@
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
 		<script src="assets/js/bootbox.min.js"></script>
+		<script src="assets/js/jquery.blockUI.js"></script>
 
 		<!-- Angular  -->
 		<script src="angular/angular.min.js"></script>
@@ -186,6 +187,7 @@
 		<script src="modules/fullscreen.js"></script>
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
+		<script src="modules/blockui.js"></script>
 		<script src="modules/registration.js"></script>
 		<script src="controllers/registration.js"></script>
 

@@ -1,4 +1,4 @@
-angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
+angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl','block-ui']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl,bui) {
 	
 	function form() {
 		
@@ -188,6 +188,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		
 		self.registration = function(scope,row) {		
 			
+			bui.show();
+			
 			if (Object.size(scope.activeEvent) == 0) {
 				
 				growl.show('btn btn-danger',{from: 'top', amount: 55},'No event is active, please activate one at Events page');
@@ -221,9 +223,11 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					scope.personal_info.birth_date = new Date(response.data.birth_date);
 					scope.barangays = scope.activeEvent.municipality.barangays;					
 					
+					bui.hide();
+					
 				}, function myError(response) {
 					 
-				  // error
+					bui.hide();
 					
 				});
 				
@@ -252,9 +256,13 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					scope.personal_info.address_municipality = scope.activeEvent.municipality;
 					scope.barangays = scope.activeEvent.municipality.barangays;	
 					
+					bui.hide();
+					
 				}, function myError(response) {
 					 
-				  // error
+					bui.hide();
+					
+					growl.show('btn btn-danger',{from: 'top', amount: 55},'Session expired please re-login');					
 					
 				});
 				
@@ -276,6 +284,8 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				return;
 			}
 			
+			bui.show();
+			
 			$http({
 			  method: 'POST',
 			  url: 'handlers/registration-save.php',
@@ -294,9 +304,13 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 				
 				profiles(scope);
 				
+				bui.hide();
+				
 			}, function myError(response) {
 				 
-			  // error
+				bui.hide();
+				
+				growl.show('btn btn-danger',{from: 'top', amount: 55},'Session expired please re-login');
 				
 			});			
 			

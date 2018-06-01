@@ -1,12 +1,14 @@
 <?php
 
+require_once 'check-session.php';
+
 $_POST = json_decode(file_get_contents('php://input'), true);
 
 include_once '../db.php';
 
 $con = new pdo_db("personal_infos");
 
-$personal_info = $con->insertData(array("personal_info_no"=>""));
+$personal_info = $con->insertData(array("personal_info_no"=>"","last_modified_by"=>$_SESSION['account_id']));
 
 header("Content-type: application/json");
 echo json_encode(array("id"=>$con->insertId));

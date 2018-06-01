@@ -2,9 +2,10 @@
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 
+require_once 'delete-no-event.php';
+
 require_once '../classes/db.php';
 require_once '../classes/DataTables/ssp.class.php';
-
 
 $table = 'personal_infos_list';
 $primaryKey = 'id';
