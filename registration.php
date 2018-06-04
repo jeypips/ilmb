@@ -188,6 +188,7 @@
 		<script src="modules/bootstrap-modal.js"></script>
 		<script src="modules/growl.js"></script>
 		<script src="modules/blockui.js"></script>
+		<script src="modules/session.js"></script>
 		<script src="modules/registration.js"></script>
 		<script src="controllers/registration.js"></script>
 

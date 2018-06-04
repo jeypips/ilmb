@@ -1,16 +1,16 @@
 <?php
 
-require_once 'check-session.php';
-
 $_POST = json_decode(file_get_contents('php://input'), true);
+
+session_start();
 
 include_once '../db.php';
 
 $con = new pdo_db("personal_infos");
 
 if (isset($_POST['personal_info']['birth_date'])) $_POST['personal_info']['birth_date'] =  date("Y-m-d",strtotime($_POST['personal_info']['birth_date'])); // date Format
-$_POST['personal_info']['family_head'] = ($_POST['personal_info']['family_head'])?1:0; // for checkbox
-$_POST['personal_info']['attendance'] = ($_POST['personal_info']['attendance'])?1:0; // for checkbox
+$_POST['personal_info']['family_head'] = (isset($_POST['personal_info']['family_head']))?1:0; // for checkbox
+$_POST['personal_info']['attendance'] = (isset($_POST['personal_info']['attendance']))?1:0; // for checkbox
 
 $_POST['personal_info']['address_barangay'] = (isset($_POST['personal_info']['address_barangay']['id']))?$_POST['personal_info']['address_barangay']['id']:0;
 

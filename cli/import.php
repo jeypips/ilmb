@@ -3,7 +3,7 @@
 header("Content-Type: text/html; charset=UTF-8");
 
 $data = [];
-$file = fopen("../data/sha.csv","rb");
+$file = fopen("../data/bacnotan.csv","rb");
 
 $c = 0;
 while (! feof($file)) {
@@ -16,16 +16,21 @@ require_once '../db.php';
 
 $con = new pdo_db("personal_infos");
 
-$i = 0;
+$i = 1;
 $total = count($data);
+
+$lfirst = true;
+// $lfirst = false;
 
 echo "Inializing data import\n";
 
 foreach ($data as $d) {
 	
+	if (!$d) continue;
+	
 	echo "Importing $i/$total...";	
 	
-	$d = array(
+	/* $e = array(
 		"event_id"=>1,
 		"personal_info_no"=>personal_info_no($con,trim($d[4])),
 		"firstname"=>utf8_encode(trim($d[0])),
@@ -34,19 +39,60 @@ foreach ($data as $d) {
 		"address_barangay"=>address_barangay($con,trim($d[3])),
 		"address_municipality"=>13,
 		"category"=>trim($d[4])
-	);
+	); */
 	
-	// var_dump($d);
+	$firstname = "";
+	$lastname = "";
+	$middlename = "";
 	
-	$import = $con->insertData($d);
+	$n = preg_replace('/[,]/', '', $d[1]);
+	
+	$names = explode(" ",$n);
+	
+	if (count($names)==3) {
+		
+		$firstname = utf8_encode($names[0]);
+		$lastname = utf8_encode($names[2]);
+		$middlename = utf8_encode($names[1]);
+		
+		if ($lfirst) {
+			$lastname = utf8_encode($names[0]);
+			$firstname = utf8_encode($names[1]);
+			$middlename = utf8_encode($names[2]);
+		};
+		
+	} else {
+		
+		$firstname = utf8_encode($names[0]);
+		$lastname = utf8_encode($names[1]);
+		
+		if ($lfirst) {
+			$lastname = utf8_encode($names[0]);
+			$firstname = utf8_encode($names[1]);
+		};		
+		
+	};
 
-	$percent = ceil($i*100/$total);	
-	
+	$e = array(
+		"event_id"=>1,
+		"personal_info_no"=>STR_PAD($d[0],4,"0",STR_PAD_LEFT),
+		"firstname"=>$firstname,
+		"lastname"=>$lastname,
+		"middlename"=>$middlename,
+		"address_barangay"=>address_barangay($con,ucfirst(strtolower(trim($d[2])))),
+		"address_municipality"=>3,
+		"category"=>"Indigent"
+	);
+
+	$import = $con->insertData($e);
+
+	$percent = ceil($i*100/$total);
+
 	echo "$percent%...\n";
 
-	++$i;	
-	
-}
+	++$i;
+
+};
 
 echo "$percent% completed...";
 

@@ -1,8 +1,8 @@
 <?php
 
-require_once 'check-session.php';
-
 $_POST = json_decode(file_get_contents('php://input'), true);
+
+session_start();
 
 include_once '../db.php';
 

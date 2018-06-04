@@ -1,4 +1,4 @@
-angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl','block-ui']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl,bui) {
+angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl','block-ui','session-module']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl,bui,session) {
 	
 	function form() {
 		
@@ -186,7 +186,19 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			
 		};
 		
-		self.registration = function(scope,row) {		
+		self.registration = function(scope,row) {
+			
+			session.check().then(function success(response) {
+
+				registration(scope,row);
+
+			}, function error(response) {
+				
+			});
+
+		};
+		
+		function registration(scope,row) {				
 			
 			bui.show();
 			
@@ -262,8 +274,6 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 					 
 					bui.hide();
 					
-					growl.show('btn btn-danger',{from: 'top', amount: 55},'Session expired please re-login');					
-					
 				});
 				
 			}
@@ -278,6 +288,18 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 		};
 		
 		self.save = function(scope) {
+			
+			session.check().then(function success(response) {
+
+				save(scope);
+
+			}, function error(response) {
+				
+			});			
+			
+		};
+		
+		function save(scope) {
 			
 			if (validate(scope)) {
 				growl.show('btn btn-danger',{from: 'top', amount: 55},'Please complete required fields');				
@@ -309,8 +331,6 @@ angular.module('registration-module',['ui.bootstrap','bootstrap-modal','bootstra
 			}, function myError(response) {
 				 
 				bui.hide();
-				
-				growl.show('btn btn-danger',{from: 'top', amount: 55},'Session expired please re-login');
 				
 			});			
 			
