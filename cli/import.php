@@ -20,7 +20,7 @@ $i = 1;
 $total = count($data);
 
 $lfirst = true;
-// $lfirst = false;
+$lfirst = false;
 
 echo "Inializing data import\n";
 
@@ -61,7 +61,9 @@ foreach ($data as $d) {
 			$middlename = utf8_encode($names[2]);
 		};
 		
-	} else {
+	}
+	
+	if (count($names)==2) {
 		
 		$firstname = utf8_encode($names[0]);
 		$lastname = utf8_encode($names[1]);
@@ -73,9 +75,17 @@ foreach ($data as $d) {
 		
 	};
 
+	if (count($names)==1) {
+		
+		$firstname = utf8_encode($names[0]);
+		
+	};
+
+	$personal_info_no = STR_PAD($d[0],4,"0",STR_PAD_LEFT);
+	
 	$e = array(
 		"event_id"=>1,
-		"personal_info_no"=>STR_PAD($d[0],4,"0",STR_PAD_LEFT),
+		"personal_info_no"=>$personal_info_no,
 		"firstname"=>$firstname,
 		"lastname"=>$lastname,
 		"middlename"=>$middlename,
@@ -88,7 +98,7 @@ foreach ($data as $d) {
 
 	$percent = ceil($i*100/$total);
 
-	echo "$percent%...\n";
+	echo "$percent%...($personal_info_no)\n";
 
 	++$i;
 
